@@ -11,7 +11,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="460.0" prefWidth="563.0" style="-fx-background-color: LightBlue;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="project2dana.LogInController">
+<AnchorPane id="AnchorPane" prefHeight="460.0" prefWidth="563.0" style="-fx-background-color: LightBlue;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project2dana.LogInController">
    <children>
       <ImageView fitHeight="533.0" fitWidth="609.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -25,23 +25,30 @@
             </Glow>
          </effect>
       </ImageView>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="208.0" layoutX="64.0" layoutY="115.0" opacity="0.83" stroke="WHITE" strokeType="INSIDE" strokeWidth="5.0" width="226.0" />
-      <TextField layoutX="83.0" layoutY="168.0" />
-      <TextField layoutX="83.0" layoutY="263.0" />
-      <Text layoutX="86.0" layoutY="156.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Username">
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="208.0" layoutX="223.0" layoutY="116.0" opacity="0.8" stroke="WHITE" strokeType="INSIDE" strokeWidth="5.0" width="226.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="54.0" layoutX="223.0" layoutY="52.0" opacity="0.8" stroke="WHITE" strokeType="INSIDE" strokeWidth="5.0" width="226.0" />
+      <TextField layoutX="242.0" layoutY="169.0" />
+      <TextField layoutX="242.0" layoutY="264.0" />
+      <Text layoutX="245.0" layoutY="157.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Username">
          <font>
             <Font name="Times New Roman" size="18.0" />
          </font>
       </Text>
-      <Text layoutX="86.0" layoutY="250.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password" wrappingWidth="79.43896484375">
+      <Text layoutX="245.0" layoutY="251.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password" wrappingWidth="79.43896484375">
          <font>
             <Font name="Times New Roman" size="18.0" />
          </font>
       </Text>
-      <Button layoutX="421.0" layoutY="380.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="113.0" text="Sign in" underline="true">
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="54.0" layoutX="223.0" layoutY="336.0" opacity="0.8" stroke="WHITE" strokeType="INSIDE" strokeWidth="5.0" width="226.0" />
+      <Button layoutX="285.0" layoutY="347.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="113.0" text="Sign in">
          <font>
-            <Font name="System Italic" size="15.0" />
+            <Font name="Times New Roman" size="18.0" />
          </font>
       </Button>
+      <Label layoutX="301.0" layoutY="65.0" text="DANA">
+         <font>
+            <Font name="Times New Roman" size="24.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>
