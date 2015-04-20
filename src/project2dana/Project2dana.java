@@ -33,6 +33,8 @@ public class Project2dana extends Application {
      */
     public static void main(String[] args) {
         launch(args);
+        
+        System.out.println("Darrdan o hans clio djuuur");
     }
     
 }
