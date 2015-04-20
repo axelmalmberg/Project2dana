@@ -15,7 +15,7 @@
    <children>
       <ImageView fitHeight="533.0" fitWidth="609.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../../background.jpg" />
+            <Image url="@background.jpg" />
          </image>
          <effect>
             <Glow level="0.56">
