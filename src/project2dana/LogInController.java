@@ -17,7 +17,7 @@ import javafx.scene.control.Label;
  *
  * @author bumblebee
  */
-public class FXMLDocumentController implements Initializable {
+public class LogInController implements Initializable {
     
     @FXML
     private Label label;
