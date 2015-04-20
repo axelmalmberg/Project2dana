@@ -1,9 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package project2dana;
 
 import javafx.application.Application;
@@ -33,6 +27,8 @@ public class Project2dana extends Application {
      */
     public static void main(String[] args) {
         launch(args);
+        
+        System.out.println("Darrdan o hans clio djuuur");
     }
     
 }
