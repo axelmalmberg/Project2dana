@@ -40,7 +40,7 @@
          </font>
       </Text>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="54.0" layoutX="223.0" layoutY="336.0" opacity="0.8" stroke="WHITE" strokeType="INSIDE" strokeWidth="5.0" width="226.0" />
-      <Button fx:id="signInButton" layoutX="285.0" layoutY="347.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="113.0" text="Sign in">
+      <Button fx:id="signInButton" layoutX="285.0" layoutY="347.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="31.0" prefWidth="113.0" text="Sign in">
          <font>
             <Font name="Times New Roman" size="18.0" />
          </font>
