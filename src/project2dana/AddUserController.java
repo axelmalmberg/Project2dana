@@ -1,9 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package project2dana;
 
 import java.net.URL;
@@ -16,13 +10,14 @@ import javafx.scene.control.TextField;
 /**
  * FXML Controller class
  *
- * @author optimus prime
+ * @author Dardan Berisha, Anesa Kusmic, Nemanja Lekanovic, Axel Malmberg
+ *
  */
 public class AddUserController implements Initializable {
-    
+
     @FXML
     private TextField userNameField, passwordField;
-    
+
     @FXML
     private Button submitButton, returnButton;
 
@@ -32,6 +27,6 @@ public class AddUserController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-    }    
-    
+    }
+
 }
