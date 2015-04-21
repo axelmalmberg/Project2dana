@@ -28,7 +28,6 @@
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="208.0" layoutX="223.0" layoutY="116.0" opacity="0.8" stroke="WHITE" strokeType="INSIDE" strokeWidth="5.0" width="226.0" />
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="54.0" layoutX="223.0" layoutY="52.0" opacity="0.8" stroke="WHITE" strokeType="INSIDE" strokeWidth="5.0" width="226.0" />
       <TextField fx:id="userNameField" layoutX="242.0" layoutY="169.0" />
-      <TextField fx:id="passwordField" layoutX="242.0" layoutY="264.0" />
       <Text layoutX="245.0" layoutY="157.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Username">
          <font>
             <Font name="Times New Roman" size="18.0" />
@@ -50,5 +49,6 @@
             <Font name="Times New Roman" size="24.0" />
          </font>
       </Label>
+      <PasswordField fx:id="passwordField" layoutX="243.0" layoutY="264.0" />
    </children>
 </AnchorPane>
