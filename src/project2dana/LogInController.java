@@ -1,8 +1,11 @@
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+
+
 package project2dana;
 
 import java.net.URL;
@@ -21,7 +24,8 @@ import javafx.stage.Stage;
 
 /**
  *
- * @author bumblebee
+ * @author Dardan Berisha, Anesa Kusmic, Nemanja Lekanovic, Axel Malmberg
+ *
  */
 public class LogInController implements Initializable {
 
@@ -31,8 +35,10 @@ public class LogInController implements Initializable {
     @FXML
     private Button signInButton;
 
+    
     private String username = null;
     private String password = null;
+
 
     @FXML
     private void handleButtonAction(ActionEvent event) {

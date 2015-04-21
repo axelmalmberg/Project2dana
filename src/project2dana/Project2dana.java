@@ -8,16 +8,17 @@ import javafx.stage.Stage;
 
 /**
  *
- * @author bumblebee
+ * @author Dardan Berisha, Anesa Kusmic, Nemanja Lekanovic, Axel Malmberg
+ *
  */
 public class Project2dana extends Application {
-    
+
     @Override
     public void start(Stage stage) throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("LogInScene.fxml"));
-        
+
         Scene scene = new Scene(root);
-        
+
         stage.setScene(scene);
         stage.show();
     }
@@ -27,8 +28,8 @@ public class Project2dana extends Application {
      */
     public static void main(String[] args) {
         launch(args);
-        
-        System.out.println("Darrdan o hans clio djuuur");
+
+        System.out.println("DANA IS TAKING OVER!");
     }
-    
+
 }
