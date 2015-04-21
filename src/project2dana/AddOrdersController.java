@@ -8,29 +8,29 @@ package project2dana;
 
 import java.net.URL;
 import java.util.ResourceBundle;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 
 /**
+ * FXML Controller class
  *
- * @author bumblebee
+ * @author optimus prime
  */
-public class LogInController implements Initializable {
+public class AddOrdersController implements Initializable {
     
     @FXML
-    private TextField userNameField, passwordField;
+    private TextField addDrink, addDrinkSize, addAppetizer, addMainCourse, addDessert, addExtra, addTableNumber;
     
     @FXML
-    private Button signInButton;
+    private Button submitButton, returnButton;
     
-    @FXML
-    private void handleButtonAction(ActionEvent event) {
+    
 
-    }
-    
+    /**
+     * Initializes the controller class.
+     */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO

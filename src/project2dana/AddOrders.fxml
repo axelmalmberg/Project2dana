@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="project2dana.AddOrdersController">
+   <children>
+      <TextField fx:id="addDrink" layoutX="33.0" layoutY="60.0" />
+      <TextField fx:id="addAppetizer" layoutX="33.0" layoutY="110.0" />
+      <TextField fx:id="addMainCourse" layoutX="33.0" layoutY="160.0" />
+      <TextField fx:id="addDessert" layoutX="33.0" layoutY="208.0" />
+      <Label layoutX="33.0" layoutY="37.0" text="Drink" />
+      <Label layoutX="33.0" layoutY="93.0" text="Appetizer" />
+      <Label layoutX="33.0" layoutY="143.0" text="Main course" />
+      <Label layoutX="33.0" layoutY="192.0" text="Dessert" />
+      <TextField fx:id="addExtra" layoutX="33.0" layoutY="254.0" />
+      <Label layoutX="33.0" layoutY="237.0" text="Extra" />
+      <TextField fx:id="addDrinkSize" layoutX="197.0" layoutY="60.0" prefHeight="25.0" prefWidth="53.0" />
+      <Label layoutX="196.0" layoutY="37.0" text="Drink Size" />
+      <Button fx:id="submitButton" layoutX="32.0" layoutY="346.0" mnemonicParsing="false" text="Submit" />
+      <Button fx:id="returnButton" layoutX="508.0" layoutY="60.0" mnemonicParsing="false" text="Return" />
+      <TextField fx:id="addTableNumber" layoutX="33.0" layoutY="305.0" />
+      <Label layoutX="34.0" layoutY="288.0" text="Table" />
+   </children>
+</AnchorPane>
