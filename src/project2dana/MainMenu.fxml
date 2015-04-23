@@ -53,7 +53,7 @@
          </font>
       </Label>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="54.0" layoutX="287.0" layoutY="368.0" opacity="0.8" stroke="WHITE" strokeType="INSIDE" strokeWidth="5.0" width="226.0" />
-      <Button layoutX="375.0" layoutY="379.0" mnemonicParsing="false" text="Exit">
+      <Button fx:id="exitButton" layoutX="375.0" layoutY="379.0" mnemonicParsing="false" onAction="#exitButton" text="Exit">
          <font>
             <Font name="Times New Roman" size="18.0" />
          </font>

@@ -15,7 +15,7 @@ import javafx.scene.control.Button;
 public class MainMenuController implements Initializable {
 
     @FXML
-    private Button addOrdersButton, viewOrdersButton, searchSalesButton, addUserButton;
+    private Button addOrdersButton, viewOrdersButton, searchSalesButton, addUserButton, exitButton;
 
     /**
      * Initializes the controller class.
@@ -23,6 +23,10 @@ public class MainMenuController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
+    }
+    
+    public void exitButton() {
+        System.exit(0);
     }
 
 }
