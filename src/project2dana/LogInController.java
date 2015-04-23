@@ -68,9 +68,11 @@ public class LogInController implements Initializable {
                     stage.setScene(scene);
                     stage.show();
                     
+                    break;
+                    
                     
                 } else {
-                    System.out.println("FUUUUUUUUUUUCK YOUUU bruuuh");
+                    System.out.println("login denied");
                 }
 //                System.out.println("Customer Name: " + name + " \nand customer number " + nbr + "\n\n");
             }
