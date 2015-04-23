@@ -11,9 +11,9 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="525.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project2dana.MainMenuController">
+<AnchorPane id="AnchorPane" prefHeight="525.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project2dana.MainMenuController">
    <children>
-      <ImageView fitHeight="533.0" fitWidth="609.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="525.0" fitWidth="750.0" pickOnBounds="true">
          <image>
             <Image url="@background.jpg" />
          </image>
@@ -25,35 +25,35 @@
             </Glow>
          </effect>
       </ImageView>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="218.0" layoutX="204.0" layoutY="106.0" opacity="0.8" stroke="WHITE" strokeType="INSIDE" strokeWidth="5.0" width="226.0" />
-      <Button fx:id="addOrdersButton" layoutX="269.0" layoutY="126.0" mnemonicParsing="false" text="Add order">
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="208.0" layoutX="287.0" layoutY="148.0" opacity="0.8" stroke="WHITE" strokeType="INSIDE" strokeWidth="5.0" width="226.0" />
+      <Button fx:id="addOrdersButton" layoutX="352.0" layoutY="166.0" mnemonicParsing="false" text="Add order">
          <font>
             <Font name="Times New Roman" size="18.0" />
          </font>
       </Button>
-      <Button fx:id="viewOrdersButton" layoutX="261.0" layoutY="175.0" mnemonicParsing="false" text="View orders">
+      <Button fx:id="viewOrdersButton" layoutX="345.0" layoutY="213.0" mnemonicParsing="false" text="View orders">
          <font>
             <Font name="Times New Roman" size="18.0" />
          </font>
       </Button>
-      <Button fx:id="searchSalesButton" layoutX="261.0" layoutY="226.0" mnemonicParsing="false" text="Search sales">
+      <Button fx:id="searchSalesButton" layoutX="345.0" layoutY="261.0" mnemonicParsing="false" text="Search sales">
          <font>
             <Font name="Times New Roman" size="18.0" />
          </font>
       </Button>
-      <Button fx:id="addUserButton" layoutX="273.0" layoutY="275.0" mnemonicParsing="false" text="Add user">
+      <Button fx:id="addUserButton" layoutX="357.0" layoutY="306.0" mnemonicParsing="false" text="Add user">
          <font>
             <Font name="Times New Roman" size="18.0" />
          </font>
       </Button>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="54.0" layoutX="204.0" layoutY="44.0" opacity="0.8" stroke="WHITE" strokeType="INSIDE" strokeWidth="5.0" width="226.0" />
-      <Label layoutX="282.0" layoutY="57.0" text="DANA">
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="54.0" layoutX="287.0" layoutY="84.0" opacity="0.8" stroke="WHITE" strokeType="INSIDE" strokeWidth="5.0" width="226.0" />
+      <Label layoutX="367.0" layoutY="97.0" text="DANA">
          <font>
-            <Font name="Times New Roman" size="24.0" />
+            <Font name="Times New Roman Bold" size="24.0" />
          </font>
       </Label>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="54.0" layoutX="204.0" layoutY="334.0" opacity="0.8" stroke="WHITE" strokeType="INSIDE" strokeWidth="5.0" width="226.0" />
-      <Button layoutX="290.0" layoutY="345.0" mnemonicParsing="false" text="Exit">
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="54.0" layoutX="287.0" layoutY="368.0" opacity="0.8" stroke="WHITE" strokeType="INSIDE" strokeWidth="5.0" width="226.0" />
+      <Button layoutX="375.0" layoutY="379.0" mnemonicParsing="false" text="Exit">
          <font>
             <Font name="Times New Roman" size="18.0" />
          </font>
