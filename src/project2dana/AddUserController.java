@@ -2,10 +2,16 @@ package project2dana;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 
 /**
  * FXML Controller class
@@ -20,6 +26,24 @@ public class AddUserController implements Initializable {
 
     @FXML
     private Button submitButton, returnButton;
+    
+    @FXML
+    private void handleaReturnButtonAction(ActionEvent event) {
+        try {
+            Node node = (Node) event.getSource();
+                    Stage stage = (Stage) node.getScene().getWindow();
+
+                    FXMLLoader loader = new FXMLLoader(getClass().getResource("MainMenu.fxml"));
+                    Parent root = loader.load();
+
+                    Scene scene = new Scene(root);
+                    stage.setScene(scene);
+                    stage.show();
+        } catch (Exception ex) {
+            
+        }
+        
+    }
 
     /**
      * Initializes the controller class.

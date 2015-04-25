@@ -6,8 +6,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="project2dana.ViewSalesController">
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project2dana.ViewSalesController">
    <children>
       <TableView fx:id="orderTable" layoutY="93.0" prefHeight="200.0" prefWidth="600.0">
         <columns>
@@ -31,6 +30,6 @@
       <Label layoutX="112.0" layoutY="20.0" text="Date" />
       <Label layoutX="211.0" layoutY="20.0" text="Id" />
       <Label layoutX="310.0" layoutY="20.0" text="Table" />
-      <Button fx:id="returnButton" layoutX="523.0" layoutY="37.0" mnemonicParsing="false" text="Return" />
+      <Button fx:id="returnButton" layoutX="523.0" layoutY="37.0" mnemonicParsing="false" onAction="#handleaddReturnButtonAction" text="Return" />
    </children>
 </AnchorPane>

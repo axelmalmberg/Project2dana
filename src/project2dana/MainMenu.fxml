@@ -26,22 +26,22 @@
          </effect>
       </ImageView>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="208.0" layoutX="287.0" layoutY="148.0" opacity="0.8" stroke="WHITE" strokeType="INSIDE" strokeWidth="5.0" width="226.0" />
-      <Button fx:id="addOrdersButton" layoutX="352.0" layoutY="166.0" mnemonicParsing="false" text="Add order">
+      <Button fx:id="addOrdersButton" layoutX="352.0" layoutY="166.0" mnemonicParsing="false" onAction="#handleaddOrderButtonAction" text="Add order">
          <font>
             <Font name="Times New Roman" size="18.0" />
          </font>
       </Button>
-      <Button fx:id="viewOrdersButton" layoutX="345.0" layoutY="213.0" mnemonicParsing="false" text="View orders">
+      <Button fx:id="viewOrdersButton" layoutX="345.0" layoutY="213.0" mnemonicParsing="false" onAction="#handleviewOrderButtonAction" text="View orders">
          <font>
             <Font name="Times New Roman" size="18.0" />
          </font>
       </Button>
-      <Button fx:id="searchSalesButton" layoutX="345.0" layoutY="261.0" mnemonicParsing="false" text="Search sales">
+      <Button fx:id="searchSalesButton" layoutX="345.0" layoutY="261.0" mnemonicParsing="false" onAction="#handleaSearchSalesButtonAction" text="Search sales">
          <font>
             <Font name="Times New Roman" size="18.0" />
          </font>
       </Button>
-      <Button fx:id="addUserButton" layoutX="357.0" layoutY="306.0" mnemonicParsing="false" text="Add user">
+      <Button fx:id="addUserButton" layoutX="357.0" layoutY="306.0" mnemonicParsing="false" onAction="#handleaddUserButtonAction" text="Add user">
          <font>
             <Font name="Times New Roman" size="18.0" />
          </font>
