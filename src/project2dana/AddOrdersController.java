@@ -1,5 +1,10 @@
 package project2dana;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
@@ -23,14 +28,16 @@ import javafx.stage.Stage;
  *
  */
 public class AddOrdersController implements Initializable {
-
+    
+    ArrayList<Order> list = new ArrayList<>();
+    Order order = null;
+    
     @FXML
     private TextField addDrink, addDrinkSize, addAppetizer, addMainCourse, addDessert, addExtra, addTableNumber;
 
     @FXML
     private Button submitButton, returnButton;
     
-//    ArrayList<> orders = new ArrayList<>();
     
 
     
@@ -55,6 +62,24 @@ public class AddOrdersController implements Initializable {
     @FXML
     private void handleSubmitButtonAction(ActionEvent event) {
         
+        int tempNr = 0;
+        
+        try {
+        order = new Order();
+        
+        tempNr = Integer.parseInt(addTableNumber.getText());
+        order.setDrink(addDrink.getText());
+        order.setDrinkSize(addDrinkSize.getText());
+        order.setAppetizer(addAppetizer.getText());
+        order.setMainCourse(addMainCourse.getText());
+        order.setDessert(addDessert.getText());
+        order.setExtra(addExtra.getText());
+        order.setTableNumber(tempNr);
+        list.add(order);
+        saveList();
+        } catch (Exception ex) {
+            System.out.println(ex.getMessage());
+        }
     }
     
     /**
@@ -62,7 +87,32 @@ public class AddOrdersController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+        File f = new File("OrderList.ser");
+        if (!f.exists()) {
+            return;
+        }
+        try {
+            FileInputStream fileIn = new FileInputStream("OrderList.ser");
+            ObjectInputStream in = new ObjectInputStream(fileIn);
+            list = (ArrayList<Order>) in.readObject();
+            in.close();
+            fileIn.close();
+        } catch (Exception ex) {
+            System.out.println(ex.getMessage());
+        }
     }
 
+    
+    public void saveList() {
+        try {
+            FileOutputStream fileOut = new FileOutputStream("OrderList.ser");
+            ObjectOutputStream out = new ObjectOutputStream(fileOut);
+            out.writeObject(list);
+            out.close();
+            fileOut.close();
+        } catch (Exception ex) {
+            System.out.println(ex.getMessage());
+        }
+    }
+    
 }

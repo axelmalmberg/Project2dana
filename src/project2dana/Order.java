@@ -6,12 +6,16 @@
 
 package project2dana;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+
 /**
  *
  * @author bumblebee
  */
 public class Order {
     
+    String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(Calendar.getInstance().getTime());
     String drink;
     String drinkSize;
     String appetizer;
@@ -19,6 +23,7 @@ public class Order {
     String dessert;
     String extra;
     int tableNumber;
+    int id = 1;
     
     public void setDrink(String drink) {
         this.drink = drink;
@@ -61,5 +66,11 @@ public class Order {
     }
     public int getTableNumber() {
         return tableNumber;
+    }
+    public String getDate() {
+        return timeStamp;
+    }
+    public int getId() {
+        return id;
     }
 }
