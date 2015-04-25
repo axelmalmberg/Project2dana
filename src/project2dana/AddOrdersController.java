@@ -1,6 +1,7 @@
 package project2dana;
 
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -28,6 +29,9 @@ public class AddOrdersController implements Initializable {
 
     @FXML
     private Button submitButton, returnButton;
+    
+//    ArrayList<> orders = new ArrayList<>();
+    
 
     
     @FXML
@@ -45,6 +49,11 @@ public class AddOrdersController implements Initializable {
         } catch (Exception ex) {
             
         }
+        
+    }
+    
+    @FXML
+    private void handleSubmitButtonAction(ActionEvent event) {
         
     }
     

@@ -23,80 +23,78 @@ public class MainMenuController implements Initializable {
     @FXML
     private Button addOrdersButton, viewOrdersButton, searchSalesButton, addUserButton, exitButton;
 
-    
     @FXML
     private void handleaddOrderButtonAction(ActionEvent event) {
         try {
             Node node = (Node) event.getSource();
-                    Stage stage = (Stage) node.getScene().getWindow();
+            Stage stage = (Stage) node.getScene().getWindow();
 
-                    FXMLLoader loader = new FXMLLoader(getClass().getResource("AddOrders.fxml"));
-                    Parent root = loader.load();
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("AddOrders.fxml"));
+            Parent root = loader.load();
 
-                    Scene scene = new Scene(root);
-                    stage.setScene(scene);
-                    stage.show();
+            Scene scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
         } catch (Exception ex) {
-            
+
         }
-        
+
     }
-    
+
     @FXML
     private void handleviewOrderButtonAction(ActionEvent event) {
         try {
             Node node = (Node) event.getSource();
-                    Stage stage = (Stage) node.getScene().getWindow();
+            Stage stage = (Stage) node.getScene().getWindow();
 
-                    FXMLLoader loader = new FXMLLoader(getClass().getResource("ViewOrders.fxml"));
-                    Parent root = loader.load();
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("ViewOrders.fxml"));
+            Parent root = loader.load();
 
-                    Scene scene = new Scene(root);
-                    stage.setScene(scene);
-                    stage.show();
+            Scene scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
         } catch (Exception ex) {
-            
+
         }
-        
+
     }
-    
+
     @FXML
     private void handleaSearchSalesButtonAction(ActionEvent event) {
         try {
             Node node = (Node) event.getSource();
-                    Stage stage = (Stage) node.getScene().getWindow();
+            Stage stage = (Stage) node.getScene().getWindow();
 
-                    FXMLLoader loader = new FXMLLoader(getClass().getResource("ViewSales.fxml"));
-                    Parent root = loader.load();
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("ViewSales.fxml"));
+            Parent root = loader.load();
 
-                    Scene scene = new Scene(root);
-                    stage.setScene(scene);
-                    stage.show();
+            Scene scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
         } catch (Exception ex) {
-            
+
         }
-        
+
     }
-    
-    
+
     @FXML
     private void handleaddUserButtonAction(ActionEvent event) {
         try {
             Node node = (Node) event.getSource();
-                    Stage stage = (Stage) node.getScene().getWindow();
+            Stage stage = (Stage) node.getScene().getWindow();
 
-                    FXMLLoader loader = new FXMLLoader(getClass().getResource("AddUser.fxml"));
-                    Parent root = loader.load();
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("AddUser.fxml"));
+            Parent root = loader.load();
 
-                    Scene scene = new Scene(root);
-                    stage.setScene(scene);
-                    stage.show();
+            Scene scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
         } catch (Exception ex) {
-            
+
         }
-        
+
     }
-    
+
     /**
      * Initializes the controller class.
      */
@@ -104,7 +102,7 @@ public class MainMenuController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }
-    
+
     public void exitButton() {
         System.exit(0);
     }
