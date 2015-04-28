@@ -87,7 +87,7 @@ public class ViewOrdersController implements Initializable {
             for (int i = 0; i < list.size(); i++) {
                 Order order = list.get(i);
                     
-                  drink = new SimpleStringProperty(order.getDrink());
+                  drinkColumn.setCellValueFactory(cellData -> cellData.getValue().getDrinkProperty());
                 
                   
                 
