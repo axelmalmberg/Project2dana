@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.text.*?>
+<?import javafx.scene.effect.*?>
 <?import javafx.scene.image.*?>
 <?import java.lang.*?>
 <?import java.util.*?>
@@ -9,26 +11,54 @@
 
 <AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project2dana.AddOrdersController">
    <children>
-      <ImageView fitHeight="400.0" fitWidth="600.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="525.0" fitWidth="750.0" pickOnBounds="true">
          <image>
             <Image url="@background.jpg" />
          </image>
+         <effect>
+            <Glow level="0.52">
+               <input>
+                  <ColorAdjust brightness="0.02" contrast="0.12" />
+               </input>
+            </Glow>
+         </effect>
       </ImageView>
-      <TextField fx:id="addDrink" layoutX="33.0" layoutY="60.0" />
-      <TextField fx:id="addAppetizer" layoutX="33.0" layoutY="110.0" />
-      <TextField fx:id="addMainCourse" layoutX="33.0" layoutY="160.0" />
-      <TextField fx:id="addDessert" layoutX="33.0" layoutY="208.0" />
-      <Label layoutX="33.0" layoutY="37.0" text="Drink" />
-      <Label layoutX="33.0" layoutY="93.0" text="Appetizer" />
-      <Label layoutX="33.0" layoutY="143.0" text="Main course" />
-      <Label layoutX="33.0" layoutY="192.0" text="Dessert" />
-      <TextField fx:id="addExtra" layoutX="33.0" layoutY="254.0" />
-      <Label layoutX="33.0" layoutY="237.0" text="Extra" />
-      <TextField fx:id="addDrinkSize" layoutX="197.0" layoutY="60.0" prefHeight="25.0" prefWidth="53.0" />
-      <Label layoutX="196.0" layoutY="37.0" text="Drink Size" />
-      <Button fx:id="submitButton" layoutX="32.0" layoutY="346.0" mnemonicParsing="false" onAction="#handleSubmitButtonAction" text="Submit" />
+      <TextField fx:id="addDrink" layoutX="48.0" layoutY="64.0" />
+      <TextField fx:id="addAppetizer" layoutX="48.0" layoutY="120.0" />
+      <TextField fx:id="addMainCourse" layoutX="50.0" layoutY="176.0" />
+      <TextField fx:id="addDessert" layoutX="50.0" layoutY="232.0" />
+      <Label layoutX="51.0" layoutY="35.0" text="Drink" textFill="WHITE">
+         <font>
+            <Font size="16.0" />
+         </font></Label>
+      <Label layoutX="50.0" layoutY="95.0" text="Appetizer" textFill="WHITE">
+         <font>
+            <Font size="16.0" />
+         </font></Label>
+      <Label layoutX="52.0" layoutY="151.0" prefHeight="25.0" prefWidth="89.0" text="Main course" textFill="WHITE">
+         <font>
+            <Font size="16.0" />
+         </font></Label>
+      <Label layoutX="50.0" layoutY="207.0" text="Dessert" textFill="WHITE">
+         <font>
+            <Font size="16.0" />
+         </font></Label>
+      <TextField fx:id="addExtra" layoutX="50.0" layoutY="289.0" />
+      <Label layoutX="52.0" layoutY="263.0" text="Extra" textFill="WHITE">
+         <font>
+            <Font size="16.0" />
+         </font></Label>
+      <TextField fx:id="addDrinkSize" layoutX="236.0" layoutY="64.0" prefHeight="25.0" prefWidth="53.0" />
+      <Label layoutX="237.0" layoutY="37.0" text="Drink Size" textFill="WHITE">
+         <font>
+            <Font size="14.0" />
+         </font></Label>
+      <Button fx:id="submitButton" layoutX="50.0" layoutY="402.0" mnemonicParsing="false" onAction="#handleSubmitButtonAction" text="Submit" />
       <Button fx:id="returnButton" layoutX="508.0" layoutY="60.0" mnemonicParsing="false" onAction="#handleaddReturnButtonAction" text="Return" />
-      <TextField fx:id="addTableNumber" layoutX="33.0" layoutY="305.0" />
-      <Label layoutX="34.0" layoutY="288.0" text="Table" />
+      <TextField fx:id="addTableNumber" layoutX="50.0" layoutY="345.0" />
+      <Label layoutX="50.0" layoutY="320.0" text="Table" textFill="WHITE">
+         <font>
+            <Font size="16.0" />
+         </font></Label>
    </children>
 </AnchorPane>

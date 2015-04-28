@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.text.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
 <?import java.lang.*?>
 <?import java.util.*?>
 <?import javafx.scene.*?>
@@ -8,27 +11,69 @@
 
 <AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project2dana.AddUserController">
    <children>
-      <TextField fx:id="userNameField" layoutX="220.0" layoutY="73.0" />
-      <TextField fx:id="passwordField" layoutX="220.0" layoutY="129.0" />
-      <Label layoutX="220.0" layoutY="56.0" text="Enter username" />
-      <Label layoutX="220.0" layoutY="112.0" text="Enter password" />
-      <Button fx:id="submitButton" layoutX="220.0" layoutY="262.0" mnemonicParsing="false" onAction="#handleSubmitButtonAction" text="Submit" />
-      <Button fx:id="returnButton" layoutX="313.0" layoutY="262.0" mnemonicParsing="false" onAction="#handleaReturnButtonAction" text="Return" />
-      <TextField fx:id="firstNameField" layoutX="30.0" layoutY="73.0" />
-      <TextField fx:id="lastNameField" layoutX="30.0" layoutY="129.0" />
-      <TextField fx:id="emailField" layoutX="30.0" layoutY="175.0" />
-      <TextField fx:id="PhoneField" layoutX="30.0" layoutY="219.0" />
-      <TextField fx:id="addressField" layoutX="30.0" layoutY="262.0" />
-      <TextField fx:id="cityField" layoutX="30.0" layoutY="301.0" />
-      <TextField fx:id="sequrityQuestionField" layoutX="220.0" layoutY="175.0" />
-      <TextField fx:id="answerField" layoutX="220.0" layoutY="219.0" />
-      <Label layoutX="30.0" layoutY="56.0" text="First name" />
-      <Label layoutX="30.0" layoutY="112.0" text="Last name" />
-      <Label layoutX="30.0" layoutY="154.0" text="E-mail" />
-      <Label layoutX="31.0" layoutY="200.0" text="Phone" />
-      <Label layoutX="31.0" layoutY="244.0" text="Address" />
-      <Label layoutX="31.0" layoutY="287.0" text="City" />
-      <Label layoutX="220.0" layoutY="154.0" text="Sequrity question" />
-      <Label layoutX="220.0" layoutY="200.0" text="Answer" />
+      <ImageView fitHeight="525.0" fitWidth="750.0">
+         <image>
+            <Image url="@background.jpg" />
+         </image>
+         <effect>
+            <Glow level="0.52">
+               <input>
+                  <ColorAdjust brightness="0.02" contrast="0.12" />
+               </input>
+            </Glow>
+         </effect>
+      </ImageView>
+      <TextField fx:id="userNameField" layoutX="288.0" layoutY="104.0" />
+      <TextField fx:id="passwordField" layoutX="288.0" layoutY="164.0" />
+      <Label layoutX="289.0" layoutY="81.0" text="Enter username" textFill="WHITE">
+         <font>
+            <Font size="16.0" />
+         </font></Label>
+      <Label layoutX="290.0" layoutY="142.0" text="Enter password" textFill="WHITE">
+         <font>
+            <Font size="16.0" />
+         </font></Label>
+      <Button fx:id="submitButton" layoutX="290.0" layoutY="328.0" mnemonicParsing="false" onAction="#handleSubmitButtonAction" text="Submit" />
+      <Button fx:id="returnButton" layoutX="410.0" layoutY="328.0" mnemonicParsing="false" onAction="#handleaReturnButtonAction" text="Return" />
+      <TextField fx:id="firstNameField" layoutX="53.0" layoutY="104.0" />
+      <TextField fx:id="lastNameField" layoutX="53.0" layoutY="160.0" />
+      <TextField fx:id="emailField" layoutX="51.0" layoutY="219.0" />
+      <TextField fx:id="PhoneField" layoutX="51.0" layoutY="275.0" />
+      <TextField fx:id="addressField" layoutX="51.0" layoutY="328.0" />
+      <TextField fx:id="cityField" layoutX="51.0" layoutY="384.0" />
+      <TextField fx:id="sequrityQuestionField" layoutX="288.0" layoutY="219.0" />
+      <TextField fx:id="answerField" layoutX="288.0" layoutY="276.0" />
+      <Label layoutX="52.0" layoutY="81.0" text="First name" textFill="WHITE">
+         <font>
+            <Font size="16.0" />
+         </font></Label>
+      <Label layoutX="53.0" layoutY="132.0" text="Last name" textFill="WHITE">
+         <font>
+            <Font size="16.0" />
+         </font></Label>
+      <Label layoutX="53.0" layoutY="198.0" text="E-mail" textFill="WHITE">
+         <font>
+            <Font size="16.0" />
+         </font></Label>
+      <Label layoutX="53.0" layoutY="250.0" text="Phone" textFill="WHITE">
+         <font>
+            <Font size="16.0" />
+         </font></Label>
+      <Label layoutX="50.0" layoutY="308.0" text="Address" textFill="WHITE">
+         <font>
+            <Font size="16.0" />
+         </font></Label>
+      <Label layoutX="51.0" layoutY="359.0" text="City" textFill="WHITE">
+         <font>
+            <Font size="16.0" />
+         </font></Label>
+      <Label layoutX="290.0" layoutY="198.0" text="Sequrity question" textFill="WHITE">
+         <font>
+            <Font size="16.0" />
+         </font></Label>
+      <Label layoutX="288.0" layoutY="251.0" text="Answer" textFill="WHITE">
+         <font>
+            <Font size="16.0" />
+         </font></Label>
    </children>
 </AnchorPane>
