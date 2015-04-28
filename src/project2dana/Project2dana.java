@@ -29,7 +29,7 @@ public class Project2dana extends Application {
     public static void main(String[] args) {
         launch(args);
 
-        System.out.println("DANA IS TAKING OVER!");
+        System.out.println("DANA IS TOVER!");
     }
 
 }
