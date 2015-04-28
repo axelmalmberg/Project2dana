@@ -29,20 +29,25 @@ public class DbConnector {
         try {
             Class.forName("com.mysql.jdbc.Driver").newInstance();
             // String URL = "jdbc:mysql://194.47.47.18:3306/YOUR_DATABASE_NAME?user=YOUR_USER_NAME&password=YOUR_PASSWORD";
+            System.out.println("a");
             String URL = "jdbc:mysql://127.0.0.1:3306/dana?user=root&password=root";
+            System.out.println("b");
             Connection c = DriverManager.getConnection(URL);
             Statement st = c.createStatement();
             Statement st2 = c.createStatement();
             Statement st3 = c.createStatement();
-            st.executeQuery("insert into employee (firstname, lastname, email, phone, address, city) values (" + fName + ", " + lName + ", " + mail + ", " + phn + ", " + adrs + ", " + cty + ")");
-            
+            System.out.println("1");
+            String tmp = String.format("insert into employee (firstname, lastname, email, phone, address, city) values ('%s', '%s', '%s', %d, '%s', '%s')",fName, lName, mail, phn, adrs, cty, quest, ans);
+              st.executeUpdate(tmp);
+            System.out.println("2");
             ResultSet rs = st2.executeQuery("SELECT idemployee FROM employee ORDER BY idemployee DESC LIMIT 1");
             int resultat = 0;
             if(rs.next()) {
                 resultat = rs.getInt(1);
             }
-            st3.executeQuery("insert into login ('username', 'password', 'securityQuestion', 'securityAnswer', 'employee_idemployee')"
-                    + " values (" + usrn + ", " + psw + " , " + quest + ", " + ans + ", " + resultat + ");");
+            String tmp2 = String.format("insert into login (username, password, securityQuestion, securityAnswer, employee_idemployee) values ('%s', '%s', '%s', '%s', %d)", usrn, psw, quest, ans, resultat);
+            st3.executeUpdate(tmp2);
+//                    + " values (" + usrn + ", " + psw + " , " + quest + ", " + ans + ", " + resultat + ");");
             
             
         }catch (Exception ex) {

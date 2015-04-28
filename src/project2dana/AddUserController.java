@@ -1,6 +1,9 @@
 package project2dana;
 
 import java.net.URL;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.Statement;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -20,69 +23,68 @@ import javafx.stage.Stage;
  *
  */
 public class AddUserController implements Initializable {
+
     private DbConnector db = new DbConnector();
-    private String userName = null;
-    private String password = null;
-    private String eMail = null;
-    private int phone = 0;
-    private String address = null;
-    private String city = null;
-    private String sequrityQuestion = null;
-    private String answer = null;
-    private String fname = null;
-    private String lname = null;
 
     @FXML
-    private TextField userNameField, passwordField, sequrityQuestionField, answerField, firstNameField, lastNameField, phoneField, emailField, addressField, cityField;
+    private TextField userNameField, passwordField, sequrityQuestionField, answerField, firstNameField, lastNameField, PhoneField, emailField, addressField, cityField;
 
     @FXML
     private Button submitButton, returnButton;
-    
+
     @FXML
     private void handleaReturnButtonAction(ActionEvent event) {
-        
-        
+
         try {
             Node node = (Node) event.getSource();
-                    Stage stage = (Stage) node.getScene().getWindow();
+            Stage stage = (Stage) node.getScene().getWindow();
 
-                    FXMLLoader loader = new FXMLLoader(getClass().getResource("MainMenu.fxml"));
-                    Parent root = loader.load();
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("MainMenu.fxml"));
+            Parent root = loader.load();
 
-                    Scene scene = new Scene(root);
-                    stage.setScene(scene);
-                    stage.show();
+            Scene scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
         } catch (Exception ex) {
-            
+
         }
-        
+
     }
+
     @FXML
-        private void handleSubmitButtonAction(ActionEvent event) {
-            
+    private void handleSubmitButtonAction(ActionEvent event) {
+        String userName = null;
+        String password = null;
+        String eMail = null;
+        int phone = 0;
+        String address = null;
+        String city = null;
+        String sequrityQuestion = null;
+        String answer = null;
+        String fname = null;
+        String lname = null;
+
         try {
-        userName = userNameField.getText();
-        password = passwordField.getText();
-        eMail = emailField.getText();
-        phone = Integer.parseInt(phoneField.getText());
-        address = addressField.getText();
-        city = cityField.getText();
-        sequrityQuestion = sequrityQuestionField.getId();
-        answer = answerField.getText();
-        fname = firstNameField.getText();
-        lname = lastNameField.getText();
-        
-        db.addUser(userName, password, fname, lname, eMail, phone, address, city, sequrityQuestion, answer);
-        
+            userName = userNameField.getText();
+            System.out.println(userName);
+            password = passwordField.getText();
+            eMail = emailField.getText();
+            System.out.println(eMail);
+            phone = Integer.parseInt(PhoneField.getText());
+            System.out.println(0);
+            address = addressField.getText();
+            city = cityField.getText();
+            sequrityQuestion = sequrityQuestionField.getText();
+            answer = answerField.getText();
+            fname = firstNameField.getText();
+            lname = lastNameField.getText();
+
+            db.addUser(userName, password, fname, lname, eMail, phone, address, city, sequrityQuestion, answer);
+
         } catch (Exception ex) {
-            
+            System.out.println(ex.getMessage());
         }
-        
-        
-        
-        
-            
-            
+
     }
 
     /**
