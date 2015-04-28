@@ -20,20 +20,36 @@ import javafx.stage.Stage;
 public class DbConnector {
 
     
+    
+    
+    
 //    THIS IS ALL UNDER CONSTRUCTION, DONT REMOVE ISNT FINISHED
     
-//    public void addUser(String usr, String psw) {
-//        try {
-//            Class.forName("com.mysql.jdbc.Driver").newInstance();
-//            // String URL = "jdbc:mysql://194.47.47.18:3306/YOUR_DATABASE_NAME?user=YOUR_USER_NAME&password=YOUR_PASSWORD";
-//            String URL = "jdbc:mysql://127.0.0.1:3306/dana?user=root&password=root";
-//            Connection c = DriverManager.getConnection(URL);
-//            Statement st = c.createStatement();
-//            ResultSet rs = st.executeQuery("Grant);
-//        }catch (Exception ex) {
-//            
-//        }
-//    }
+    public void addUser(String usrn, String psw, String fName, String lName, String mail, int phn, String adrs, String cty, String quest, String ans) {
+        try {
+            Class.forName("com.mysql.jdbc.Driver").newInstance();
+            // String URL = "jdbc:mysql://194.47.47.18:3306/YOUR_DATABASE_NAME?user=YOUR_USER_NAME&password=YOUR_PASSWORD";
+            String URL = "jdbc:mysql://127.0.0.1:3306/dana?user=root&password=root";
+            Connection c = DriverManager.getConnection(URL);
+            Statement st = c.createStatement();
+            Statement st2 = c.createStatement();
+            Statement st3 = c.createStatement();
+            st.executeQuery("insert into employee (firstname, lastname, email, phone, address, city) values (" + fName + ", " + lName + ", " + mail + ", " + phn + ", " + adrs + ", " + cty + ")");
+            
+            ResultSet rs = st2.executeQuery("SELECT idemployee FROM employee ORDER BY idemployee DESC LIMIT 1");
+            int resultat = 0;
+            if(rs.next()) {
+                resultat = rs.getInt(1);
+            }
+            st3.executeQuery("insert into login ('username', 'password', 'securityQuestion', 'securityAnswer', 'employee_idemployee')"
+                    + " values (" + usrn + ", " + psw + " , " + quest + ", " + ans + ", " + resultat + ");");
+            
+            
+        }catch (Exception ex) {
+            
+        }
+    }
+    
 
 //    THIS IS ALL UNDER CONSTRUCTION, DONT REMOVE ISNT FINISHED
     public void verifyLogIn(String usr, String psw, ActionEvent event) {

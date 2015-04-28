@@ -20,15 +20,28 @@ import javafx.stage.Stage;
  *
  */
 public class AddUserController implements Initializable {
+    private DbConnector db = new DbConnector();
+    private String userName = null;
+    private String password = null;
+    private String eMail = null;
+    private int phone = 0;
+    private String address = null;
+    private String city = null;
+    private String sequrityQuestion = null;
+    private String answer = null;
+    private String fname = null;
+    private String lname = null;
 
     @FXML
-    private TextField userNameField, passwordField;
+    private TextField userNameField, passwordField, sequrityQuestionField, answerField, firstNameField, lastNameField, phoneField, emailField, addressField, cityField;
 
     @FXML
     private Button submitButton, returnButton;
     
     @FXML
     private void handleaReturnButtonAction(ActionEvent event) {
+        
+        
         try {
             Node node = (Node) event.getSource();
                     Stage stage = (Stage) node.getScene().getWindow();
@@ -43,6 +56,33 @@ public class AddUserController implements Initializable {
             
         }
         
+    }
+    @FXML
+        private void handleSubmitButtonAction(ActionEvent event) {
+            
+        try {
+        userName = userNameField.getText();
+        password = passwordField.getText();
+        eMail = emailField.getText();
+        phone = Integer.parseInt(phoneField.getText());
+        address = addressField.getText();
+        city = cityField.getText();
+        sequrityQuestion = sequrityQuestionField.getId();
+        answer = answerField.getText();
+        fname = firstNameField.getText();
+        lname = lastNameField.getText();
+        
+        db.addUser(userName, password, fname, lname, eMail, phone, address, city, sequrityQuestion, answer);
+        
+        } catch (Exception ex) {
+            
+        }
+        
+        
+        
+        
+            
+            
     }
 
     /**
