@@ -8,8 +8,6 @@ import java.io.ObjectOutputStream;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -56,7 +54,7 @@ public class AddOrdersController implements Initializable {
                     stage.setScene(scene);
                     stage.show();
         } catch (Exception ex) {
-            
+            System.out.println(ex.getMessage());
         }
         
     }

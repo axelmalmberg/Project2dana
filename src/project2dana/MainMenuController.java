@@ -1,5 +1,6 @@
 package project2dana;
 
+import java.io.File;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
@@ -22,78 +23,43 @@ public class MainMenuController implements Initializable {
 
     @FXML
     private Button addOrdersButton, viewOrdersButton, searchSalesButton, addUserButton, exitButton;
-
+    
     @FXML
-    private void handleaddOrderButtonAction(ActionEvent event) {
-        try {
+    private void handleButtonAction(ActionEvent event) {
+        Button scr = (Button)event.getSource();
+        String tmpFxmlStr = null;
+        if (scr == addOrdersButton || scr == viewOrdersButton || scr == searchSalesButton || scr == addUserButton) {
+             if (scr == addOrdersButton) {
+                 tmpFxmlStr = "AddOrders.fxml";
+             } else if (scr == viewOrdersButton) {
+                 tmpFxmlStr = "ViewOrders.fxml";
+             } else if (scr == searchSalesButton) {
+                 tmpFxmlStr = "ViewSales.fxml";
+             } else if (scr == addUserButton) {
+                 tmpFxmlStr = "AddUser.fxml";
+             }
+             try {
             Node node = (Node) event.getSource();
             Stage stage = (Stage) node.getScene().getWindow();
 
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("AddOrders.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource(tmpFxmlStr));
             Parent root = loader.load();
 
             Scene scene = new Scene(root);
             stage.setScene(scene);
             stage.show();
         } catch (Exception ex) {
-
+            System.out.println(ex.getMessage());
         }
-
+             
+        } else {
+            
+            File f = new File("SaveUserInfo.txt");
+            f.delete();
+            System.exit(0);
+        }
     }
 
-    @FXML
-    private void handleviewOrderButtonAction(ActionEvent event) {
-        try {
-            Node node = (Node) event.getSource();
-            Stage stage = (Stage) node.getScene().getWindow();
-
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("ViewOrders.fxml"));
-            Parent root = loader.load();
-
-            Scene scene = new Scene(root);
-            stage.setScene(scene);
-            stage.show();
-        } catch (Exception ex) {
-
-        }
-
-    }
-
-    @FXML
-    private void handleaSearchSalesButtonAction(ActionEvent event) {
-        try {
-            Node node = (Node) event.getSource();
-            Stage stage = (Stage) node.getScene().getWindow();
-
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("ViewSales.fxml"));
-            Parent root = loader.load();
-
-            Scene scene = new Scene(root);
-            stage.setScene(scene);
-            stage.show();
-        } catch (Exception ex) {
-
-        }
-
-    }
-
-    @FXML
-    private void handleaddUserButtonAction(ActionEvent event) {
-        try {
-            Node node = (Node) event.getSource();
-            Stage stage = (Stage) node.getScene().getWindow();
-
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("AddUser.fxml"));
-            Parent root = loader.load();
-
-            Scene scene = new Scene(root);
-            stage.setScene(scene);
-            stage.show();
-        } catch (Exception ex) {
-
-        }
-
-    }
 
     /**
      * Initializes the controller class.
@@ -103,8 +69,5 @@ public class MainMenuController implements Initializable {
         // TODO
     }
 
-    public void exitButton() {
-        System.exit(0);
-    }
 
 }
