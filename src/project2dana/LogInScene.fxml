@@ -33,7 +33,7 @@
             <Font size="18.0" />
          </font>
       </Text>
-      <Text layoutX="321.0" layoutY="288.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password" wrappingWidth="79.43896484375">
+      <Text layoutX="321.0" layoutY="288.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password">
          <font>
             <Font size="18.0" />
          </font>
