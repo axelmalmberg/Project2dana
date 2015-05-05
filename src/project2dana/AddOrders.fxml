@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 <?import javafx.scene.effect.*?>
 <?import javafx.scene.image.*?>
@@ -23,42 +24,50 @@
             </Glow>
          </effect>
       </ImageView>
-      <TextField fx:id="addDrink" layoutX="48.0" layoutY="64.0" />
-      <TextField fx:id="addAppetizer" layoutX="48.0" layoutY="120.0" />
-      <TextField fx:id="addMainCourse" layoutX="50.0" layoutY="176.0" />
-      <TextField fx:id="addDessert" layoutX="50.0" layoutY="232.0" />
-      <Label layoutX="51.0" layoutY="35.0" text="Drink" textFill="WHITE">
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="362.0" layoutX="229.0" layoutY="51.0" opacity="0.8" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="297.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="55.0" layoutX="229.0" layoutY="425.0" opacity="0.8" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="297.0" />
+      <TextField fx:id="addDrink" layoutX="240.0" layoutY="89.0" />
+      <TextField fx:id="addAppetizer" layoutX="240.0" layoutY="145.0" prefHeight="26.0" prefWidth="275.0" />
+      <TextField fx:id="addMainCourse" layoutX="240.0" layoutY="201.0" prefHeight="26.0" prefWidth="275.0" />
+      <TextField fx:id="addDessert" layoutX="240.0" layoutY="257.0" prefHeight="26.0" prefWidth="275.0" />
+      <Label layoutX="240.0" layoutY="60.0" text="Drink">
          <font>
-            <Font size="16.0" />
+            <Font size="18.0" />
          </font></Label>
-      <Label layoutX="50.0" layoutY="95.0" text="Appetizer" textFill="WHITE">
+      <Label layoutX="240.0" layoutY="120.0" text="Appetizer">
          <font>
-            <Font size="16.0" />
+            <Font size="18.0" />
          </font></Label>
-      <Label layoutX="52.0" layoutY="151.0" prefHeight="25.0" prefWidth="89.0" text="Main course" textFill="WHITE">
+      <Label layoutX="240.0" layoutY="176.0" prefHeight="25.0" prefWidth="105.0" text="Main course">
          <font>
-            <Font size="16.0" />
+            <Font size="18.0" />
          </font></Label>
-      <Label layoutX="50.0" layoutY="207.0" text="Dessert" textFill="WHITE">
+      <Label layoutX="240.0" layoutY="232.0" text="Dessert">
          <font>
-            <Font size="16.0" />
+            <Font size="18.0" />
          </font></Label>
-      <TextField fx:id="addExtra" layoutX="50.0" layoutY="289.0" />
-      <Label layoutX="52.0" layoutY="263.0" text="Extra" textFill="WHITE">
+      <TextField fx:id="addExtra" layoutX="240.0" layoutY="314.0" prefHeight="26.0" prefWidth="275.0" />
+      <Label layoutX="240.0" layoutY="288.0" text="Extra">
          <font>
-            <Font size="16.0" />
+            <Font size="18.0" />
          </font></Label>
-      <TextField fx:id="addDrinkSize" layoutX="236.0" layoutY="64.0" prefHeight="25.0" prefWidth="53.0" />
-      <Label layoutX="237.0" layoutY="37.0" text="Drink Size" textFill="WHITE">
+      <TextField fx:id="addDrinkSize" layoutX="415.0" layoutY="89.0" prefHeight="26.0" prefWidth="98.0" />
+      <Label layoutX="415.0" layoutY="60.0" text="Drink size">
          <font>
-            <Font size="14.0" />
+            <Font size="18.0" />
          </font></Label>
-      <Button fx:id="submitButton" layoutX="50.0" layoutY="402.0" mnemonicParsing="false" onAction="#handleSubmitButtonAction" text="Submit" />
-      <Button fx:id="returnButton" layoutX="508.0" layoutY="60.0" mnemonicParsing="false" onAction="#handleaddReturnButtonAction" text="Return" />
-      <TextField fx:id="addTableNumber" layoutX="50.0" layoutY="345.0" />
-      <Label layoutX="50.0" layoutY="320.0" text="Table" textFill="WHITE">
+      <Button fx:id="submitButton" layoutX="240.0" layoutY="436.0" mnemonicParsing="false" onAction="#handleSubmitButtonAction" text="Submit">
          <font>
-            <Font size="16.0" />
+            <Font name="Times New Roman" size="18.0" />
+         </font></Button>
+      <Button fx:id="returnButton" layoutX="440.0" layoutY="436.0" mnemonicParsing="false" onAction="#handleaddReturnButtonAction" text="Return">
+         <font>
+            <Font name="Times New Roman" size="18.0" />
+         </font></Button>
+      <TextField fx:id="addTableNumber" layoutX="240.0" layoutY="370.0" prefHeight="26.0" prefWidth="275.0" />
+      <Label layoutX="240.0" layoutY="345.0" text="Table">
+         <font>
+            <Font size="18.0" />
          </font></Label>
    </children>
 </AnchorPane>
