@@ -48,7 +48,7 @@ public class DbConnector  {
             st3.executeUpdate(tmp2);
 //                    + " values (" + usrn + ", " + psw + " , " + quest + ", " + ans + ", " + resultat + ");");
             String tmp3 = String.format("CREATE USER '%s'@'localhost' IDENTIFIED BY '%s';", usrn, psw);
-            String tmp4 = String.format("GRANT ALL PRIVILEGES ON * . * TO '%s'@'localhost'", usrn);
+            String tmp4 = String.format("GRANT ALL PRIVILEGES ON * . * TO '%s'@'localhost' WITH GRANT OPTION", usrn);
 
             st4.executeUpdate(tmp3);
             st5.executeUpdate(tmp4);

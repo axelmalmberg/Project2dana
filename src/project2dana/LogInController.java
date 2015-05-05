@@ -31,7 +31,7 @@ public class LogInController implements Initializable {
 
     private String username = null;
     private String password = null;
-    DbConnector Db = new DbConnector();
+    private DbConnector Db = new DbConnector();
 
     @FXML
     private void handleButtonAction(ActionEvent event) {
