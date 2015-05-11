@@ -9,8 +9,6 @@ package project2dana;
 import java.io.Serializable;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
-import javafx.beans.property.SimpleStringProperty;
-import javafx.beans.property.StringProperty;
 
 /**
  *
@@ -18,7 +16,7 @@ import javafx.beans.property.StringProperty;
  */
 public class Order implements Serializable {
     
-    StringProperty drink2;
+//    StringProperty drink2;
     
     String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(Calendar.getInstance().getTime());
     String drink;
@@ -32,7 +30,7 @@ public class Order implements Serializable {
     
     public void setDrink(String drink) {
         this.drink = drink;
-        this.drink2 = new SimpleStringProperty(drink);
+//        this.drink2 = new SimpleStringProperty(drink);
     }
     public void setDrinkSize(String drinkSize) {
         this.drinkSize = drinkSize;
@@ -55,9 +53,9 @@ public class Order implements Serializable {
     public String getDrink() {
         return drink;
     }
-    public StringProperty getDrinkProperty() {
-        return drink2;
-    }
+//    public StringProperty getDrinkProperty() {
+//        return drink2;
+//    }
     public String getDrinkSize() {
         return drinkSize;
     }
@@ -81,5 +79,8 @@ public class Order implements Serializable {
     }
     public int getId() {
         return id;
+    }
+    public String getTimeStamp() {
+        return timeStamp;
     }
 }
