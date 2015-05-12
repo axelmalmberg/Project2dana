@@ -61,8 +61,8 @@ public class AddUserController implements Initializable {
         String city = null;
         String sequrityQuestion = null;
         String answer = null;
-        String fname = null;
-        String lname = null;
+        String firstName = null;
+        String lastName = null;
 
         try {
             userName = userNameField.getText();
@@ -76,10 +76,10 @@ public class AddUserController implements Initializable {
             city = cityField.getText();
             sequrityQuestion = sequrityQuestionField.getText();
             answer = answerField.getText();
-            fname = firstNameField.getText();
-            lname = lastNameField.getText();
+            firstName = firstNameField.getText();
+            lastName = lastNameField.getText();
 
-            db.addUser(userName, password, fname, lname, eMail, phone, address, city, sequrityQuestion, answer);
+            db.addUser(userName, password, firstName, lastName, eMail, phone, address, city, sequrityQuestion, answer);
 
         } catch (Exception ex) {
             System.out.println(ex.getMessage());
