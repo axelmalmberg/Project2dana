@@ -18,19 +18,23 @@ public class Order implements Serializable {
     
 //    StringProperty drink2;
     
-    String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(Calendar.getInstance().getTime());
-    String drink;
-    String drinkSize;
-    String appetizer;
-    String mainCourse;
-    String dessert;
-    String extra;
-    int tableNumber;
-    int id = 1;
+    private String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(Calendar.getInstance().getTime());
+    private String drink;
+    private String drinkSize;
+    private String appetizer;
+    private String mainCourse;
+    private String dessert;
+    private String extra;
+    private int tableNumber;
+    private int id = 1;
+    private double price;
     
     public void setDrink(String drink) {
         this.drink = drink;
 //        this.drink2 = new SimpleStringProperty(drink);
+    }
+    public void setPrice(double price) {
+        this.price = price;
     }
     public void setDrinkSize(String drinkSize) {
         this.drinkSize = drinkSize;
@@ -82,5 +86,8 @@ public class Order implements Serializable {
     }
     public String getTimeStamp() {
         return timeStamp;
+    }
+    public double getPrice() {
+        return price;
     }
 }
