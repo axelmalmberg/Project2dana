@@ -11,6 +11,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 
@@ -25,7 +26,7 @@ public class LogInController implements Initializable {
     
     @FXML
     private PasswordField passwordField;
-
+   
     @FXML
     private Button signInButton;
 
@@ -39,9 +40,8 @@ public class LogInController implements Initializable {
         username = userNameField.getText();
         password = passwordField.getText();
         Db.verifyLogIn(username, password, event);
-
+       
     }
-
     @Override
     public void initialize(URL url, ResourceBundle rb) {
     }
