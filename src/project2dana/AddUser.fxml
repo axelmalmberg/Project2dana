@@ -36,6 +36,11 @@
       <TextField fx:id="cityField" layoutX="88.0" layoutY="414.0" prefHeight="31.0" prefWidth="235.0" />
       <TextField fx:id="userNameField" layoutX="392.0" layoutY="138.0" prefHeight="31.0" prefWidth="235.0" />
       <TextField fx:id="passwordField" layoutX="393.0" layoutY="191.0" prefHeight="31.0" prefWidth="235.0" />
+      <TextField fx:id="sequrityQuestionField" layoutX="389.0" layoutY="248.0" prefHeight="31.0" prefWidth="235.0" />
+      <TextField fx:id="answerField" layoutX="389.0" layoutY="302.0" prefHeight="31.0" prefWidth="235.0" />
+      <CheckBox fx:id="adminBox" layoutX="454.0" layoutY="380.0" mnemonicParsing="false" text="Make Admin" />
+      <Button fx:id="submitButton" layoutX="391.0" layoutY="415.0" mnemonicParsing="false" onAction="#handleSubmitButtonAction" text="Submit" />
+      <Button fx:id="returnButton" layoutX="559.0" layoutY="414.0" mnemonicParsing="false" onAction="#handleaReturnButtonAction" text="Return" />
       <Label layoutX="392.0" layoutY="132.0">
          <font>
             <Font name="Arial" size="18.0" />
@@ -44,10 +49,6 @@
          <font>
             <Font size="18.0" />
          </font></Label>
-      <Button fx:id="submitButton" layoutX="391.0" layoutY="415.0" mnemonicParsing="false" onAction="#handleSubmitButtonAction" text="Submit" />
-      <Button fx:id="returnButton" layoutX="559.0" layoutY="414.0" mnemonicParsing="false" onAction="#handleaReturnButtonAction" text="Return" />
-      <TextField fx:id="sequrityQuestionField" layoutX="389.0" layoutY="248.0" prefHeight="31.0" prefWidth="235.0" />
-      <TextField fx:id="answerField" layoutX="389.0" layoutY="302.0" prefHeight="31.0" prefWidth="235.0" />
       <Label layoutX="392.0" layoutY="222.0" prefHeight="27.0" prefWidth="146.0" text="Sequrity Question">
          <font>
             <Font size="18.0" />
@@ -86,6 +87,5 @@
             <Font size="18.0" />
          </font>
       </Label>
-      <CheckBox fx:id="adminBox" layoutX="454.0" layoutY="380.0" mnemonicParsing="false" text="Make Admin" />
    </children>
 </AnchorPane>
