@@ -24,50 +24,56 @@
             </Glow>
          </effect>
       </ImageView>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="362.0" layoutX="229.0" layoutY="51.0" opacity="0.8" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="297.0" />
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="55.0" layoutX="229.0" layoutY="425.0" opacity="0.8" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="297.0" />
-      <TextField fx:id="addDrink" layoutX="240.0" layoutY="89.0" />
-      <TextField fx:id="addAppetizer" layoutX="240.0" layoutY="145.0" prefHeight="26.0" prefWidth="275.0" />
-      <TextField fx:id="addMainCourse" layoutX="240.0" layoutY="201.0" prefHeight="26.0" prefWidth="275.0" />
-      <TextField fx:id="addDessert" layoutX="240.0" layoutY="257.0" prefHeight="26.0" prefWidth="275.0" />
-      <Label layoutX="240.0" layoutY="60.0" text="Drink">
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="421.0" layoutX="227.0" layoutY="14.0" opacity="0.8" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="297.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="55.0" layoutX="227.0" layoutY="446.0" opacity="0.8" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="297.0" />
+      <TextField fx:id="addDrink" layoutX="238.0" layoutY="52.0" />
+      <TextField fx:id="addAppetizer" layoutX="238.0" layoutY="108.0" prefHeight="26.0" prefWidth="275.0" />
+      <TextField fx:id="addMainCourse" layoutX="238.0" layoutY="164.0" prefHeight="26.0" prefWidth="275.0" />
+      <TextField fx:id="addDessert" layoutX="238.0" layoutY="220.0" prefHeight="26.0" prefWidth="275.0" />
+      <Label layoutX="238.0" layoutY="23.0" text="Drink">
          <font>
             <Font size="18.0" />
          </font></Label>
-      <Label layoutX="240.0" layoutY="120.0" text="Appetizer">
+      <Label layoutX="238.0" layoutY="83.0" text="Appetizer">
          <font>
             <Font size="18.0" />
          </font></Label>
-      <Label layoutX="240.0" layoutY="176.0" prefHeight="25.0" prefWidth="105.0" text="Main course">
+      <Label layoutX="238.0" layoutY="139.0" prefHeight="25.0" prefWidth="105.0" text="Main course">
          <font>
             <Font size="18.0" />
          </font></Label>
-      <Label layoutX="240.0" layoutY="232.0" text="Dessert">
+      <Label layoutX="238.0" layoutY="195.0" text="Dessert">
          <font>
             <Font size="18.0" />
          </font></Label>
-      <TextField fx:id="addExtra" layoutX="240.0" layoutY="314.0" prefHeight="26.0" prefWidth="275.0" />
-      <Label layoutX="240.0" layoutY="288.0" text="Extra">
+      <TextField fx:id="addExtra" layoutX="238.0" layoutY="277.0" prefHeight="26.0" prefWidth="275.0" />
+      <Label layoutX="238.0" layoutY="251.0" text="Extra">
          <font>
             <Font size="18.0" />
          </font></Label>
-      <TextField fx:id="addDrinkSize" layoutX="415.0" layoutY="89.0" prefHeight="26.0" prefWidth="98.0" />
-      <Label layoutX="415.0" layoutY="60.0" text="Drink size">
+      <TextField fx:id="addDrinkSize" layoutX="413.0" layoutY="52.0" prefHeight="26.0" prefWidth="98.0" />
+      <Label layoutX="413.0" layoutY="23.0" text="Drink size">
          <font>
             <Font size="18.0" />
          </font></Label>
-      <Button fx:id="submitButton" layoutX="240.0" layoutY="436.0" mnemonicParsing="false" onAction="#handleSubmitButtonAction" text="Submit">
+      <Button fx:id="submitButton" layoutX="238.0" layoutY="457.0" mnemonicParsing="false" onAction="#handleSubmitButtonAction" text="Submit">
          <font>
             <Font name="Times New Roman" size="18.0" />
          </font></Button>
-      <Button fx:id="returnButton" layoutX="440.0" layoutY="436.0" mnemonicParsing="false" onAction="#handleaddReturnButtonAction" text="Return">
+      <Button fx:id="returnButton" layoutX="438.0" layoutY="457.0" mnemonicParsing="false" onAction="#handleaddReturnButtonAction" text="Return">
          <font>
             <Font name="Times New Roman" size="18.0" />
          </font></Button>
-      <TextField fx:id="addTableNumber" layoutX="240.0" layoutY="370.0" prefHeight="26.0" prefWidth="275.0" />
-      <Label layoutX="240.0" layoutY="345.0" text="Table">
+      <TextField fx:id="addTableNumber" layoutX="238.0" layoutY="333.0" prefHeight="26.0" prefWidth="275.0" />
+      <Label layoutX="238.0" layoutY="308.0" text="Table">
          <font>
             <Font size="18.0" />
          </font></Label>
+      <Label layoutX="238.0" layoutY="371.0" text="Price">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <TextField fx:id="addPrice" layoutX="238.0" layoutY="396.0" prefHeight="26.0" prefWidth="275.0" />
    </children>
 </AnchorPane>

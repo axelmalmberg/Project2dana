@@ -1,7 +1,9 @@
 package project2dana;
 
 
+import javafx.beans.property.DoubleProperty;
 import javafx.beans.property.IntegerProperty;
+import javafx.beans.property.SimpleDoubleProperty;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
@@ -19,18 +21,19 @@ import javafx.beans.property.StringProperty;
 public class OrderProperty {
 //    StringProperty drink2;
     
-    StringProperty timeStamp;
-    StringProperty drink;
-    StringProperty drinkSize;
-    StringProperty appetizer;
-    StringProperty mainCourse;
-    StringProperty dessert;
-    StringProperty extra;
-    IntegerProperty tableNumber;
-    IntegerProperty id;
+    private StringProperty timeStamp;
+    private StringProperty drink;
+    private StringProperty drinkSize;
+    private StringProperty appetizer;
+    private StringProperty mainCourse;
+    private StringProperty dessert;
+    private StringProperty extra;
+    private IntegerProperty tableNumber;
+    private IntegerProperty id;
+    private DoubleProperty price;
     
     public OrderProperty(String timeStamp, String drink, String drinkSize, String appetizer, String mainCourse, String dessert,
-            String extra, int tableNumber, int id) {
+            String extra, int tableNumber, int id, double price )  {
         this.drink = new SimpleStringProperty(drink);
         this.drinkSize = new SimpleStringProperty(drinkSize);
         this.appetizer = new SimpleStringProperty (appetizer);
@@ -40,6 +43,7 @@ public class OrderProperty {
         this.tableNumber = new SimpleIntegerProperty(tableNumber);
         this.timeStamp = new SimpleStringProperty(timeStamp);
         this.id = new SimpleIntegerProperty(id);
+        this.price = new SimpleDoubleProperty(price);
         
     }
     
@@ -90,5 +94,8 @@ public class OrderProperty {
     }
     public IntegerProperty getId() {
         return id;
+    }
+    public DoubleProperty getPrice() {
+        return price;
     }
 }
