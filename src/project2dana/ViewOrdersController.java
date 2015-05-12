@@ -144,7 +144,7 @@ public class ViewOrdersController implements Initializable {
             for (int i = 0; i < list.size(); i++) {
                 Order order = list.get(i);
                 op = new OrderProperty(order.getTimeStamp(), order.getDrink(), order.getDrinkSize(), order.getAppetizer(), order.getMainCourse(),
-                        order.getDessert(), order.getExtra(), order.getTableNumber(), order.getId());
+                        order.getDessert(), order.getExtra(), order.getTableNumber(), order.getId(), order.getPrice());
                 ObList.add(op);
             }
         } catch (Exception ex) {
