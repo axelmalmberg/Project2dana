@@ -74,6 +74,11 @@
             <Font size="18.0" />
          </font>
       </Label>
+      <Label fx:id="orderAdded" layoutX="332.0" layoutY="463.0" prefHeight="21.0" prefWidth="90.0" textAlignment="CENTER">
+         <cursor>
+            <Cursor fx:constant="DEFAULT" />
+         </cursor>
+      </Label>
       <TextField fx:id="addPrice" layoutX="238.0" layoutY="396.0" prefHeight="26.0" prefWidth="275.0" />
    </children>
 </AnchorPane>

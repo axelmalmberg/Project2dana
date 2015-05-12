@@ -16,7 +16,9 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
 /**
@@ -37,6 +39,9 @@ public class AddOrdersController implements Initializable {
 
     @FXML
     private Button submitButton, returnButton;
+    
+    @FXML
+    private Label orderAdded;
     
     
 
@@ -67,6 +72,7 @@ public class AddOrdersController implements Initializable {
         try {
         order = new Order();
         
+        
         tempNr = Integer.parseInt(addTableNumber.getText());
         order.setDrink(addDrink.getText());
         order.setDrinkSize(addDrinkSize.getText());
@@ -78,8 +84,12 @@ public class AddOrdersController implements Initializable {
         order.setPrice(Double.parseDouble(addPrice.getText()));
         list.add(order);
         saveList();
+        
+        orderAdded.setText("Order Added");
+        
         } catch (Exception ex) {
             System.out.println(ex.getMessage());
+            orderAdded.setText("Check Fields");
         }
     }
     
