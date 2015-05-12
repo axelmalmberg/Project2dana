@@ -27,14 +27,14 @@
       <TableView fx:id="orderTable" layoutX="26.0" layoutY="84.0" opacity="0.8" prefHeight="353.0" prefWidth="696.0">
         <columns>
           <TableColumn fx:id="drinkColumn" prefWidth="75.0" text="Drink" />
-          <TableColumn fx:id="drinkSizeColumn" prefWidth="103.0" text="Drink size" />
-            <TableColumn fx:id="appetizerColumn" prefWidth="99.0" text="Appetizer" />
-            <TableColumn fx:id="mainCourseColumn" prefWidth="102.0" text="Main course" />
-            <TableColumn fx:id="dessertColumn" text="Dessert" />
+          <TableColumn fx:id="drinkSizeColumn" prefWidth="66.0" text="Drink size" />
+            <TableColumn fx:id="appetizerColumn" prefWidth="117.0" text="Appetizer" />
+            <TableColumn fx:id="mainCourseColumn" prefWidth="112.0" text="Main course" />
+            <TableColumn fx:id="dessertColumn" prefWidth="89.0" text="Dessert" />
             <TableColumn fx:id="extraColumn" prefWidth="64.0" text="Extra" />
-            <TableColumn fx:id="tableColumn" prefWidth="66.0" text="Table" />
+            <TableColumn fx:id="tableColumn" prefWidth="44.0" text="Table" />
             <TableColumn fx:id="idColumn" prefWidth="43.0" text="Id" />
-            <TableColumn fx:id="dateColumn" prefWidth="63.0" text="Date" />
+            <TableColumn fx:id="dateColumn" prefWidth="85.0" text="Date" />
         </columns>
       </TableView>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="54.0" layoutX="26.0" layoutY="447.0" opacity="0.8" stroke="WHITE" strokeType="INSIDE" strokeWidth="5.0" width="696.0" />
@@ -46,7 +46,7 @@
          <font>
             <Font name="Times New Roman" size="18.0" />
          </font></Button>
-      <Button fx:id="deleteOrderButton" layoutX="235.0" layoutY="458.0" mnemonicParsing="false" text="Delete">
+      <Button fx:id="deleteOrderButton" layoutX="235.0" layoutY="458.0" mnemonicParsing="false" onAction="#handleDeleteButtonAction" text="Delete">
          <font>
             <Font name="Times New Roman" size="18.0" />
          </font></Button>

@@ -2,7 +2,9 @@ package project2dana;
 
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
@@ -75,6 +77,26 @@ public class ViewOrdersController implements Initializable {
         }
 
     }
+    
+    @FXML
+    private void handleDeleteButtonAction(ActionEvent event) {
+    ObservableList<OrderProperty> orderSelected, allOrders;
+    allOrders = orderTable.getItems();
+    orderSelected = orderTable.getSelectionModel().getSelectedItems();
+    list.remove(orderTable.getSelectionModel().getSelectedIndex());
+    orderSelected.forEach(allOrders::remove);
+    
+    try {
+            FileOutputStream fileOut = new FileOutputStream("OrderList.ser");
+            ObjectOutputStream out = new ObjectOutputStream(fileOut);
+            out.writeObject(list);
+            out.close();
+            fileOut.close();
+        } catch (Exception ex) {
+            System.out.println(ex.getMessage());
+        }
+    
+}
 
     /**
      * Initializes the controller class.
