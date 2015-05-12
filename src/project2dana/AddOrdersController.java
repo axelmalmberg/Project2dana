@@ -33,7 +33,7 @@ public class AddOrdersController implements Initializable {
     Order order = null;
     
     @FXML
-    private TextField addDrink, addDrinkSize, addAppetizer, addMainCourse, addDessert, addExtra, addTableNumber;
+    private TextField addDrink, addDrinkSize, addAppetizer, addMainCourse, addDessert, addExtra, addTableNumber, addPrice;
 
     @FXML
     private Button submitButton, returnButton;
@@ -75,6 +75,7 @@ public class AddOrdersController implements Initializable {
         order.setDessert(addDessert.getText());
         order.setExtra(addExtra.getText());
         order.setTableNumber(tempNr);
+        order.setPrice(Double.parseDouble(addPrice.getText()));
         list.add(order);
         saveList();
         } catch (Exception ex) {
