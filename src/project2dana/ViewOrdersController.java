@@ -18,7 +18,6 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.stage.Stage;
@@ -77,16 +76,16 @@ public class ViewOrdersController implements Initializable {
         }
 
     }
-    
+
     @FXML
     private void handleDeleteButtonAction(ActionEvent event) {
-    ObservableList<OrderProperty> orderSelected, allOrders;
-    allOrders = orderTable.getItems();
-    orderSelected = orderTable.getSelectionModel().getSelectedItems();
-    list.remove(orderTable.getSelectionModel().getSelectedIndex());
-    orderSelected.forEach(allOrders::remove);
-    
-    try {
+        ObservableList<OrderProperty> orderSelected, allOrders;
+        allOrders = orderTable.getItems();
+        orderSelected = orderTable.getSelectionModel().getSelectedItems();
+        list.remove(orderTable.getSelectionModel().getSelectedIndex());
+        orderSelected.forEach(allOrders::remove);
+
+        try {
             FileOutputStream fileOut = new FileOutputStream("OrderList.ser");
             ObjectOutputStream out = new ObjectOutputStream(fileOut);
             out.writeObject(list);
@@ -95,8 +94,8 @@ public class ViewOrdersController implements Initializable {
         } catch (Exception ex) {
             System.out.println(ex.getMessage());
         }
-    
-}
+
+    }
 
     /**
      * Initializes the controller class.

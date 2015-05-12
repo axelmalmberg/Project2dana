@@ -19,7 +19,7 @@ public class Order implements Serializable {
 //    StringProperty drink2;
     
     private String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(Calendar.getInstance().getTime());
-    private String drink;
+    private String drink ;
     private String drinkSize;
     private String appetizer;
     private String mainCourse;

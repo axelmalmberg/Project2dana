@@ -34,25 +34,22 @@ public class AddOrdersController implements Initializable {
     
     @FXML
     private TextField addDrink, addDrinkSize, addAppetizer, addMainCourse, addDessert, addExtra, addTableNumber, addPrice;
-
+    
     @FXML
     private Button submitButton, returnButton;
-    
-    
-
     
     @FXML
     private void handleaddReturnButtonAction(ActionEvent event) {
         try {
             Node node = (Node) event.getSource();
-                    Stage stage = (Stage) node.getScene().getWindow();
-
-                    FXMLLoader loader = new FXMLLoader(getClass().getResource("MainMenu.fxml"));
-                    Parent root = loader.load();
-
-                    Scene scene = new Scene(root);
-                    stage.setScene(scene);
-                    stage.show();
+            Stage stage = (Stage) node.getScene().getWindow();
+            
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("MainMenu.fxml"));
+            Parent root = loader.load();
+            
+            Scene scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
         } catch (Exception ex) {
             System.out.println(ex.getMessage());
         }
@@ -65,24 +62,24 @@ public class AddOrdersController implements Initializable {
         int tempNr = 0;
         
         try {
-        order = new Order();
-        
-        tempNr = Integer.parseInt(addTableNumber.getText());
-        order.setDrink(addDrink.getText());
-        order.setDrinkSize(addDrinkSize.getText());
-        order.setAppetizer(addAppetizer.getText());
-        order.setMainCourse(addMainCourse.getText());
-        order.setDessert(addDessert.getText());
-        order.setExtra(addExtra.getText());
-        order.setTableNumber(tempNr);
-        order.setPrice(Double.parseDouble(addPrice.getText()));
-        list.add(order);
-        saveList();
+            order = new Order();
+            
+            tempNr = Integer.parseInt(addTableNumber.getText());
+            order.setDrink(addDrink.getText());
+            order.setDrinkSize(addDrinkSize.getText());
+            order.setAppetizer(addAppetizer.getText());
+            order.setMainCourse(addMainCourse.getText());
+            order.setDessert(addDessert.getText());
+            order.setExtra(addExtra.getText());
+            order.setTableNumber(tempNr);
+            order.setPrice(Double.parseDouble(addPrice.getText()));
+            list.add(order);
+            saveList();
         } catch (Exception ex) {
             System.out.println(ex.getMessage());
         }
     }
-    
+
     /**
      * Initializes the controller class.
      */
@@ -102,7 +99,6 @@ public class AddOrdersController implements Initializable {
             System.out.println(ex.getMessage());
         }
     }
-
     
     public void saveList() {
         try {
