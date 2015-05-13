@@ -35,6 +35,7 @@ public class AddOrdersController implements Initializable {
     
     ArrayList<Order> list = new ArrayList<>();
     Order order = null;
+    FtpConnector ftp = null;
     
     @FXML
     private TextField addDrink, addDrinkSize, addAppetizer, addMainCourse, addDessert, addExtra, addTableNumber, addPrice;
@@ -105,6 +106,7 @@ public class AddOrdersController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         File f = new File("OrderList.ser");
+        
         if (!f.exists()) {
             return;
         }
@@ -129,6 +131,11 @@ public class AddOrdersController implements Initializable {
         } catch (Exception ex) {
             System.out.println(ex.getMessage());
         }
+    }
+    
+    public void addToFTP(){
+        ftp = new FtpConnector();
+        ftp.startFTP("OrderList.ser");
     }
     
 }
