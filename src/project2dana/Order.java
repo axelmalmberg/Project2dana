@@ -26,7 +26,7 @@ public class Order implements Serializable {
     private String dessert;
     private String extra;
     private int tableNumber;
-    private int id = 1;
+    private int id;
     private double price;
     
     public void setDrink(String drink) {
@@ -57,6 +57,10 @@ public class Order implements Serializable {
     public String getDrink() {
         return drink;
     }
+    public void setId(int id) {
+        this.id = id;
+    }
+    
 //    public StringProperty getDrinkProperty() {
 //        return drink2;
 //    }

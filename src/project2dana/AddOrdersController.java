@@ -1,8 +1,10 @@
 package project2dana;
 
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
+import java.io.FileReader;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.net.URL;
@@ -39,13 +41,10 @@ public class AddOrdersController implements Initializable {
     
     @FXML
     private Button submitButton, returnButton;
-
     
     @FXML
     private Label orderAdded;
     
-    
-
     @FXML
     private void handleaddReturnButtonAction(ActionEvent event) {
         try {
@@ -66,27 +65,34 @@ public class AddOrdersController implements Initializable {
     
     @FXML
     private void handleSubmitButtonAction(ActionEvent event) {
-        
+        BufferedReader read = null;
         int tempNr = 0;
         
         try {
-        order = new Order();
-        
-        
-        tempNr = Integer.parseInt(addTableNumber.getText());
-        order.setDrink(addDrink.getText());
-        order.setDrinkSize(addDrinkSize.getText());
-        order.setAppetizer(addAppetizer.getText());
-        order.setMainCourse(addMainCourse.getText());
-        order.setDessert(addDessert.getText());
-        order.setExtra(addExtra.getText());
-        order.setTableNumber(tempNr);
-        order.setPrice(Double.parseDouble(addPrice.getText()));
-        list.add(order);
-        saveList();
-        
-        orderAdded.setText("Order Added");
-
+            order = new Order();
+            
+            read = new BufferedReader(new FileReader("saveId.txt"));
+            String tmpStr = null;
+            tmpStr = read.readLine();
+            int id = Integer.parseInt(tmpStr);
+            
+            read.close();
+            
+            tempNr = Integer.parseInt(addTableNumber.getText());
+            order.setDrink(addDrink.getText());
+            order.setDrinkSize(addDrinkSize.getText());
+            order.setAppetizer(addAppetizer.getText());
+            order.setMainCourse(addMainCourse.getText());
+            order.setDessert(addDessert.getText());
+            order.setExtra(addExtra.getText());
+            order.setTableNumber(tempNr);
+            order.setPrice(Double.parseDouble(addPrice.getText()));
+            order.setId(id);
+            list.add(order);
+            saveList();
+            
+            orderAdded.setText("Order Added");
+            
         } catch (Exception ex) {
             System.out.println(ex.getMessage());
             orderAdded.setText("Check Fields");

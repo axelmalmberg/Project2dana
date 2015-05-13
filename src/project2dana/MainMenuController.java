@@ -1,6 +1,8 @@
 package project2dana;
 
+import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileReader;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
@@ -55,6 +57,8 @@ public class MainMenuController implements Initializable {
         } else {
             File f2 = new File("saveId.txt");
             File f = new File("SaveUserInfo.txt");
+            File f3 = new File("saveStatus.txt");
+            f3.delete();
             f.delete();
             f2.delete();
             System.exit(0);
@@ -67,7 +71,25 @@ public class MainMenuController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+        BufferedReader read = null;
+        try {
+            read = new BufferedReader(new FileReader("saveStatus.txt"));
+            String tmpStr = null;
+            tmpStr = read.readLine();
+            int adminStatus = Integer.parseInt(tmpStr);
+            System.out.println(adminStatus);
+            if (adminStatus == 2) {
+                addUserButton.setVisible(false);
+                searchSalesButton.setVisible(false);
+            }
+            read.close();
+            
+            
+        } catch (Exception ex) {
+            System.out.println(ex.getMessage());
+        }
+        
+        
     }
 
 
