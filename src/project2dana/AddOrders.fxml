@@ -27,9 +27,13 @@
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="421.0" layoutX="227.0" layoutY="14.0" opacity="0.8" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="297.0" />
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="55.0" layoutX="227.0" layoutY="446.0" opacity="0.8" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="297.0" />
       <TextField fx:id="addDrink" layoutX="238.0" layoutY="52.0" />
+      <TextField fx:id="addDrinkSize" layoutX="413.0" layoutY="52.0" prefHeight="26.0" prefWidth="98.0" />
       <TextField fx:id="addAppetizer" layoutX="238.0" layoutY="108.0" prefHeight="26.0" prefWidth="275.0" />
       <TextField fx:id="addMainCourse" layoutX="238.0" layoutY="164.0" prefHeight="26.0" prefWidth="275.0" />
       <TextField fx:id="addDessert" layoutX="238.0" layoutY="220.0" prefHeight="26.0" prefWidth="275.0" />
+      <TextField fx:id="addExtra" layoutX="238.0" layoutY="277.0" prefHeight="26.0" prefWidth="275.0" />
+      <TextField fx:id="addTableNumber" layoutX="238.0" layoutY="333.0" prefHeight="26.0" prefWidth="275.0" />
+      <TextField fx:id="addPrice" layoutX="238.0" layoutY="396.0" prefHeight="26.0" prefWidth="275.0" />
       <Label layoutX="238.0" layoutY="23.0" text="Drink">
          <font>
             <Font size="18.0" />
@@ -46,12 +50,10 @@
          <font>
             <Font size="18.0" />
          </font></Label>
-      <TextField fx:id="addExtra" layoutX="238.0" layoutY="277.0" prefHeight="26.0" prefWidth="275.0" />
       <Label layoutX="238.0" layoutY="251.0" text="Extra">
          <font>
             <Font size="18.0" />
          </font></Label>
-      <TextField fx:id="addDrinkSize" layoutX="413.0" layoutY="52.0" prefHeight="26.0" prefWidth="98.0" />
       <Label layoutX="413.0" layoutY="23.0" text="Drink size">
          <font>
             <Font size="18.0" />
@@ -64,7 +66,6 @@
          <font>
             <Font name="Times New Roman" size="18.0" />
          </font></Button>
-      <TextField fx:id="addTableNumber" layoutX="238.0" layoutY="333.0" prefHeight="26.0" prefWidth="275.0" />
       <Label layoutX="238.0" layoutY="308.0" text="Table">
          <font>
             <Font size="18.0" />
@@ -79,6 +80,5 @@
             <Cursor fx:constant="DEFAULT" />
          </cursor>
       </Label>
-      <TextField fx:id="addPrice" layoutX="238.0" layoutY="396.0" prefHeight="26.0" prefWidth="275.0" />
    </children>
 </AnchorPane>
