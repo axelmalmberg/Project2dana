@@ -10,6 +10,7 @@ package project2dana;
  * @author dardaiin
  */
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.InputStream;
 import java.io.ObjectInputStream;
@@ -70,7 +71,7 @@ public class FtpUpload {
            
             //get input stream
             FileInputStream input;
-            input = new FileInputStream(localDirectory + ":" + fileToFTP);
+            input = new FileInputStream(localDirectory + File.separator + fileToFTP);
             
             //store the file in the remote server
             ftp.storeFile(fileToFTP, input);
