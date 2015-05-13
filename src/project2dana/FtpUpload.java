@@ -12,12 +12,14 @@ package project2dana;
 
 import java.io.FileInputStream;
 import java.io.InputStream;
+import java.io.ObjectInputStream;
+import java.util.ArrayList;
 import java.util.Properties;
  
 import org.apache.commons.net.ftp.FTPClient;
 import org.apache.commons.net.ftp.FTPReply;
  
-public class FtpConnector {
+public class FtpUpload {
  
     static Properties props;
     
@@ -25,7 +27,7 @@ public class FtpConnector {
     String userId = "deadesign.se";
     String password = "dana1234";
     String remoteDirectory = "/dana";
-    String localDirectory ="/Users/dardaiin/GitHub/Project2dana/OrderList.ser";
+    String localDirectory ="/Users/dardaiin/GitHub/Project2dana/";
  
     public boolean startFTP(String fileToFTP){
  
@@ -65,14 +67,17 @@ public class FtpConnector {
             ftp.changeWorkingDirectory(remoteDirectory);
             System.out.println("Current directory is " + ftp.printWorkingDirectory());
  
+           
             //get input stream
-            InputStream input;
+            FileInputStream input;
             input = new FileInputStream(localDirectory + "/" + fileToFTP);
+            
             //store the file in the remote server
             ftp.storeFile(fileToFTP, input);
             //close the stream
             input.close();
- 
+            
+            
             ftp.logout();
             ftp.disconnect();
         }

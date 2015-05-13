@@ -35,7 +35,7 @@ public class AddOrdersController implements Initializable {
     
     ArrayList<Order> list = new ArrayList<>();
     Order order = null;
-    FtpConnector ftp = null;
+    FtpUpload ftp = null;
     
     @FXML
     private TextField addDrink, addDrinkSize, addAppetizer, addMainCourse, addDessert, addExtra, addTableNumber, addPrice;
@@ -91,6 +91,7 @@ public class AddOrdersController implements Initializable {
             order.setId(id);
             list.add(order);
             saveList();
+            addToFTP();
             
             orderAdded.setText("Order Added");
             
@@ -134,7 +135,7 @@ public class AddOrdersController implements Initializable {
     }
     
     public void addToFTP(){
-        ftp = new FtpConnector();
+        ftp = new FtpUpload();
         ftp.startFTP("OrderList.ser");
     }
     

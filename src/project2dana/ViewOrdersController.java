@@ -34,6 +34,8 @@ public class ViewOrdersController implements Initializable {
     ObservableList<OrderProperty> ObList = FXCollections.observableArrayList();
     ArrayList<Order> list = new ArrayList<>();
     StringProperty drink, drinksize, appetizer, maincourse, dessert;
+    
+    FtpDownload ftp = null;
 
     @FXML
     private TableView<OrderProperty> orderTable;
@@ -126,6 +128,8 @@ public class ViewOrdersController implements Initializable {
     }
 
     public void convert() {
+        
+        downloadFtp();
 
         File f = new File("OrderList.ser");
         if (!f.exists()) {
@@ -149,6 +153,12 @@ public class ViewOrdersController implements Initializable {
         } catch (Exception ex) {
             System.out.println(ex.getMessage());
         }
+
+    }
+    
+    public void downloadFtp(){
+                ftp = new FtpDownload();
+                ftp.startFTP();
 
     }
 
