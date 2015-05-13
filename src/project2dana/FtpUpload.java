@@ -14,6 +14,8 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.InputStream;
 import java.io.ObjectInputStream;
+import java.nio.file.FileSystem;
+import java.nio.file.FileSystems;
 import java.util.ArrayList;
 import java.util.Properties;
  
@@ -71,7 +73,7 @@ public class FtpUpload {
            
             //get input stream
             FileInputStream input;
-            input = new FileInputStream(localDirectory + File.separator + fileToFTP);
+            input = new FileInputStream(localDirectory + FileSystems.getDefault().getSeparator() + fileToFTP);
             
             //store the file in the remote server
             ftp.storeFile(fileToFTP, input);

@@ -12,6 +12,7 @@ package project2dana;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.OutputStream;
+import java.nio.file.FileSystems;
 import java.util.Properties;
 
 import org.apache.commons.net.ftp.FTPClient;
@@ -76,7 +77,7 @@ public class FtpDownload {
 
                     //get output stream
                     OutputStream output;
-                    output = new FileOutputStream(localDirectory + File.separator + file.getName());
+                    output = new FileOutputStream(localDirectory + FileSystems.getDefault().getSeparator() +  file.getName());
                     //get the file from the remote system
                     ftp.retrieveFile(file.getName(), output);
                     //close output stream
