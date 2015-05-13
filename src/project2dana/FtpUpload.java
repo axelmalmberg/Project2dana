@@ -27,7 +27,7 @@ public class FtpUpload {
     String userId = "deadesign.se";
     String password = "dana1234";
     String remoteDirectory = "/dana";
-    String localDirectory ="/Users/dardaiin/GitHub/Project2dana/";
+    String localDirectory = System.getProperty("user.dir");
  
     public boolean startFTP(String fileToFTP){
  
