@@ -24,7 +24,7 @@ public class FtpDownload {
         String serverAddress = "ftp.deadesign.se";
         String userId = "deadesign.se";
         String password = "dana1234";
-        String remoteDirectory = "/dana";
+        String remoteDirectory = File.separator + "dana";
         String localDirectory = System.getProperty("user.dir");
 
     public boolean startFTP() {
