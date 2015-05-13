@@ -53,9 +53,10 @@ public class MainMenuController implements Initializable {
         }
              
         } else {
-            
+            File f2 = new File("saveId.txt");
             File f = new File("SaveUserInfo.txt");
             f.delete();
+            f2.delete();
             System.exit(0);
         }
     }

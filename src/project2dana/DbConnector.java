@@ -24,9 +24,24 @@ import javafx.stage.Stage;
 public class DbConnector {
 
     private String URL;
+    
+    public void addSale(String date, int tableNr, double price, int employeeId, String appetizer, String dessert, String drink, String extras, String mainCourse) {
+        try {
+            connect();
+            Connection c = DriverManager.getConnection(URL);
+            Statement st = c.createStatement();
+            String tmp = String.format("insert into sales (date, tableNumber, totalPrice, employee_idemployee, appetizer, dessert, drink, extras, mainMeal) values"
+                    + "('%s', %d, %f, %d, '%s', '%s', '%s', '%s', '%s')", date, tableNr, price, employeeId, appetizer, dessert, drink, extras, mainCourse);
+            st.executeQuery(tmp);
+            
+        } catch (Exception ex) {
+            System.out.println(ex.getMessage());
+        }
+        
+    }
 
 //    THIS IS ALL UNDER CONSTRUCTION, DONT REMOVE ISNT FINISHED
-    public void addUser(String userName, String password, String firstName, String lastName, String mail, int phone, String adress, String city, String quest, String ans) {
+    public void addUser(String userName, String password, String firstName, String lastName, String mail, String phone, String adress, String city, String quest, String ans, int admin) {
         try {
             connect();
             Connection c = DriverManager.getConnection(URL);
@@ -36,7 +51,7 @@ public class DbConnector {
             Statement st4 = c.createStatement();
             Statement st5 = c.createStatement();
             System.out.println("1");
-            String tmp = String.format("insert into employee (firstname, lastname, email, phone, address, city) values ('%s', '%s', '%s', %d, '%s', '%s')", firstName, lastName, mail, phone, adress, city, quest, ans);
+            String tmp = String.format("insert into employee (firstname, lastname, email, phone, address, city) values ('%s', '%s', '%s', %s, '%s', '%s')", firstName, lastName, mail, phone, adress, city, quest, ans);
             st.executeUpdate(tmp);
             System.out.println("2");
             ResultSet rs = st2.executeQuery("SELECT idemployee FROM employee ORDER BY idemployee DESC LIMIT 1");
@@ -44,15 +59,24 @@ public class DbConnector {
             if (rs.next()) {
                 resultat = rs.getInt(1);
             }
-            String tmp2 = String.format("insert into login (username, password, securityQuestion, securityAnswer, employee_idemployee) values ('%s', '%s', '%s', '%s', %d)", userName, password, quest, ans, resultat);
+            String tmp2 = String.format("insert into login (username, password, securityQuestion, securityAnswer, employee_idemployee, status) values ('%s', '%s', '%s', '%s', %d, %d)", userName, password, quest, ans, resultat, admin);
             st3.executeUpdate(tmp2);
 //                    + " values (" + usrn + ", " + psw + " , " + quest + ", " + ans + ", " + resultat + ");");
+            if (admin == 1) {
             String tmp3 = String.format("CREATE USER '%s'@'localhost' IDENTIFIED BY '%s';", userName, password);
             String tmp4 = String.format("GRANT ALL PRIVILEGES ON * . * TO '%s'@'localhost' WITH GRANT OPTION", userName);
+            
 
             st4.executeUpdate(tmp3);
             st5.executeUpdate(tmp4);
+            } else {
+                String tmp3 = String.format("CREATE USER '%s'@'localhost' IDENTIFIED BY '%s';", userName, password);
+            String tmp4 = String.format("GRANT add ON *. * TO '%s'@'localhost'", userName);
+            
 
+            st4.executeUpdate(tmp3);
+            st5.executeUpdate(tmp4);
+            }
         } catch (Exception ex) {
             System.out.println(ex.getMessage());
         }
@@ -61,6 +85,7 @@ public class DbConnector {
 //    THIS IS ALL UNDER CONSTRUCTION, DONT REMOVE ISNT FINISHED
     public void verifyLogIn(String userName, String password, ActionEvent event) {
         FileWriter save = null;
+        FileWriter saveId = null;
         try {
             Class.forName("com.mysql.jdbc.Driver").newInstance();
             String URL2 = "jdbc:mysql://127.0.0.1:3306/dana?user=" + userName + "&password=" + password;
@@ -82,6 +107,16 @@ public class DbConnector {
                     Scene scene = new Scene(root);
                     stage.setScene(scene);
                     stage.show();
+                    
+                    int id = rs.getInt("employee_idemployee");
+                    
+                    System.out.println(id);
+                    
+                    String id2 = Integer.toString(id);
+                    
+                    
+                    saveId = new FileWriter("saveId.txt", true);
+                    saveId.write(id2);
 
                     save = new FileWriter("SaveUserInfo.txt", true);
                     save.write(userName + ":" + password);
@@ -95,6 +130,7 @@ public class DbConnector {
             }
             c.close();
             save.close();
+            saveId.close();
         } catch (Exception ex) {
             System.out.println(ex.getMessage());
         }

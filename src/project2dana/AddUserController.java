@@ -13,6 +13,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
@@ -35,6 +36,9 @@ public class AddUserController implements Initializable {
     
     @FXML
     private Label userAdded;
+    
+    @FXML
+    private CheckBox adminBox;
 
     @FXML
     private void handleaReturnButtonAction(ActionEvent event) {
@@ -60,21 +64,29 @@ public class AddUserController implements Initializable {
         String userName = null;
         String password = null;
         String eMail = null;
-        int phone = 0;
+        String phone = null;
         String address = null;
         String city = null;
         String sequrityQuestion = null;
         String answer = null;
         String firstName = null;
         String lastName = null;
+        int admin = 0;
+        
+        
 
         try {
+            if (adminBox.isSelected()) {
+            admin = 1;
+        } else {
+            admin = 2;
+        }
             userName = userNameField.getText();
             System.out.println(userName);
             password = passwordField.getText();
             eMail = emailField.getText();
             System.out.println(eMail);
-            phone = Integer.parseInt(PhoneField.getText());
+            phone = (PhoneField.getText());
             System.out.println(0);
             address = addressField.getText();
             city = cityField.getText();
@@ -83,7 +95,7 @@ public class AddUserController implements Initializable {
             firstName = firstNameField.getText();
             lastName = lastNameField.getText();
 
-            db.addUser(userName, password, firstName, lastName, eMail, phone, address, city, sequrityQuestion, answer);
+            db.addUser(userName, password, firstName, lastName, eMail, phone, address, city, sequrityQuestion, answer, admin);
             
             userNameField.clear();
             passwordField.clear();
