@@ -57,7 +57,7 @@ public class FtpUpload {
             }
  
             //enter passive mode
-            ftp.enterLocalActiveMode();
+            ftp.enterLocalPassiveMode();
             //get system name
             System.out.println("Remote system is " + ftp.getSystemType());
             //change current directory

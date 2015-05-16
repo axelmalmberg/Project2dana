@@ -12,6 +12,7 @@ package project2dana;
 import java.io.FileOutputStream;
 import java.io.OutputStream;
 import java.util.Properties;
+import org.apache.commons.net.ftp.FTP;
 
 import org.apache.commons.net.ftp.FTPClient;
 import org.apache.commons.net.ftp.FTPFile;
@@ -55,7 +56,7 @@ public class FtpDownload {
             }
 
             //enter active mode
-            ftp.enterLocalActiveMode();
+            ftp.enterLocalPassiveMode();
             //get system name
             System.out.println("Remote system is " + ftp.getSystemType());
             //change current directory

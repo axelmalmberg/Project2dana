@@ -132,6 +132,7 @@ public class ViewOrdersController implements Initializable {
         downloadFtp();
 
         File f = new File("OrderList.ser");
+              
         if (!f.exists()) {
             return;
         }
@@ -157,6 +158,10 @@ public class ViewOrdersController implements Initializable {
     }
     
     public void downloadFtp(){
+        File f = new File("OrderList.ser");
+        if(f.exists()){
+            f.delete();
+        }
                 ftp = new FtpDownload();
                 ftp.startFTP();
 
