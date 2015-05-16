@@ -15,6 +15,7 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 
@@ -57,6 +58,10 @@ public class ViewOrdersController implements Initializable {
 
     @FXML
     private TableColumn<OrderProperty, Integer> idColumn;
+    
+    @FXML
+    private Button finishedOrderButton;
+   
 
     @FXML
     private void handleRefreshButtonAction(ActionEvent event){
@@ -78,12 +83,16 @@ public class ViewOrdersController implements Initializable {
 
     @FXML
     private void handleFinishedButtonAction(ActionEvent event) {
+        Button bt = (Button)event.getSource();
+        
         try {
             ObservableList<OrderProperty> orderSelected, allOrders;
             allOrders = orderTable.getItems();
             orderSelected = orderTable.getSelectionModel().getSelectedItems();
+        if(bt == finishedOrderButton){    
             Order order = list.get(orderTable.getSelectionModel().getSelectedIndex());
             db.addSale(order.getDate(), order.getTableNumber(), order.getPrice(), order.getId(), order.getAppetizer(), order.getDessert(), order.getDrink(), order.getExtra(), order.getMainCourse(), order.getDrinkSize());
+        } 
             list.remove(orderTable.getSelectionModel().getSelectedIndex());
             orderSelected.forEach(allOrders::remove);
 

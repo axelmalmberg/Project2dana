@@ -46,7 +46,7 @@
          <font>
             <Font name="Times New Roman" size="18.0" />
          </font></Button>
-      <Button fx:id="deleteOrderButton" layoutX="235.0" layoutY="458.0" mnemonicParsing="false" onAction="#handleDeleteButtonAction" text="Delete">
+      <Button fx:id="deleteOrderButton" layoutX="235.0" layoutY="458.0" mnemonicParsing="false" onAction="#handleFinishedButtonAction" text="Delete">
          <font>
             <Font name="Times New Roman" size="18.0" />
          </font></Button>
