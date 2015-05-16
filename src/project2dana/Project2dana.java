@@ -15,6 +15,7 @@ public class Project2dana extends Application {
 
     @Override
     public void start(Stage stage) throws Exception {
+        System.out.println(System.getProperty("user.dir"));
         Parent root = FXMLLoader.load(getClass().getResource("LogInScene.fxml"));
 
         Scene scene = new Scene(root);

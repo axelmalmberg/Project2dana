@@ -34,7 +34,7 @@ public class ViewOrdersController implements Initializable {
     ObservableList<OrderProperty> ObList = FXCollections.observableArrayList();
     ArrayList<Order> list = new ArrayList<>();
     StringProperty drink, drinksize, appetizer, maincourse, dessert;
-    
+
     FtpDownload ftp = null;
 
     @FXML
@@ -64,15 +64,9 @@ public class ViewOrdersController implements Initializable {
     @FXML
     private void handleaddReturnButtonAction(ActionEvent event) {
         try {
-            Node node = (Node) event.getSource();
-            Stage stage = (Stage) node.getScene().getWindow();
 
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("MainMenu.fxml"));
-            Parent root = loader.load();
-
-            Scene scene = new Scene(root);
-            stage.setScene(scene);
-            stage.show();
+            SceneSwitcher ss = new SceneSwitcher();
+            ss.switchScene(event, "MainMenu.fxml");
         } catch (Exception ex) {
 
         }
@@ -110,6 +104,11 @@ public class ViewOrdersController implements Initializable {
 
     public void showTable() {
         try {
+            downloadFtp();
+        } catch (Exception ex) {
+            System.out.println(ex.getMessage());
+        }
+        try {
             convert();
 
             drinkColumn.setCellValueFactory(cellData -> cellData.getValue().getDrink());
@@ -128,8 +127,6 @@ public class ViewOrdersController implements Initializable {
     }
 
     public void convert() {
-        
-        downloadFtp();
 
         File f = new File("OrderList.ser");
         if (!f.exists()) {
@@ -155,10 +152,10 @@ public class ViewOrdersController implements Initializable {
         }
 
     }
-    
-    public void downloadFtp(){
-                ftp = new FtpDownload();
-                ftp.startFTP();
+
+    public void downloadFtp() {
+        ftp = new FtpDownload();
+        ftp.startFTP();
 
     }
 

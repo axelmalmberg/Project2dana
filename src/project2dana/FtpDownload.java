@@ -77,7 +77,7 @@ public class FtpDownload {
 
                     //get output stream
                     OutputStream output;
-                    output = new FileOutputStream(localDirectory +  file.getName());
+                    output = new FileOutputStream(localDirectory + file.getName());
                     //get the file from the remote system
                     ftp.retrieveFile(file.getName(), output);
                     //close output stream

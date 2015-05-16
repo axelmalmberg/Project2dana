@@ -32,53 +32,46 @@ import javafx.stage.Stage;
  *
  */
 public class AddOrdersController implements Initializable {
-    
+
     ArrayList<Order> list = new ArrayList<>();
     Order order = null;
     FtpUpload ftp = null;
-    
+
     @FXML
     private TextField addDrink, addDrinkSize, addAppetizer, addMainCourse, addDessert, addExtra, addTableNumber, addPrice;
-    
+
     @FXML
     private Button submitButton, returnButton;
-    
+
     @FXML
     private Label orderAdded;
-    
+
     @FXML
     private void handleaddReturnButtonAction(ActionEvent event) {
         try {
-            Node node = (Node) event.getSource();
-            Stage stage = (Stage) node.getScene().getWindow();
-            
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("MainMenu.fxml"));
-            Parent root = loader.load();
-            
-            Scene scene = new Scene(root);
-            stage.setScene(scene);
-            stage.show();
+            SceneSwitcher ss = new SceneSwitcher();
+            ss.switchScene(event, "MainMenu.fxml");
         } catch (Exception ex) {
             System.out.println(ex.getMessage());
         }
-        
+
     }
-    
+
     @FXML
     private void handleSubmitButtonAction(ActionEvent event) {
         BufferedReader read = null;
         int tempNr = 0;
-        
+
         try {
             order = new Order();
-            
+
             read = new BufferedReader(new FileReader("saveId.txt"));
             String tmpStr = null;
             tmpStr = read.readLine();
             int id = Integer.parseInt(tmpStr);
-            
+
             read.close();
-            
+
             tempNr = Integer.parseInt(addTableNumber.getText());
             order.setDrink(addDrink.getText());
             order.setDrinkSize(addDrinkSize.getText());
@@ -92,9 +85,9 @@ public class AddOrdersController implements Initializable {
             list.add(order);
             saveList();
             addToFTP();
-            
+
             orderAdded.setText("Order Added");
-            
+
         } catch (Exception ex) {
             System.out.println(ex.getMessage());
             orderAdded.setText("Check Fields");
@@ -107,7 +100,7 @@ public class AddOrdersController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         File f = new File("OrderList.ser");
-        
+
         if (!f.exists()) {
             return;
         }
@@ -121,7 +114,7 @@ public class AddOrdersController implements Initializable {
             System.out.println(ex.getMessage());
         }
     }
-    
+
     public void saveList() {
         try {
             FileOutputStream fileOut = new FileOutputStream("OrderList.ser");
@@ -133,10 +126,10 @@ public class AddOrdersController implements Initializable {
             System.out.println(ex.getMessage());
         }
     }
-    
-    public void addToFTP(){
+
+    public void addToFTP() {
         ftp = new FtpUpload();
         ftp.startFTP("OrderList.ser");
     }
-    
+
 }

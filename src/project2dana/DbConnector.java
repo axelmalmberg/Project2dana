@@ -118,15 +118,8 @@ public class DbConnector {
                     saveStatus.write(status2);
                     saveStatus.close();
                     
-                    Node node = (Node) event.getSource();
-                    Stage stage = (Stage) node.getScene().getWindow();
-
-                    FXMLLoader loader = new FXMLLoader(getClass().getResource("MainMenu.fxml"));
-                    Parent root = loader.load();
-
-                    Scene scene = new Scene(root);
-                    stage.setScene(scene);
-                    stage.show();
+                    SceneSwitcher ss = new SceneSwitcher();
+                    ss.switchScene(event, "MainMenu.fxml");
                     
                     break;
 

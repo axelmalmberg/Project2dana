@@ -33,10 +33,10 @@ public class AddUserController implements Initializable {
 
     @FXML
     private Button submitButton, returnButton;
-    
+
     @FXML
     private Label userAdded;
-    
+
     @FXML
     private CheckBox adminBox;
 
@@ -44,15 +44,9 @@ public class AddUserController implements Initializable {
     private void handleaReturnButtonAction(ActionEvent event) {
 
         try {
-            Node node = (Node) event.getSource();
-            Stage stage = (Stage) node.getScene().getWindow();
 
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("MainMenu.fxml"));
-            Parent root = loader.load();
-
-            Scene scene = new Scene(root);
-            stage.setScene(scene);
-            stage.show();
+            SceneSwitcher ss = new SceneSwitcher();
+            ss.switchScene(event, "MainMenu.fxml");
         } catch (Exception ex) {
 
         }
@@ -72,15 +66,13 @@ public class AddUserController implements Initializable {
         String firstName = null;
         String lastName = null;
         int admin = 0;
-        
-        
 
         try {
             if (adminBox.isSelected()) {
-            admin = 1;
-        } else {
-            admin = 2;
-        }
+                admin = 1;
+            } else {
+                admin = 2;
+            }
             userName = userNameField.getText();
             System.out.println(userName);
             password = passwordField.getText();
@@ -96,7 +88,7 @@ public class AddUserController implements Initializable {
             lastName = lastNameField.getText();
 
             db.addUser(userName, password, firstName, lastName, eMail, phone, address, city, sequrityQuestion, answer, admin);
-            
+
             userNameField.clear();
             passwordField.clear();
             emailField.clear();
@@ -107,7 +99,7 @@ public class AddUserController implements Initializable {
             answerField.clear();
             firstNameField.clear();
             lastNameField.clear();
-            
+
             userAdded.setText("User Added");
 
         } catch (Exception ex) {
