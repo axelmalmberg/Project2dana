@@ -42,7 +42,7 @@
          <font>
             <Font name="Times New Roman" size="18.0" />
          </font></Button>
-      <Button fx:id="finishedOrderButton" layoutX="132.0" layoutY="458.0" mnemonicParsing="false" text="Finished">
+      <Button fx:id="finishedOrderButton" layoutX="132.0" layoutY="458.0" mnemonicParsing="false" onAction="#handleFinishedButtonAction" text="Finished">
          <font>
             <Font name="Times New Roman" size="18.0" />
          </font></Button>

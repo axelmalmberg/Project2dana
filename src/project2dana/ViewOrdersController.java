@@ -30,6 +30,7 @@ import javafx.stage.Stage;
  */
 public class ViewOrdersController implements Initializable {
 
+    DbConnector db = new DbConnector();
     OrderProperty op = null;
     ObservableList<OrderProperty> ObList = FXCollections.observableArrayList();
     ArrayList<Order> list = new ArrayList<>();
@@ -71,6 +72,27 @@ public class ViewOrdersController implements Initializable {
 
         }
 
+    }
+
+    @FXML
+    private void handleFinishedButtonAction(ActionEvent event) {
+        try {
+            ObservableList<OrderProperty> orderSelected, allOrders;
+            allOrders = orderTable.getItems();
+            orderSelected = orderTable.getSelectionModel().getSelectedItems();
+            Order order = list.get(orderTable.getSelectionModel().getSelectedIndex());
+            db.addSale(order.getDate(), order.getTableNumber(), order.getPrice(), order.getId(), order.getAppetizer(), order.getDessert(), order.getDrink(), order.getExtra(), order.getMainCourse(), order.getDrinkSize());
+            list.remove(orderTable.getSelectionModel().getSelectedIndex());
+            orderSelected.forEach(allOrders::remove);
+
+            FileOutputStream fileOut = new FileOutputStream("OrderList.ser");
+            ObjectOutputStream out = new ObjectOutputStream(fileOut);
+            out.writeObject(list);
+            out.close();
+            fileOut.close();
+        } catch (Exception ex) {
+            System.out.println(ex.getMessage());
+        }
     }
 
     @FXML

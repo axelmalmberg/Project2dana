@@ -10,6 +10,9 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.sql.*;
+import java.text.DecimalFormat;
+import java.text.DecimalFormatSymbols;
+import java.util.Locale;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -22,18 +25,19 @@ import javafx.stage.Stage;
  * @author bumblebee
  */
 public class DbConnector {
-
+    
     private static final int ADMIN = 1;
     private String URL;
 
-    public void addSale(String date, int tableNr, double price, int employeeId, String appetizer, String dessert, String drink, String extras, String mainCourse) {
+    public void addSale(String date, int tableNr, double price, int employeeId, String appetizer, String dessert, String drink, String extras, String mainCourse, String drinkSize) {
         try {
             connect();
             Connection c = DriverManager.getConnection(URL);
             Statement st = c.createStatement();
-            String tmp = String.format("insert into sales (date, tableNumber, totalPrice, employee_idemployee, appetizer, dessert, drink, extras, mainMeal) values"
-                    + "('%s', %d, %f, %d, '%s', '%s', '%s', '%s', '%s')", date, tableNr, price, employeeId, appetizer, dessert, drink, extras, mainCourse);
-            st.executeQuery(tmp);
+            String tmpPrice = Double.toString(price);
+            String tmp = String.format("insert into sales (dateString, tableNumber, totalPrice, employee_idemployee, appetizer, dessert, drink, extras, mainMeal, drinkSize) values ('%s', %d, '%s', %d, '%s', '%s', '%s', '%s', '%s', '%s')", date, tableNr, tmpPrice, employeeId, appetizer, dessert, drink, extras, mainCourse, drinkSize);
+            System.out.println(tmp);
+            st.executeUpdate(tmp);
 
         } catch (Exception ex) {
             System.out.println(ex.getMessage());
@@ -52,7 +56,7 @@ public class DbConnector {
             Statement st4 = c.createStatement();
             Statement st5 = c.createStatement();
             System.out.println("1");
-            String tmp = String.format("insert into employee (firstname, lastname, email, phone, address, city) values ('%s', '%s', '%s', %s, '%s', '%s')", firstName, lastName, mail, phone, adress, city, quest, ans);
+            String tmp = String.format("insert into employee (firstname, lastname, email, phone, address, city) values ('%s', '%s', '%s', '%s', '%s', '%s')", firstName, lastName, mail, phone, adress, city, quest, ans);
             st.executeUpdate(tmp);
             System.out.println("2");
             ResultSet rs = st2.executeQuery("SELECT idemployee FROM employee ORDER BY idemployee DESC LIMIT 1");
