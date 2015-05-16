@@ -9,11 +9,11 @@ package project2dana;
  *
  * @author dardaiin
  */
+import java.io.File;
 import java.io.FileOutputStream;
 import java.io.OutputStream;
 import java.util.Properties;
 import org.apache.commons.net.ftp.FTP;
-
 import org.apache.commons.net.ftp.FTPClient;
 import org.apache.commons.net.ftp.FTPFile;
 import org.apache.commons.net.ftp.FTPReply;
@@ -57,6 +57,7 @@ public class FtpDownload {
 
             //enter active mode
             ftp.enterLocalPassiveMode();
+            ftp.setFileType(FTP.BINARY_FILE_TYPE);
             //get system name
             System.out.println("Remote system is " + ftp.getSystemType());
             //change current directory
@@ -75,11 +76,11 @@ public class FtpDownload {
                     System.out.println("File is " + file.getName());
 
                     //get output stream
-                    OutputStream output;
+                    FileOutputStream output;
 
                     output = new FileOutputStream(localDirectory + file.getName());
 
-                    output = new FileOutputStream(localDirectory + "/" + file.getName());
+                    output = new FileOutputStream(localDirectory + File.separator + file.getName());
 
                     //get the file from the remote system
                     ftp.retrieveFile(file.getName(), output);
