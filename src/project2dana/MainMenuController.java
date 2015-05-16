@@ -52,9 +52,11 @@ public class MainMenuController implements Initializable {
             File f2 = new File("saveId.txt");
             File f = new File("SaveUserInfo.txt");
             File f3 = new File("saveStatus.txt");
+            File f4 = new File("OrderList.ser");
             f3.delete();
             f.delete();
             f2.delete();
+            f3.delete();
             System.exit(0);
         }
     }

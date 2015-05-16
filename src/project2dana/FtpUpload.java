@@ -9,59 +9,50 @@ package project2dana;
  *
  * @author dardaiin
  */
-
-import java.io.File;
 import java.io.FileInputStream;
-import java.io.InputStream;
-import java.io.ObjectInputStream;
-import java.nio.file.FileSystem;
-import java.nio.file.FileSystems;
-import java.util.ArrayList;
 import java.util.Properties;
- 
+
 import org.apache.commons.net.ftp.FTPClient;
 import org.apache.commons.net.ftp.FTPReply;
- 
+
 public class FtpUpload {
- 
+
     static Properties props;
-    
+
     String serverAddress = "ftp.deadesign.se";
     String userId = "deadesign.se";
     String password = "dana1234";
     String remoteDirectory = "/dana";
     String localDirectory = System.getProperty("user.dir");
- 
-    public boolean startFTP(String fileToFTP){
- 
+
+    public boolean startFTP(String fileToFTP) {
+
         props = new Properties();
- 
+
         try {
- 
+
             props.getProperty(serverAddress);
             props.getProperty(userId);
             props.getProperty(password);
             props.getProperty(remoteDirectory);
             props.getProperty(localDirectory);
- 
+
             //new ftp client
             FTPClient ftp = new FTPClient();
             //try to connect
             ftp.connect(serverAddress);
             //login to server
-            if(!ftp.login(userId, password))
-            {
+            if (!ftp.login(userId, password)) {
                 ftp.logout();
                 return false;
             }
             int reply = ftp.getReplyCode();
             //FTPReply stores a set of constants for FTP reply codes. 
-            if (!FTPReply.isPositiveCompletion(reply))
-            {
+            if (!FTPReply.isPositiveCompletion(reply)) {
                 ftp.disconnect();
                 return false;
             }
- 
+
             //enter passive mode
             ftp.enterLocalPassiveMode();
             //get system name
@@ -69,28 +60,24 @@ public class FtpUpload {
             //change current directory
             ftp.changeWorkingDirectory(remoteDirectory);
             System.out.println("Current directory is " + ftp.printWorkingDirectory());
- 
-           
+
             //get input stream
             FileInputStream input;
-            input = new FileInputStream(localDirectory + fileToFTP);
-            System.out.println(localDirectory + fileToFTP);
-            
+            input = new FileInputStream(localDirectory + "/" + fileToFTP);
+            System.out.println(localDirectory + "/" + fileToFTP);
+
             //store the file in the remote server
             ftp.storeFile(fileToFTP, input);
             //close the stream
             input.close();
-            
-            
+
             ftp.logout();
             ftp.disconnect();
-        }
-        catch (Exception ex)
-        {
+        } catch (Exception ex) {
             System.out.println(ex.getMessage());
             return false;
         }
         return true;
     }
- 
+
 }

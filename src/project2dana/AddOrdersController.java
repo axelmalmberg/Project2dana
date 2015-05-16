@@ -63,6 +63,7 @@ public class AddOrdersController implements Initializable {
         int tempNr = 0;
 
         try {
+            File f = new File("OrderList.ser");
             order = new Order();
 
             read = new BufferedReader(new FileReader("saveId.txt"));
@@ -85,6 +86,11 @@ public class AddOrdersController implements Initializable {
             list.add(order);
             saveList();
             addToFTP();
+
+            if(f.exists()){
+                f.delete();
+            }
+            
 
             orderAdded.setText("Order Added");
 
