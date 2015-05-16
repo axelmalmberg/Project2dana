@@ -7,6 +7,7 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.Observer;
 import java.util.ResourceBundle;
 import javafx.beans.property.StringProperty;
 import javafx.collections.FXCollections;
@@ -58,6 +59,12 @@ public class ViewOrdersController implements Initializable {
     private TableColumn<OrderProperty, Integer> idColumn;
 
     @FXML
+    private void handleRefreshButtonAction(ActionEvent event){
+        ObList.clear();
+        showTable();
+    }
+    
+    @FXML
     private void handleaddReturnButtonAction(ActionEvent event) {
         try {
 
@@ -92,6 +99,7 @@ public class ViewOrdersController implements Initializable {
 
     @FXML
     private void handleDeleteButtonAction(ActionEvent event) {
+        
         ObservableList<OrderProperty> orderSelected, allOrders;
         allOrders = orderTable.getItems();
         orderSelected = orderTable.getSelectionModel().getSelectedItems();

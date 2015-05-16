@@ -50,7 +50,7 @@
          <font>
             <Font name="Times New Roman" size="18.0" />
          </font></Button>
-      <Button fx:id="refreshButton" layoutX="39.0" layoutY="458.0" mnemonicParsing="false" text="Refresh">
+      <Button fx:id="refreshButton" layoutX="39.0" layoutY="458.0" mnemonicParsing="false" onAction="#handleRefreshButtonAction" text="Refresh">
          <font>
             <Font name="Times New Roman" size="18.0" />
          </font></Button>
