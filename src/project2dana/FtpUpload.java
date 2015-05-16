@@ -10,13 +10,7 @@ package project2dana;
  * @author dardaiin
  */
 
-import java.io.File;
 import java.io.FileInputStream;
-import java.io.InputStream;
-import java.io.ObjectInputStream;
-import java.nio.file.FileSystem;
-import java.nio.file.FileSystems;
-import java.util.ArrayList;
 import java.util.Properties;
  
 import org.apache.commons.net.ftp.FTPClient;
@@ -63,7 +57,7 @@ public class FtpUpload {
             }
  
             //enter passive mode
-            ftp.enterLocalPassiveMode();
+            ftp.enterLocalActiveMode();
             //get system name
             System.out.println("Remote system is " + ftp.getSystemType());
             //change current directory
@@ -73,8 +67,8 @@ public class FtpUpload {
            
             //get input stream
             FileInputStream input;
-            input = new FileInputStream(localDirectory + fileToFTP);
-            System.out.println(localDirectory + fileToFTP);
+            input = new FileInputStream(localDirectory + "/" + fileToFTP);
+            System.out.println(localDirectory + "/" + fileToFTP);
             
             //store the file in the remote server
             ftp.storeFile(fileToFTP, input);
