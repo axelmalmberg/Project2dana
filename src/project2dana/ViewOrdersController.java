@@ -125,11 +125,7 @@ public class ViewOrdersController implements Initializable {
     }
 
     public void showTable() {
-        try {
-            downloadFtp();
-        } catch (Exception ex) {
-            System.out.println(ex.getMessage());
-        }
+
         try {
             convert();
 
@@ -151,7 +147,11 @@ public class ViewOrdersController implements Initializable {
     public void convert() {
 
         downloadFtp();
-
+        try {
+            Thread.sleep(1000);                 //1000 milliseconds is one second.
+        } catch (InterruptedException ex) {
+            Thread.currentThread().interrupt();
+        }
         File f = new File("OrderList.ser");
 
         if (!f.exists()) {
