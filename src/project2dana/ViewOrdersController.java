@@ -34,7 +34,7 @@ public class ViewOrdersController implements Initializable {
     ObservableList<OrderProperty> ObList = FXCollections.observableArrayList();
     ArrayList<Order> list = new ArrayList<>();
     StringProperty drink, drinksize, appetizer, maincourse, dessert;
-    
+
     FtpDownload ftp = null;
 
     @FXML
@@ -128,11 +128,11 @@ public class ViewOrdersController implements Initializable {
     }
 
     public void convert() {
-        
+
         downloadFtp();
 
         File f = new File("OrderList.ser");
-              
+
         if (!f.exists()) {
             return;
         }
@@ -156,14 +156,14 @@ public class ViewOrdersController implements Initializable {
         }
 
     }
-    
-    public void downloadFtp(){
+
+    public void downloadFtp() {
         File f = new File("OrderList.ser");
-        if(f.exists()){
+        if (f.exists()) {
             f.delete();
         }
-                ftp = new FtpDownload();
-                ftp.startFTP();
+        ftp = new FtpDownload();
+        ftp.startFTP();
 
     }
 

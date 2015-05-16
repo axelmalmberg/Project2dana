@@ -25,46 +25,47 @@ public class MainMenuController implements Initializable {
 
     @FXML
     private Button addOrdersButton, viewOrdersButton, searchSalesButton, addUserButton, exitButton;
-    
+
     @FXML
     private void handleButtonAction(ActionEvent event) {
-        Button scr = (Button)event.getSource();
+        Button scr = (Button) event.getSource();
         String tmpFxmlStr = null;
         if (scr == addOrdersButton || scr == viewOrdersButton || scr == searchSalesButton || scr == addUserButton) {
-             if (scr == addOrdersButton) {
-                 tmpFxmlStr = "AddOrders.fxml";
-             } else if (scr == viewOrdersButton) {
-                 tmpFxmlStr = "ViewOrders.fxml";
-             } else if (scr == searchSalesButton) {
-                 tmpFxmlStr = "ViewSales.fxml";
-             } else if (scr == addUserButton) {
-                 tmpFxmlStr = "AddUser.fxml";
-             }
-             try {
-            Node node = (Node) event.getSource();
-            Stage stage = (Stage) node.getScene().getWindow();
+            if (scr == addOrdersButton) {
+                tmpFxmlStr = "AddOrders.fxml";
+            } else if (scr == viewOrdersButton) {
+                tmpFxmlStr = "ViewOrders.fxml";
+            } else if (scr == searchSalesButton) {
+                tmpFxmlStr = "ViewSales.fxml";
+            } else if (scr == addUserButton) {
+                tmpFxmlStr = "AddUser.fxml";
+            }
+            try {
+                Node node = (Node) event.getSource();
+                Stage stage = (Stage) node.getScene().getWindow();
 
-            FXMLLoader loader = new FXMLLoader(getClass().getResource(tmpFxmlStr));
-            Parent root = loader.load();
+                FXMLLoader loader = new FXMLLoader(getClass().getResource(tmpFxmlStr));
+                Parent root = loader.load();
 
-            Scene scene = new Scene(root);
-            stage.setScene(scene);
-            stage.show();
-        } catch (Exception ex) {
-            System.out.println(ex.getMessage());
-        }
-             
+                Scene scene = new Scene(root);
+                stage.setScene(scene);
+                stage.show();
+            } catch (Exception ex) {
+                System.out.println(ex.getMessage());
+            }
+
         } else {
             File f2 = new File("saveId.txt");
             File f = new File("SaveUserInfo.txt");
             File f3 = new File("saveStatus.txt");
+            File f4 = new File("OrderList.ser");
             f3.delete();
             f.delete();
             f2.delete();
+            f3.delete();
             System.exit(0);
         }
     }
-
 
     /**
      * Initializes the controller class.
@@ -83,14 +84,11 @@ public class MainMenuController implements Initializable {
                 searchSalesButton.setVisible(false);
             }
             read.close();
-            
-            
+
         } catch (Exception ex) {
             System.out.println(ex.getMessage());
         }
-        
-        
-    }
 
+    }
 
 }

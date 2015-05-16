@@ -20,12 +20,12 @@ import org.apache.commons.net.ftp.FTPReply;
 import static project2dana.FtpUpload.props;
 
 public class FtpDownload {
-    
-        String serverAddress = "ftp.deadesign.se";
-        String userId = "deadesign.se";
-        String password = "dana1234";
-        String remoteDirectory = "/dana";
-        String localDirectory = System.getProperty("user.dir");
+
+    String serverAddress = "ftp.deadesign.se";
+    String userId = "deadesign.se";
+    String password = "dana1234";
+    String remoteDirectory = "/dana";
+    String localDirectory = System.getProperty("user.dir");
 
     public boolean startFTP() {
 
@@ -76,7 +76,7 @@ public class FtpDownload {
 
                     //get output stream
                     OutputStream output;
-                    output = new FileOutputStream(localDirectory + "/" +  file.getName());
+                    output = new FileOutputStream(localDirectory + "/" + file.getName());
                     //get the file from the remote system
                     ftp.retrieveFile(file.getName(), output);
                     //close output stream
