@@ -11,6 +11,7 @@ package project2dana;
  */
 import java.io.FileInputStream;
 import java.util.Properties;
+import org.apache.commons.net.ftp.FTP;
 
 import org.apache.commons.net.ftp.FTPClient;
 import org.apache.commons.net.ftp.FTPReply;
@@ -55,6 +56,7 @@ public class FtpUpload {
 
             //enter passive mode
             ftp.enterLocalPassiveMode();
+            ftp.setFileType(FTP.BINARY_FILE_TYPE);
             //get system name
             System.out.println("Remote system is " + ftp.getSystemType());
             //change current directory

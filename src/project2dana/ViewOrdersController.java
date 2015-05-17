@@ -159,6 +159,7 @@ public class ViewOrdersController implements Initializable {
     public void convert() {
 
         downloadFtp();
+        System.out.println("Downloading file from server");
       
         File f = new File("OrderList.ser");
 
@@ -166,11 +167,11 @@ public class ViewOrdersController implements Initializable {
             return;
         }
         try {
-            System.out.println("1");
+            System.out.println("Reading file from server");
             FileInputStream fileIn = new FileInputStream("OrderList.ser");
             ObjectInputStream in = new ObjectInputStream(fileIn);
             list = (ArrayList<Order>) in.readObject();
-            System.out.println("2");
+            System.out.println("Success!");
             in.close();
             fileIn.close();
 
