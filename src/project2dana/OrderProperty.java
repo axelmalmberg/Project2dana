@@ -23,19 +23,19 @@ public class OrderProperty {
     
     private StringProperty timeStamp;
     private StringProperty drink;
-    private StringProperty drinkSize;
+//    private StringProperty drinkSize;
     private StringProperty appetizer;
     private StringProperty mainCourse;
     private StringProperty dessert;
     private StringProperty extra;
     private IntegerProperty tableNumber;
     private IntegerProperty id;
-    private DoubleProperty price;
+//    private DoubleProperty price;
     
-    public OrderProperty(String timeStamp, String drink, String drinkSize, String appetizer, String mainCourse, String dessert,
-            String extra, int tableNumber, int id, double price )  {
+    public OrderProperty(String timeStamp, String drink, String appetizer, String mainCourse, String dessert,
+            String extra, int tableNumber, int id)  {
         this.drink = new SimpleStringProperty(drink);
-        this.drinkSize = new SimpleStringProperty(drinkSize);
+//        this.drinkSize = new SimpleStringProperty(drinkSize);
         this.appetizer = new SimpleStringProperty (appetizer);
         this.mainCourse = new SimpleStringProperty (mainCourse);
         this.dessert = new SimpleStringProperty(dessert);
@@ -43,16 +43,16 @@ public class OrderProperty {
         this.tableNumber = new SimpleIntegerProperty(tableNumber);
         this.timeStamp = new SimpleStringProperty(timeStamp);
         this.id = new SimpleIntegerProperty(id);
-        this.price = new SimpleDoubleProperty(price);
+//        this.price = new SimpleDoubleProperty(price);
         
     }
     
     public void setDrink(String drink) {
         this.drink = new SimpleStringProperty(drink);
     }
-    public void setDrinkSize(String drinkSize) {
-        this.drinkSize = new SimpleStringProperty(drinkSize);
-    }
+//    public void setDrinkSize(String drinkSize) {
+//        this.drinkSize = new SimpleStringProperty(drinkSize);
+//    }
     public void setAppetizer(String appetizer) {
         this.appetizer = new SimpleStringProperty (appetizer);
     }
@@ -70,9 +70,6 @@ public class OrderProperty {
     }
     public StringProperty getDrink() {
         return drink;
-    }
-    public StringProperty getDrinkSize() {
-        return drinkSize;
     }
     public StringProperty getAppetizer() {
         return appetizer;
@@ -94,8 +91,5 @@ public class OrderProperty {
     }
     public IntegerProperty getId() {
         return id;
-    }
-    public DoubleProperty getPrice() {
-        return price;
     }
 }

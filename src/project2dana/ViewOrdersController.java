@@ -28,8 +28,8 @@ import javafx.scene.control.TableView;
 public class ViewOrdersController implements Initializable {
 
     DbConnector db = new DbConnector();
-    OrderProperty op = null;
-    ObservableList<OrderProperty> ObList = FXCollections.observableArrayList();
+    PendingOrderProperty op = null;
+    ObservableList<PendingOrderProperty> ObList = FXCollections.observableArrayList();
     ArrayList<Order> list = new ArrayList<>();
     StringProperty drink, drinksize, appetizer, maincourse, dessert;
 
@@ -37,28 +37,28 @@ public class ViewOrdersController implements Initializable {
     FtpUpload ftpUp = null;
 
     @FXML
-    private TableView<OrderProperty> orderTable;
+    private TableView<PendingOrderProperty> orderTable;
 
     @FXML
-    private TableColumn<OrderProperty, String> drinkColumn;
+    private TableColumn<PendingOrderProperty, String> drinkColumn;
     @FXML
-    private TableColumn<OrderProperty, String> drinkSizeColumn;
+    private TableColumn<PendingOrderProperty, String> drinkSizeColumn;
     @FXML
-    private TableColumn<OrderProperty, String> appetizerColumn;
+    private TableColumn<PendingOrderProperty, String> appetizerColumn;
     @FXML
-    private TableColumn<OrderProperty, String> mainCourseColumn;
+    private TableColumn<PendingOrderProperty, String> mainCourseColumn;
     @FXML
-    private TableColumn<OrderProperty, String> dessertColumn;
+    private TableColumn<PendingOrderProperty, String> dessertColumn;
     @FXML
-    private TableColumn<OrderProperty, String> extraColumn;
+    private TableColumn<PendingOrderProperty, String> extraColumn;
     @FXML
-    private TableColumn<OrderProperty, String> dateColumn;
+    private TableColumn<PendingOrderProperty, String> dateColumn;
 
     @FXML
-    private TableColumn<OrderProperty, Integer> tableColumn;
+    private TableColumn<PendingOrderProperty, Integer> tableColumn;
 
     @FXML
-    private TableColumn<OrderProperty, Integer> idColumn;
+    private TableColumn<PendingOrderProperty, Integer> idColumn;
     
     @FXML
     private Button finishedOrderButton;
@@ -89,7 +89,7 @@ public class ViewOrdersController implements Initializable {
         Button bt = (Button)event.getSource();
         
         try {
-            ObservableList<OrderProperty> orderSelected, allOrders;
+            ObservableList<PendingOrderProperty> orderSelected, allOrders;
             allOrders = orderTable.getItems();
             orderSelected = orderTable.getSelectionModel().getSelectedItems();
         if(bt == finishedOrderButton){    
@@ -161,8 +161,8 @@ public class ViewOrdersController implements Initializable {
 
             for (int i = 0; i < list.size(); i++) {
                 Order order = list.get(i);
-                op = new OrderProperty(order.getTimeStamp(), order.getDrink(), order.getDrinkSize(), order.getAppetizer(), order.getMainCourse(),
-                        order.getDessert(), order.getExtra(), order.getTableNumber(), order.getId(), order.getPrice());
+                op = new PendingOrderProperty(order.getTimeStamp(), order.getDrink(), order.getDrinkSize(), order.getAppetizer(), order.getMainCourse(),
+                        order.getDessert(), order.getExtra(), order.getTableNumber(), order.getId());
                 ObList.add(op);
             }
         } catch (Exception ex) {
