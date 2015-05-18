@@ -31,7 +31,7 @@
           <TableColumn fx:id="drinkSizeColumn" prefWidth="102.0" text="DrinkSize" />
             <TableColumn fx:id="appetizerColumn" prefWidth="76.0" text="Appetizer" />
             <TableColumn fx:id="mainCourseColumn" prefWidth="104.0" text="Main Course" />
-            <TableColumn fx:id="desserColumn" prefWidth="86.0" text="Dessert" />
+            <TableColumn fx:id="dessertColumn" prefWidth="86.0" text="Dessert" />
             <TableColumn fx:id="extraColumn" prefWidth="95.0" text="Extra" />
             <TableColumn fx:id="tableColumn" prefWidth="62.0" text="Table" />
             <TableColumn fx:id="idColumn" prefWidth="41.0" text="Id" />

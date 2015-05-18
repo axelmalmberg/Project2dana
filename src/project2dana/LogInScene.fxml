@@ -25,27 +25,27 @@
             </Glow>
          </effect>
       </ImageView>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="195.0" layoutX="389.0" layoutY="254.0" opacity="0.8" stroke="WHITE" strokeType="INSIDE" strokeWidth="5.0" width="226.0" />
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="54.0" layoutX="390.0" layoutY="181.0" opacity="0.8" stroke="WHITE" strokeType="INSIDE" strokeWidth="5.0" width="226.0" />
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="54.0" layoutX="389.0" layoutY="470.0" opacity="0.8" stroke="WHITE" strokeType="INSIDE" strokeWidth="5.0" width="226.0" />
-      <Text layoutX="407.0" layoutY="304.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Username">
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="195.0" layoutX="374.0" layoutY="272.0" opacity="0.8" stroke="WHITE" strokeType="INSIDE" strokeWidth="5.0" width="226.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="54.0" layoutX="375.0" layoutY="201.0" opacity="0.8" stroke="WHITE" strokeType="INSIDE" strokeWidth="5.0" width="226.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="54.0" layoutX="374.0" layoutY="492.0" opacity="0.8" stroke="WHITE" strokeType="INSIDE" strokeWidth="5.0" width="226.0" />
+      <Text layoutX="394.0" layoutY="309.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Username">
          <font>
             <Font size="18.0" />
          </font>
       </Text>
-      <Text layoutX="409.0" layoutY="377.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password">
+      <Text layoutX="393.0" layoutY="389.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password">
          <font>
             <Font size="18.0" />
          </font>
       </Text>
-      <TextField fx:id="userNameField" layoutX="408.0" layoutY="309.0" />
-      <PasswordField fx:id="passwordField" layoutX="408.0" layoutY="382.0" prefHeight="31.0" prefWidth="187.0" />
-      <Button fx:id="signInButton" layoutX="447.0" layoutY="481.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="31.0" prefWidth="113.0" text="Sign in">
+      <TextField fx:id="userNameField" layoutX="394.0" layoutY="315.0" />
+      <PasswordField fx:id="passwordField" layoutX="394.0" layoutY="393.0" prefHeight="31.0" prefWidth="187.0" />
+      <Button fx:id="signInButton" layoutX="430.0" layoutY="503.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="31.0" prefWidth="113.0" text="Sign in">
          <font>
             <Font name="Times New Roman" size="18.0" />
          </font>
       </Button>
-      <Label layoutX="467.0" layoutY="194.0" text="DANA">
+      <Label layoutX="453.0" layoutY="214.0" text="DANA">
          <font>
             <Font name="Times New Roman Bold" size="24.0" />
          </font>

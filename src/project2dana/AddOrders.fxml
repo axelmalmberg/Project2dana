@@ -34,23 +34,23 @@
       <TextField fx:id="addExtra" layoutX="364.0" layoutY="378.0" prefHeight="26.0" prefWidth="275.0" />
       <TextField fx:id="addTableNumber" layoutX="364.0" layoutY="436.0" prefHeight="26.0" prefWidth="275.0" />
       <TextField fx:id="addPrice" layoutX="364.0" layoutY="494.0" prefHeight="26.0" prefWidth="275.0" />
-      <Label layoutX="381.0" layoutY="124.0" prefHeight="27.0" prefWidth="49.0" text="Drink">
+      <Label layoutX="364.0" layoutY="124.0" prefHeight="27.0" prefWidth="49.0" text="Drink">
          <font>
             <Font size="18.0" />
          </font></Label>
-      <Label layoutX="377.0" layoutY="182.0" text="Appetizer">
+      <Label layoutX="367.0" layoutY="182.0" text="Appetizer">
          <font>
             <Font size="18.0" />
          </font></Label>
-      <Label layoutX="377.0" layoutY="240.0" prefHeight="27.0" prefWidth="98.0" text="Main course">
+      <Label layoutX="364.0" layoutY="240.0" prefHeight="27.0" prefWidth="98.0" text="Main course">
          <font>
             <Font size="18.0" />
          </font></Label>
-      <Label layoutX="374.0" layoutY="298.0" prefHeight="27.0" prefWidth="62.0" text="Dessert">
+      <Label layoutX="365.0" layoutY="298.0" prefHeight="27.0" prefWidth="62.0" text="Dessert">
          <font>
             <Font size="18.0" />
          </font></Label>
-      <Label layoutX="376.0" layoutY="351.0" text="Extra">
+      <Label layoutX="369.0" layoutY="356.0" text="Extra">
          <font>
             <Font size="18.0" />
          </font></Label>
@@ -66,11 +66,11 @@
          <font>
             <Font name="Times New Roman" size="18.0" />
          </font></Button>
-      <Label layoutX="374.0" layoutY="409.0" text="Table">
+      <Label layoutX="367.0" layoutY="409.0" text="Table">
          <font>
             <Font size="18.0" />
          </font></Label>
-      <Label layoutX="376.0" layoutY="467.0" text="Price">
+      <Label layoutX="369.0" layoutY="467.0" text="Price">
          <font>
             <Font size="18.0" />
          </font>
