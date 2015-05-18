@@ -66,6 +66,7 @@ public class ViewOrdersController implements Initializable {
 
     @FXML
     private void handleRefreshButtonAction(ActionEvent event){
+        downloadFtp();
         ObList.clear();
         showTable();
     }
