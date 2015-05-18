@@ -72,20 +72,29 @@ public class AddUserController implements Initializable {
                 admin = 1;
             } else {
                 admin = 2;
+
             }
+
             userName = userNameField.getText();
-            System.out.println(userName);
             password = passwordField.getText();
             eMail = emailField.getText();
-            System.out.println(eMail);
-            phone = (PhoneField.getText());
-            System.out.println(0);
+            phone = PhoneField.getText();
             address = addressField.getText();
             city = cityField.getText();
             sequrityQuestion = sequrityQuestionField.getText();
             answer = answerField.getText();
             firstName = firstNameField.getText();
             lastName = lastNameField.getText();
+
+            if (userNameField.getText().trim().length() < 1 || passwordField.getText().trim().length() < 1 || emailField.getText().trim().length() < 1
+                    || PhoneField.getText().trim().length() < 1 || addressField.getText().trim().length() < 1 || cityField.getText().trim().length() < 1
+                    || sequrityQuestionField.getText().trim().length() < 1 || answerField.getText().trim().trim().length() < 1
+                    || firstNameField.getText().trim().length() < 1 || lastNameField.getText().trim().length() < 1) {
+
+                System.out.println("Check fields");
+                userAdded.setText("Check fields");
+                return;
+            }
 
             db.addUser(userName, password, firstName, lastName, eMail, phone, address, city, sequrityQuestion, answer, admin);
 
@@ -100,6 +109,7 @@ public class AddUserController implements Initializable {
             firstNameField.clear();
             lastNameField.clear();
 
+            System.out.println("User Added");
             userAdded.setText("User Added");
 
         } catch (Exception ex) {
