@@ -12,7 +12,7 @@
 
 <AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project2dana.AddOrdersController">
    <children>
-      <ImageView fitHeight="525.0" fitWidth="750.0" pickOnBounds="true">
+      <ImageView fitHeight="716.0" fitWidth="1003.0" pickOnBounds="true">
          <image>
             <Image url="@background.jpg" />
          </image>
@@ -24,58 +24,58 @@
             </Glow>
          </effect>
       </ImageView>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="421.0" layoutX="227.0" layoutY="14.0" opacity="0.8" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="297.0" />
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="55.0" layoutX="227.0" layoutY="446.0" opacity="0.8" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="297.0" />
-      <TextField fx:id="addDrink" layoutX="238.0" layoutY="52.0" />
-      <TextField fx:id="addDrinkSize" layoutX="413.0" layoutY="52.0" prefHeight="26.0" prefWidth="98.0" />
-      <TextField fx:id="addAppetizer" layoutX="238.0" layoutY="108.0" prefHeight="26.0" prefWidth="275.0" />
-      <TextField fx:id="addMainCourse" layoutX="238.0" layoutY="164.0" prefHeight="26.0" prefWidth="275.0" />
-      <TextField fx:id="addDessert" layoutX="238.0" layoutY="220.0" prefHeight="26.0" prefWidth="275.0" />
-      <TextField fx:id="addExtra" layoutX="238.0" layoutY="277.0" prefHeight="26.0" prefWidth="275.0" />
-      <TextField fx:id="addTableNumber" layoutX="238.0" layoutY="333.0" prefHeight="26.0" prefWidth="275.0" />
-      <TextField fx:id="addPrice" layoutX="238.0" layoutY="396.0" prefHeight="26.0" prefWidth="275.0" />
-      <Label layoutX="238.0" layoutY="23.0" text="Drink">
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="428.0" layoutX="353.0" layoutY="118.0" opacity="0.8" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="297.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="55.0" layoutX="353.0" layoutY="554.0" opacity="0.8" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="297.0" />
+      <TextField fx:id="addDrink" layoutX="363.0" layoutY="151.0" />
+      <TextField fx:id="addDrinkSize" layoutX="560.0" layoutY="151.0" prefHeight="31.0" prefWidth="77.0" />
+      <TextField fx:id="addAppetizer" layoutX="364.0" layoutY="209.0" prefHeight="26.0" prefWidth="275.0" />
+      <TextField fx:id="addMainCourse" layoutX="364.0" layoutY="267.0" prefHeight="26.0" prefWidth="275.0" />
+      <TextField fx:id="addDessert" layoutX="364.0" layoutY="325.0" prefHeight="26.0" prefWidth="275.0" />
+      <TextField fx:id="addExtra" layoutX="364.0" layoutY="378.0" prefHeight="26.0" prefWidth="275.0" />
+      <TextField fx:id="addTableNumber" layoutX="364.0" layoutY="436.0" prefHeight="26.0" prefWidth="275.0" />
+      <TextField fx:id="addPrice" layoutX="364.0" layoutY="494.0" prefHeight="26.0" prefWidth="275.0" />
+      <Label layoutX="381.0" layoutY="124.0" prefHeight="27.0" prefWidth="49.0" text="Drink">
          <font>
             <Font size="18.0" />
          </font></Label>
-      <Label layoutX="238.0" layoutY="83.0" text="Appetizer">
+      <Label layoutX="377.0" layoutY="182.0" text="Appetizer">
          <font>
             <Font size="18.0" />
          </font></Label>
-      <Label layoutX="238.0" layoutY="139.0" prefHeight="25.0" prefWidth="105.0" text="Main course">
+      <Label layoutX="377.0" layoutY="240.0" prefHeight="27.0" prefWidth="98.0" text="Main course">
          <font>
             <Font size="18.0" />
          </font></Label>
-      <Label layoutX="238.0" layoutY="195.0" text="Dessert">
+      <Label layoutX="374.0" layoutY="298.0" prefHeight="27.0" prefWidth="62.0" text="Dessert">
          <font>
             <Font size="18.0" />
          </font></Label>
-      <Label layoutX="238.0" layoutY="251.0" text="Extra">
+      <Label layoutX="376.0" layoutY="351.0" text="Extra">
          <font>
             <Font size="18.0" />
          </font></Label>
-      <Label layoutX="413.0" layoutY="23.0" text="Drink size">
+      <Label layoutX="563.0" layoutY="124.0" text="Drink size">
          <font>
             <Font size="18.0" />
          </font></Label>
-      <Button fx:id="submitButton" layoutX="238.0" layoutY="457.0" mnemonicParsing="false" onAction="#handleSubmitButtonAction" text="Submit">
+      <Button fx:id="submitButton" layoutX="367.0" layoutY="566.0" mnemonicParsing="false" onAction="#handleSubmitButtonAction" text="Submit">
          <font>
             <Font name="Times New Roman" size="18.0" />
          </font></Button>
-      <Button fx:id="returnButton" layoutX="438.0" layoutY="457.0" mnemonicParsing="false" onAction="#handleaddReturnButtonAction" text="Return">
+      <Button fx:id="returnButton" layoutX="566.0" layoutY="566.0" mnemonicParsing="false" onAction="#handleaddReturnButtonAction" text="Return">
          <font>
             <Font name="Times New Roman" size="18.0" />
          </font></Button>
-      <Label layoutX="238.0" layoutY="308.0" text="Table">
+      <Label layoutX="374.0" layoutY="409.0" text="Table">
          <font>
             <Font size="18.0" />
          </font></Label>
-      <Label layoutX="238.0" layoutY="371.0" text="Price">
+      <Label layoutX="376.0" layoutY="467.0" text="Price">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Label fx:id="orderAdded" layoutX="332.0" layoutY="463.0" prefHeight="21.0" prefWidth="90.0" textAlignment="CENTER">
+      <Label fx:id="orderAdded" layoutX="469.0" layoutY="570.0" prefHeight="21.0" prefWidth="90.0" textAlignment="CENTER">
          <cursor>
             <Cursor fx:constant="DEFAULT" />
          </cursor>
