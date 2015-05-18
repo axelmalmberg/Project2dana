@@ -18,7 +18,7 @@ import javafx.beans.property.StringProperty;
  *
  * @author bumblebee
  */
-public class OrderProperty {
+public abstract class OrderProperty {
 //    StringProperty drink2;
     
     private StringProperty timeStamp;
