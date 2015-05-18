@@ -34,6 +34,7 @@ public class ViewOrdersController implements Initializable {
     StringProperty drink, drinksize, appetizer, maincourse, dessert;
 
     FtpDownload ftp = null;
+    FtpUpload ftpUp = null;
 
     @FXML
     private TableView<OrderProperty> orderTable;
@@ -101,6 +102,7 @@ public class ViewOrdersController implements Initializable {
             out.writeObject(list);
             out.close();
             fileOut.close();
+            addToFTP();
         } catch (Exception ex) {
             System.out.println(ex.getMessage());
         }
@@ -196,6 +198,11 @@ public class ViewOrdersController implements Initializable {
         ftp = new FtpDownload();
         ftp.startFTP();
 
+    }
+    
+    public void addToFTP() {
+        ftpUp = new FtpUpload();
+        ftpUp.startFTP("OrderList.ser");
     }
 
 }
