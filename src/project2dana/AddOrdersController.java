@@ -26,6 +26,7 @@ import javafx.scene.control.TextField;
  *
  */
 public class AddOrdersController implements Initializable {
+     FtpDownload ftpDown = null;
 
     ArrayList<Order> list = new ArrayList<>();
     Order order = null;
@@ -99,6 +100,7 @@ public class AddOrdersController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        downloadFtp();
         File f = new File("OrderList.ser");
 
         if (!f.exists()) {
@@ -130,6 +132,16 @@ public class AddOrdersController implements Initializable {
     public void addToFTP() {
         ftp = new FtpUpload();
         ftp.startFTP("OrderList.ser");
+    }
+    public void downloadFtp() {
+
+        File f = new File("OrderList.ser");
+        if (f.exists()) {
+            f.delete();
+        }
+        ftpDown = new FtpDownload();
+        ftpDown.startFTP();
+
     }
 
 }
