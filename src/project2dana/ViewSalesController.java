@@ -2,6 +2,8 @@ package project2dana;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -22,15 +24,45 @@ import javafx.stage.Stage;
  */
 public class ViewSalesController implements Initializable {
 
+    FinishedOrderProperty op = null;
+    ObservableList<FinishedOrderProperty> ObList = FXCollections.observableArrayList();
+    
     @FXML
     private Button returnButton, searchButton;
 
     @FXML
-    private TableView orderTable;
+    private TableView<FinishedOrderProperty> orderTable;
 
     @FXML
-    private TableColumn drinkColumn, drinkSizeColumn, appetizerColumn, mainCourseColumn, dessertColumn, extraColumn, tableColumn, idColumn, dateColumn;
-
+    private TableColumn<FinishedOrderProperty, String> drinkColumn;
+    
+    @FXML
+    private TableColumn<FinishedOrderProperty, String> drinkSizeColumn;
+    
+    @FXML
+    private TableColumn<FinishedOrderProperty, String> appetizerColumn;
+    
+    @FXML
+    private TableColumn<FinishedOrderProperty, String> mainCourseColumn;
+    
+    @FXML
+    private TableColumn<FinishedOrderProperty, String> dessertColumn;
+    
+    @FXML
+    private TableColumn<FinishedOrderProperty, Integer> tableColumn;
+    
+    @FXML
+    private TableColumn<FinishedOrderProperty, Integer> idColumn;
+    
+    @FXML
+    private TableColumn<FinishedOrderProperty, String> dateColumn;
+    
+    @FXML
+    private TableColumn<FinishedOrderProperty, Double> priceColumn;
+    
+    
+    @FXML
+    private TableColumn<FinishedOrderProperty, String> extraColumn;
     @FXML
     private void handleaddReturnButtonAction(ActionEvent event) {
         try {
@@ -48,6 +80,28 @@ public class ViewSalesController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
+    }
+    
+    
+    public void showTable() {
+        try {
+            
+            drinkColumn.setCellValueFactory(cellData -> cellData.getValue().getDrink());
+            drinkSizeColumn.setCellValueFactory(cellData -> cellData.getValue().getDrinkSize());
+            appetizerColumn.setCellValueFactory(cellData -> cellData.getValue().getAppetizer());
+            mainCourseColumn.setCellValueFactory(cellData -> cellData.getValue().getMainCourse());
+            dessertColumn.setCellValueFactory(cellData -> cellData.getValue().getDessert());
+            extraColumn.setCellValueFactory(cellData -> cellData.getValue().getExtra());
+            tableColumn.setCellValueFactory(cellData -> cellData.getValue().getTableNumber().asObject());
+            idColumn.setCellValueFactory(cellData -> cellData.getValue().getId().asObject());
+            dateColumn.setCellValueFactory(celldData -> celldData.getValue().getDate());
+            priceColumn.setCellValueFactory(cellData -> cellData.getValue().getPrice().asObject());
+            orderTable.setItems(ObList);
+            
+            
+        } catch (Exception ex) {
+            System.out.println(ex.getMessage());
+        }
     }
 
 }

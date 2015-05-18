@@ -25,7 +25,7 @@
          </effect>
       </ImageView>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="89.0" layoutX="75.0" layoutY="122.0" opacity="0.8" stroke="BLACK" strokeType="INSIDE" width="600.0" />
-      <TableView fx:id="orderTable" layoutX="75.0" layoutY="263.0" prefHeight="200.0" prefWidth="600.0">
+      <TableView fx:id="orderTable" layoutX="7.0" layoutY="257.0" prefHeight="206.0" prefWidth="735.0">
         <columns>
           <TableColumn fx:id="drinkColumn" prefWidth="75.0" text="Drink" />
           <TableColumn fx:id="drinkSizeColumn" prefWidth="59.0" text="DrinkSize" />
@@ -36,6 +36,7 @@
             <TableColumn fx:id="tableColumn" prefWidth="36.0" text="Table" />
             <TableColumn fx:id="idColumn" prefWidth="41.0" text="Id" />
             <TableColumn fx:id="dateColumn" prefWidth="75.0" text="Date" />
+            <TableColumn fx:id="priceColumn" prefWidth="75.0" text="Price" />
         </columns>
       </TableView>
       <TextField fx:id="itemField" layoutX="89.0" layoutY="157.0" prefHeight="25.0" prefWidth="70.0" />

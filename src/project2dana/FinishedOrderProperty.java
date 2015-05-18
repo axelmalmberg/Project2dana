@@ -16,7 +16,8 @@ public class FinishedOrderProperty extends PendingOrderProperty {
 
     private DoubleProperty price;
     
-    public FinishedOrderProperty(String timeStamp, String drink, String drinkSize, String appetizer, String mainCourse, String dessert, String extra, int tableNumber, int id, double price) {
+    public FinishedOrderProperty(String timeStamp, String drink, String drinkSize, String appetizer, String mainCourse,
+            String dessert, String extra, int tableNumber, int id, double price) {
         super(timeStamp, drink, drinkSize, appetizer, mainCourse, dessert, extra, tableNumber, id);
         
         this.price = new SimpleDoubleProperty(price);
