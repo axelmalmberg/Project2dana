@@ -6,15 +6,10 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
-import javafx.stage.Stage;
 
 /**
  * FXML Controller class
@@ -26,6 +21,7 @@ public class ViewSalesController implements Initializable {
 
     FinishedOrderProperty op = null;
     ObservableList<FinishedOrderProperty> ObList = FXCollections.observableArrayList();
+    DbConnector db = new DbConnector();
     
     @FXML
     private Button returnButton, searchButton;
@@ -59,6 +55,9 @@ public class ViewSalesController implements Initializable {
     
     @FXML
     private TableColumn<FinishedOrderProperty, Double> priceColumn;
+    
+    @FXML
+    private TableColumn<FinishedOrderProperty, Integer> saleIdColumn;
     
     
     @FXML
@@ -96,7 +95,8 @@ public class ViewSalesController implements Initializable {
             idColumn.setCellValueFactory(cellData -> cellData.getValue().getId().asObject());
             dateColumn.setCellValueFactory(celldData -> celldData.getValue().getDate());
             priceColumn.setCellValueFactory(cellData -> cellData.getValue().getPrice().asObject());
-            orderTable.setItems(ObList);
+            saleIdColumn.setCellValueFactory(cellData -> cellData.getValue().getSalesId().asObject());
+            orderTable.setItems(db.getSales());
             
             
         } catch (Exception ex) {

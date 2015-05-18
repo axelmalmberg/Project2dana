@@ -6,7 +6,9 @@
 package project2dana;
 
 import javafx.beans.property.DoubleProperty;
+import javafx.beans.property.IntegerProperty;
 import javafx.beans.property.SimpleDoubleProperty;
+import javafx.beans.property.SimpleIntegerProperty;
 
 /**
  *
@@ -15,16 +17,21 @@ import javafx.beans.property.SimpleDoubleProperty;
 public class FinishedOrderProperty extends PendingOrderProperty {
 
     private DoubleProperty price;
+    private IntegerProperty salesId;
     
     public FinishedOrderProperty(String timeStamp, String drink, String drinkSize, String appetizer, String mainCourse,
-            String dessert, String extra, int tableNumber, int id, double price) {
+            String dessert, String extra, int tableNumber, int id, double price, int salesId) {
         super(timeStamp, drink, drinkSize, appetizer, mainCourse, dessert, extra, tableNumber, id);
-        
+        this.salesId = new SimpleIntegerProperty(salesId);
         this.price = new SimpleDoubleProperty(price);
     }
     
         public DoubleProperty getPrice() {
         return price;
     }
+        
+        public IntegerProperty getSalesId() {
+            return salesId;
+        }
     
 }

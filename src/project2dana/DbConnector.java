@@ -10,6 +10,8 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.sql.*;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 
 /**
@@ -17,9 +19,11 @@ import javafx.event.ActionEvent;
  * @author bumblebee
  */
 public class DbConnector {
-    
+
+    FinishedOrderProperty op = null;
     private static final int ADMIN = 1;
     private String URL;
+    ObservableList<FinishedOrderProperty> ObList = FXCollections.observableArrayList();
 
     public void addSale(String date, int tableNr, double price, int employeeId, String appetizer, String dessert, String drink, String extras, String mainCourse, String drinkSize) {
         try {
@@ -84,7 +88,7 @@ public class DbConnector {
         FileWriter saveStatus = null;
         try {
             Class.forName("com.mysql.jdbc.Driver").newInstance();
-            String URL2 = "jdbc:mysql://127.0.0.1:3306/dana?user=" + userName + "&password=" + password;
+            String URL2 = "jdbc:mysql://194.47.40.78:3306/dana?user=" + userName + "&password=" + password;
             Connection c = DriverManager.getConnection(URL2);
             Statement st = c.createStatement();
             ResultSet rs = st.executeQuery("SELECT * FROM login");
@@ -94,13 +98,11 @@ public class DbConnector {
                 if (tmpstr1.equals(userName) && tmpstr2.equals(password)) {
                     System.out.println("det funkar");
 
-
                     int id = rs.getInt("employee_idemployee");
                     int status = rs.getInt("status");
                     String status2 = Integer.toString(status);
 
                     System.out.println(id);
-                    
 
                     String id2 = Integer.toString(id);
 
@@ -109,14 +111,14 @@ public class DbConnector {
 
                     save = new FileWriter("SaveUserInfo.txt", true);
                     save.write(userName + ":" + password);
-                    
+
                     saveStatus = new FileWriter("saveStatus.txt", true);
                     saveStatus.write(status2);
                     saveStatus.close();
-                    
+
                     SceneSwitcher ss = new SceneSwitcher();
                     ss.switchScene(event, "MainMenu.fxml");
-                    
+
                     break;
 
                 } else {
@@ -127,7 +129,7 @@ public class DbConnector {
             c.close();
             save.close();
             saveId.close();
-            
+
         } catch (Exception ex) {
             System.out.println(ex.getMessage());
         }
@@ -142,7 +144,7 @@ public class DbConnector {
                 String tmpStr = null;
                 tmpStr = read.readLine();
                 String[] tmpArray = tmpStr.split(":");
-                String tmpUrl = "jdbc:mysql://127.0.0.1:3306/dana?user=" + tmpArray[0] + "&password=" + tmpArray[1];
+                String tmpUrl = "jdbc:mysql://194.47.40.78:3306/dana?user=" + tmpArray[0] + "&password=" + tmpArray[1];
 
                 System.out.println(tmpArray[0] + tmpArray[1]);
 
@@ -161,5 +163,38 @@ public class DbConnector {
                 System.out.println(ex.getMessage());
             }
         }
+    }
+
+    public ObservableList<FinishedOrderProperty> getSales() {
+
+        try {
+            connect();
+            Connection c = DriverManager.getConnection(URL);
+            Statement st = c.createStatement();
+            ResultSet rs = st.executeQuery("SELECT * FROM sales");
+
+            while (rs.next()) {
+
+                int idSales = rs.getInt("idsales");
+                String date = rs.getString("dateString");
+                int tableNr = rs.getInt("tableNumber");
+                double price = rs.getDouble("totalPrice");
+                int employeeId = rs.getInt("employee_idemployee");
+                String appetizer = rs.getString("appetizer");
+                String dessert = rs.getString("dessert");
+                String drink = rs.getString("drink");
+                String extras = rs.getString("extras");
+                String mainCourse = rs.getString("mainMeal");
+                String drinkSize = rs.getString("drinkSize");
+
+                op = new FinishedOrderProperty(date, drink, drinkSize, appetizer, mainCourse, dessert, extras, tableNr, employeeId, price, idSales);
+
+                ObList.add(op);
+            }
+
+        } catch (Exception ex) {
+            System.out.println(ex.getMessage());
+        }
+        return ObList;
     }
 }
