@@ -88,7 +88,7 @@ public class DbConnector {
         FileWriter saveStatus = null;
         try {
             Class.forName("com.mysql.jdbc.Driver").newInstance();
-            String URL2 = "jdbc:mysql://194.47.40.78:3306/dana?user=" + userName + "&password=" + password;
+            String URL2 = "jdbc:mysql://127.0.0.1:3306/dana?user=" + userName + "&password=" + password;
             Connection c = DriverManager.getConnection(URL2);
             Statement st = c.createStatement();
             ResultSet rs = st.executeQuery("SELECT * FROM login");
@@ -144,7 +144,7 @@ public class DbConnector {
                 String tmpStr = null;
                 tmpStr = read.readLine();
                 String[] tmpArray = tmpStr.split(":");
-                String tmpUrl = "jdbc:mysql://194.47.40.78:3306/dana?user=" + tmpArray[0] + "&password=" + tmpArray[1];
+                String tmpUrl = "jdbc:mysql://127.0.0.1:3306/dana?user=" + tmpArray[0] + "&password=" + tmpArray[1];
 
                 System.out.println(tmpArray[0] + tmpArray[1]);
 
