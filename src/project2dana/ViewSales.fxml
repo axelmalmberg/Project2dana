@@ -24,7 +24,7 @@
             </Glow>
          </effect>
       </ImageView>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="89.0" layoutX="202.0" layoutY="188.0" opacity="0.8" stroke="BLACK" strokeType="INSIDE" width="600.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="89.0" layoutX="202.0" layoutY="185.0" opacity="0.8" stroke="BLACK" strokeType="INSIDE" width="600.0" />
       <TableView fx:id="orderTable" layoutX="55.0" layoutY="335.0" prefHeight="206.0" prefWidth="875.0">
         <columns>
           <TableColumn fx:id="drinkColumn" prefWidth="70.0" text="Drink" />
@@ -44,7 +44,7 @@
       <TextField fx:id="dateField" layoutX="308.0" layoutY="224.0" prefHeight="25.0" prefWidth="70.0" />
       <TextField fx:id="idField" layoutX="394.0" layoutY="224.0" prefHeight="25.0" prefWidth="70.0" />
       <TextField fx:id="tableField" layoutX="493.0" layoutY="224.0" prefHeight="25.0" prefWidth="70.0" />
-      <Button fx:id="searchButton" layoutX="614.0" layoutY="217.0" mnemonicParsing="false" text="Search" />
+      <Button fx:id="searchButton" layoutX="614.0" layoutY="217.0" mnemonicParsing="false" onAction="#handleSearchButtonAction" text="Search" />
       <Label layoutX="215.0" layoutY="197.0" text="Item">
          <font>
             <Font size="18.0" />
@@ -62,5 +62,7 @@
             <Font size="18.0" />
          </font></Label>
       <Button fx:id="returnButton" layoutX="717.0" layoutY="217.0" mnemonicParsing="false" onAction="#handleaddReturnButtonAction" text="Return" />
+      <Label fx:id="totalPrice" layoutX="829.0" layoutY="310.0" textFill="WHITE" />
+      <Label layoutX="829.0" layoutY="293.0" text="total price" textFill="WHITE" />
    </children>
 </AnchorPane>
