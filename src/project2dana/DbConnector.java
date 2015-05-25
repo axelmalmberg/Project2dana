@@ -186,7 +186,17 @@ public class DbConnector {
                 String extras = rs.getString("extras");
                 String mainCourse = rs.getString("mainMeal");
                 String drinkSize = rs.getString("drinkSize");
-
+//                System.out.println(drink);
+//                System.out.println(date);
+//                System.out.println(drinkSize);
+//                System.out.println(appetizer);
+//                System.out.println(mainCourse);
+//                System.out.println(dessert);
+//                System.out.println(extras);
+//                System.out.println(tableNr);
+//                System.out.println(employeeId);
+//                System.out.println(price);
+//                System.out.println(idSales);
                 op = new FinishedOrderProperty(date, drink, drinkSize, appetizer, mainCourse, dessert, extras, tableNr, employeeId, price, idSales);
 
                 ObList.add(op);
@@ -196,5 +206,20 @@ public class DbConnector {
             System.out.println(ex.getMessage());
         }
         return ObList;
+    }
+
+    public void deleteSale(int salesId) {
+        try {
+            connect();
+            Connection c = DriverManager.getConnection(URL);
+            Statement st = c.createStatement();
+            String tmpStr = String.format("DELETE FROM sales WHERE idsales = %d", salesId);
+            st.executeUpdate(tmpStr);
+            
+            
+        } catch (Exception ex) {
+            System.out.println(ex.getMessage());
+        }
+
     }
 }

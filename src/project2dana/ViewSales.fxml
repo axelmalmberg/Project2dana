@@ -64,5 +64,7 @@
       <Button fx:id="returnButton" layoutX="717.0" layoutY="217.0" mnemonicParsing="false" onAction="#handleaddReturnButtonAction" text="Return" />
       <Label fx:id="totalPrice" layoutX="829.0" layoutY="310.0" textFill="WHITE" />
       <Label layoutX="829.0" layoutY="293.0" text="total price" textFill="WHITE" />
+      <Button layoutX="666.0" layoutY="242.0" mnemonicParsing="false" onAction="#handleDeleteButtonAction" text="Delete" />
+      <Button layoutX="737.0" layoutY="249.0" mnemonicParsing="false" onAction="#handleRefreshButtonAction" text="Refresh" />
    </children>
 </AnchorPane>
