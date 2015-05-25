@@ -10,7 +10,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="525.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project2dana.ViewOrdersController">
+<AnchorPane id="AnchorPane" prefHeight="525.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project2dana.controller.ViewOrdersController">
    <children>
       <ImageView fitHeight="716.0" fitWidth="1003.0" pickOnBounds="true">
          <effect>
