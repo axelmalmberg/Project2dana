@@ -27,7 +27,7 @@
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="428.0" layoutX="353.0" layoutY="118.0" opacity="0.8" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="297.0" />
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="55.0" layoutX="353.0" layoutY="554.0" opacity="0.8" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="297.0" />
       <TextField fx:id="addDrink" layoutX="363.0" layoutY="151.0" />
-      <TextField fx:id="addDrinkSize" layoutX="560.0" layoutY="151.0" prefHeight="31.0" prefWidth="77.0" />
+      <TextField fx:id="addDrinkSize" layoutX="541.0" layoutY="151.0" prefHeight="26.0" prefWidth="98.0" />
       <TextField fx:id="addAppetizer" layoutX="364.0" layoutY="209.0" prefHeight="26.0" prefWidth="275.0" />
       <TextField fx:id="addMainCourse" layoutX="364.0" layoutY="267.0" prefHeight="26.0" prefWidth="275.0" />
       <TextField fx:id="addDessert" layoutX="364.0" layoutY="325.0" prefHeight="26.0" prefWidth="275.0" />
@@ -54,7 +54,7 @@
          <font>
             <Font size="18.0" />
          </font></Label>
-      <Label layoutX="563.0" layoutY="124.0" text="Drink size">
+      <Label layoutX="541.0" layoutY="125.0" text="Drink size">
          <font>
             <Font size="18.0" />
          </font></Label>
@@ -79,6 +79,16 @@
          <cursor>
             <Cursor fx:constant="DEFAULT" />
          </cursor>
+      </Label>
+      <Label fx:id="mustHavePrice" layoutX="413.0" layoutY="470.0" prefHeight="25.0" prefWidth="11.0" text="*" textFill="RED" visible="false">
+         <font>
+            <Font size="27.0" />
+         </font>
+      </Label>
+      <Label fx:id="mustHaveSize" layoutX="622.0" layoutY="127.0" prefHeight="25.0" prefWidth="11.0" text="*" textFill="RED" visible="false">
+         <font>
+            <Font size="27.0" />
+         </font>
       </Label>
    </children>
 </AnchorPane>

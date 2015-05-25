@@ -26,7 +26,8 @@ import javafx.scene.control.TextField;
  *
  */
 public class AddOrdersController implements Initializable {
-     FtpDownload ftpDown = null;
+
+    FtpDownload ftpDown = null;
 
     ArrayList<Order> list = new ArrayList<>();
     Order order = null;
@@ -39,7 +40,7 @@ public class AddOrdersController implements Initializable {
     private Button submitButton, returnButton;
 
     @FXML
-    private Label orderAdded;
+    private Label orderAdded, mustHavePrice, mustHaveSize;
 
     @FXML
     private void handleaddReturnButtonAction(ActionEvent event) {
@@ -68,24 +69,63 @@ public class AddOrdersController implements Initializable {
 
             read.close();
 
-            tempNr = Integer.parseInt(addTableNumber.getText());
-            order.setDrink(addDrink.getText());
-            order.setDrinkSize(addDrinkSize.getText());
-            order.setAppetizer(addAppetizer.getText());
-            order.setMainCourse(addMainCourse.getText());
-            order.setDessert(addDessert.getText());
-            order.setExtra(addExtra.getText());
+            if (addTableNumber.textProperty().get().isEmpty()) {
+                tempNr = 0;
+            } else {
+                tempNr = Integer.parseInt(addTableNumber.getText());
+            }
+            if (addDrink.textProperty().get().isEmpty()) {
+                order.setDrink("0");
+                order.setDrinkSize("0");
+            } else {
+                order.setDrink(addDrink.getText());
+
+                if (addDrinkSize.textProperty().get().isEmpty()) {
+                orderAdded.setText("Drink size!");
+                mustHaveSize.setVisible(true);
+                return;
+                } else {
+                    order.setDrinkSize(addDrinkSize.getText());
+                }
+            }
+
+            if (addAppetizer.textProperty().get().isEmpty()) {
+                order.setAppetizer("0");
+            } else {
+                order.setAppetizer(addAppetizer.getText());
+            }
+            if (addMainCourse.textProperty().get().isEmpty()) {
+                order.setMainCourse("0");
+            } else {
+                order.setMainCourse(addMainCourse.getText());
+            }
+            if (addDessert.textProperty().get().isEmpty()) {
+                order.setDessert("0");
+            } else {
+                order.setDessert(addDessert.getText());
+            }
+            if (addExtra.textProperty().get().isEmpty()) {
+                order.setExtra("0");
+            } else {
+                order.setExtra(addExtra.getText());
+            }
             order.setTableNumber(tempNr);
-            order.setPrice(Double.parseDouble(addPrice.getText()));
+            if (addPrice.textProperty().get().isEmpty()) {
+                orderAdded.setText("Price!");
+                mustHavePrice.setVisible(true);
+                return;
+            } else {
+                order.setPrice(Double.parseDouble(addPrice.getText()));
+            }
             order.setId(id);
+
             list.add(order);
             saveList();
             addToFTP();
 
-            if(f.exists()){
+            if (f.exists()) {
                 f.delete();
             }
-            
 
             orderAdded.setText("Order Added");
 
@@ -133,6 +173,7 @@ public class AddOrdersController implements Initializable {
         ftp = new FtpUpload();
         ftp.startFTP("OrderList.ser");
     }
+
     public void downloadFtp() {
 
         File f = new File("OrderList.ser");
