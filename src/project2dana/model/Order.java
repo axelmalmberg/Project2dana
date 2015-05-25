@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-package project2dana;
+package project2dana.model;
 
 import java.io.Serializable;
 import java.text.SimpleDateFormat;

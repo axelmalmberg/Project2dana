@@ -1,4 +1,4 @@
-package project2dana;
+package project2dana.controller;
 
 import java.net.URL;
 import java.sql.Connection;
@@ -17,6 +17,8 @@ import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import project2dana.model.DbConnector;
+import project2dana.model.SceneSwitcher;
 
 /**
  * FXML Controller class

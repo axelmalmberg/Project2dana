@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package project2dana;
+package project2dana.model;
 
 /**
  *
@@ -17,7 +17,7 @@ import org.apache.commons.net.ftp.FTP;
 import org.apache.commons.net.ftp.FTPClient;
 import org.apache.commons.net.ftp.FTPFile;
 import org.apache.commons.net.ftp.FTPReply;
-import static project2dana.FtpUpload.props;
+import static project2dana.model.FtpUpload.props;
 
 public class FtpDownload {
 

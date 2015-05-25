@@ -3,8 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package project2dana;
+package project2dana.model;
 
+import project2dana.controller.FinishedOrderProperty;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;

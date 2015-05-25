@@ -1,4 +1,4 @@
-package project2dana;
+package project2dana.model;
 
 
 import javafx.beans.property.DoubleProperty;

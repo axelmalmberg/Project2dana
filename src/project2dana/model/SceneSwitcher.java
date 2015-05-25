@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package project2dana;
+package project2dana.model;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;

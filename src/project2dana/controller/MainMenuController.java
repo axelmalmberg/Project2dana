@@ -1,4 +1,4 @@
-package project2dana;
+package project2dana.controller;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -9,6 +9,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import project2dana.model.SceneSwitcher;
 
 /**
  * FXML Controller class

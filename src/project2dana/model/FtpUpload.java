@@ -1,4 +1,4 @@
-package project2dana;
+package project2dana.model;
 
 /*
  * To change this license header, choose License Headers in Project Properties.

@@ -1,4 +1,4 @@
-package project2dana;
+package project2dana.controller;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -18,6 +18,12 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import project2dana.model.DbConnector;
+import project2dana.model.FtpDownload;
+import project2dana.model.FtpUpload;
+import project2dana.model.Order;
+import project2dana.model.PendingOrderProperty;
+import project2dana.model.SceneSwitcher;
 
 /**
  * FXML Controller class
