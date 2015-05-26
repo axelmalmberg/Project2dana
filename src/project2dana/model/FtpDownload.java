@@ -1,17 +1,7 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package project2dana.model;
 
-/**
- *
- * @author dardaiin
- */
 import java.io.File;
 import java.io.FileOutputStream;
-import java.io.OutputStream;
 import java.util.Properties;
 import org.apache.commons.net.ftp.FTP;
 import org.apache.commons.net.ftp.FTPClient;

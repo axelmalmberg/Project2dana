@@ -1,11 +1,5 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package project2dana.model;
 
-import com.sun.javafx.binding.StringFormatter;
 import project2dana.controller.FinishedOrderProperty;
 import java.io.BufferedReader;
 import java.io.File;
@@ -16,10 +10,6 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 
-/**
- *
- * @author bumblebee
- */
 public class DbConnector {
 
     FinishedOrderProperty op = null;
@@ -34,7 +24,6 @@ public class DbConnector {
             Statement st = c.createStatement();
             String tmpPrice = Double.toString(price);
             String tmp = String.format("insert into sales (dateString, tableNumber, totalPrice, employee_idemployee, appetizer, dessert, drink, extras, mainMeal, drinkSize) values ('%s', %d, '%s', %d, '%s', '%s', '%s', '%s', '%s', '%s')", date, tableNr, tmpPrice, employeeId, appetizer, dessert, drink, extras, mainCourse, drinkSize);
-            System.out.println(tmp);
             st.executeUpdate(tmp);
 
         } catch (Exception ex) {
@@ -43,7 +32,6 @@ public class DbConnector {
 
     }
 
-//    THIS IS ALL UNDER CONSTRUCTION, DONT REMOVE ISNT FINISHED
     public void addUser(String userName, String password, String firstName, String lastName, String mail, String phone, String adress, String city, String quest, String ans, int admin) {
         try {
             connect();
@@ -53,10 +41,8 @@ public class DbConnector {
             Statement st3 = c.createStatement();
             Statement st4 = c.createStatement();
             Statement st5 = c.createStatement();
-            System.out.println("1");
             String tmp = String.format("insert into employee (firstname, lastname, email, phone, address, city) values ('%s', '%s', '%s', '%s', '%s', '%s')", firstName, lastName, mail, phone, adress, city, quest, ans);
             st.executeUpdate(tmp);
-            System.out.println("2");
             ResultSet rs = st2.executeQuery("SELECT idemployee FROM employee ORDER BY idemployee DESC LIMIT 1");
             int resultat = 0;
             if (rs.next()) {
@@ -64,7 +50,7 @@ public class DbConnector {
             }
             String tmp2 = String.format("insert into login (username, password, securityQuestion, securityAnswer, employee_idemployee, status) values ('%s', '%s', '%s', '%s', %d, %d)", userName, password, quest, ans, resultat, admin);
             st3.executeUpdate(tmp2);
-//                    + " values (" + usrn + ", " + psw + " , " + quest + ", " + ans + ", " + resultat + ");");
+
             if (admin == ADMIN) {
                 String tmp3 = String.format("CREATE USER '%s'@'' IDENTIFIED BY '%s';", userName, password);
                 String tmp4 = String.format("GRANT ALL PRIVILEGES ON * . * TO '%s'@'' WITH GRANT OPTION", userName);
@@ -83,14 +69,13 @@ public class DbConnector {
         }
     }
 
-//    THIS IS ALL UNDER CONSTRUCTION, DONT REMOVE ISNT FINISHED
     public void verifyLogIn(String userName, String password, ActionEvent event) {
         FileWriter save = null;
         FileWriter saveId = null;
         FileWriter saveStatus = null;
         try {
             Class.forName("com.mysql.jdbc.Driver").newInstance();
-            String URL2 = "jdbc:mysql://dea-server.ddns.net:3306/dana?user=" + userName + "&password=" + password;
+            String URL2 = "jdbc:mysql://192.168.1.77:3306/dana?user=" + userName + "&password=" + password;
             Connection c = DriverManager.getConnection(URL2);
             Statement st = c.createStatement();
             ResultSet rs = st.executeQuery("SELECT * FROM login");
@@ -98,13 +83,11 @@ public class DbConnector {
                 String tmpstr1 = rs.getString("username");
                 String tmpstr2 = rs.getString("password");
                 if (tmpstr1.equals(userName) && tmpstr2.equals(password)) {
-                    System.out.println("det funkar");
+                    System.out.println("Login success!");
 
                     int id = rs.getInt("employee_idemployee");
                     int status = rs.getInt("status");
                     String status2 = Integer.toString(status);
-
-                    System.out.println(id);
 
                     String id2 = Integer.toString(id);
 
@@ -124,9 +107,9 @@ public class DbConnector {
                     break;
 
                 } else {
-                    System.out.println("login denied");
+                    System.out.println("Login denied!");
                 }
-//                System.out.println("Customer Name: " + name + " \nand customer number " + nbr + "\n\n");
+
             }
             c.close();
             save.close();
@@ -146,15 +129,13 @@ public class DbConnector {
                 String tmpStr = null;
                 tmpStr = read.readLine();
                 String[] tmpArray = tmpStr.split(":");
-                String tmpUrl = "jdbc:mysql://dea-server.ddns.net:3306/dana?user=" + tmpArray[0] + "&password=" + tmpArray[1];
-
-                System.out.println(tmpArray[0] + tmpArray[1]);
+                String tmpUrl = "jdbc:mysql://192.168.1.77:3306/dana?user=" + tmpArray[0] + "&password=" + tmpArray[1];
 
                 Class.forName("com.mysql.jdbc.Driver").newInstance();
-                // String URL = "jdbc:mysql://194.47.47.18:3306/YOUR_DATABASE_NAME?user=YOUR_USER_NAME&password=YOUR_PASSWORD";
+
                 URL = tmpUrl;
             } else {
-                System.out.println("error");
+                System.out.println("Couldn't connect to database!");
             }
         } catch (Exception ex) {
             System.out.println(ex.getMessage());
@@ -188,17 +169,6 @@ public class DbConnector {
                 String extras = rs.getString("extras");
                 String mainCourse = rs.getString("mainMeal");
                 String drinkSize = rs.getString("drinkSize");
-//                System.out.println(drink);
-//                System.out.println(date);
-//                System.out.println(drinkSize);
-//                System.out.println(appetizer);
-//                System.out.println(mainCourse);
-//                System.out.println(dessert);
-//                System.out.println(extras);
-//                System.out.println(tableNr);
-//                System.out.println(employeeId);
-//                System.out.println(price);
-//                System.out.println(idSales);
                 op = new FinishedOrderProperty(date, drink, drinkSize, appetizer, mainCourse, dessert, extras, tableNr, employeeId, price, idSales);
 
                 ObList.add(op);
@@ -228,7 +198,7 @@ public class DbConnector {
         Boolean exists = false;
         try {
             Class.forName("com.mysql.jdbc.Driver").newInstance();
-            String URL2 = "jdbc:mysql://dea-server.ddns.net:3306/dana?user=root&password=root";
+            String URL2 = "jdbc:mysql://192.168.1.77:3306/dana?user=root&password=root";
             Connection c = DriverManager.getConnection(URL2);
             Statement st = c.createStatement();
             ResultSet rs = st.executeQuery("SELECT * FROM login");
@@ -253,7 +223,7 @@ public class DbConnector {
         String question = null;
         try {
             Class.forName("com.mysql.jdbc.Driver").newInstance();
-            String URL2 = "jdbc:mysql://dea-server.ddns.net:3306/dana?user=root&password=root";
+            String URL2 = "jdbc:mysql://192.168.1.77:3306/dana?user=root&password=root";
             Connection c = DriverManager.getConnection(URL2);
             Statement st = c.createStatement();
             String tmpStr = String.format("SELECT securityQuestion FROM login WHERE username = '%s' ", userName);
@@ -271,7 +241,7 @@ public class DbConnector {
         int tmpid = 0;
         try {
             Class.forName("com.mysql.jdbc.Driver").newInstance();
-            String URL2 = "jdbc:mysql://dea-server.ddns.net:3306/dana?user=root&password=root";
+            String URL2 = "jdbc:mysql://192.168.1.77:3306/dana?user=root&password=root";
             Connection c = DriverManager.getConnection(URL2);
             Statement st = c.createStatement();
             String tmpStr = String.format("SELECT idlogin FROM login WHERE username = '%s'", userName);
@@ -289,7 +259,7 @@ public class DbConnector {
         Boolean correct = false;
         try {
             Class.forName("com.mysql.jdbc.Driver").newInstance();
-            String URL2 = "jdbc:mysql://dea-server.ddns.net:3306/dana?user=root&password=root";
+            String URL2 = "jdbc:mysql://192.168.1.77:3306/dana?user=root&password=root";
             Connection c = DriverManager.getConnection(URL2);
             Statement st = c.createStatement();
             String tmpStr = String.format("SELECT securityQuestion, securityAnswer FROM login WHERE username = '%s'", userName);
@@ -310,7 +280,7 @@ public class DbConnector {
     public void updatePassword(String userName, String password, int id) {
         try {
             Class.forName("com.mysql.jdbc.Driver").newInstance();
-            String URL2 = "jdbc:mysql://dea-server.ddns.net:3306/dana?user=root&password=root";
+            String URL2 = "jdbc:mysql://192.168.1.77:3306/dana?user=root&password=root";
             Connection c = DriverManager.getConnection(URL2);
             Statement st = c.createStatement();
             Statement st2 = c.createStatement();

@@ -6,19 +6,13 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
-/**
- *
- * @author Dardan Berisha, Anesa Kusmic, Nemanja Lekanovic, Axel Malmberg
- *
- */
 public class Project2dana extends Application {
+
     private double xOffset = 0;
     private double yOffset = 0;
-    
 
     @Override
     public void start(Stage stage) throws Exception {
@@ -49,13 +43,10 @@ public class Project2dana extends Application {
         stage.show();
     }
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
         launch(args);
 
-        System.out.println("DANA ISG OVER!");
+        System.out.println("Welcome to a world without rules.");
     }
 
 }

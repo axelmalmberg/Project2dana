@@ -21,14 +21,6 @@ import project2dana.model.FtpUpload;
 import project2dana.model.Order;
 import project2dana.model.SceneSwitcher;
 
-/**
- * FXML Controller class
- *
- * /**
- *
- * @author Dardan Berisha, Anesa Kusmic, Nemanja Lekanovic, Axel Malmberg
- *
- */
 public class AddOrdersController implements Initializable {
 
     FtpDownload ftpDown = null;
@@ -85,9 +77,9 @@ public class AddOrdersController implements Initializable {
                 order.setDrink(addDrink.getText());
 
                 if (addDrinkSize.textProperty().get().isEmpty()) {
-                orderAdded.setText("Drink size!");
-                mustHaveSize.setVisible(true);
-                return;
+                    orderAdded.setText("Drink size!");
+                    mustHaveSize.setVisible(true);
+                    return;
                 } else {
                     order.setDrinkSize(addDrinkSize.getText());
                 }
@@ -139,9 +131,6 @@ public class AddOrdersController implements Initializable {
         }
     }
 
-    /**
-     * Initializes the controller class.
-     */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         downloadFtp();

@@ -2,8 +2,6 @@ package project2dana.controller;
 
 import java.net.URL;
 import java.util.ResourceBundle;
-import javafx.beans.property.IntegerProperty;
-import javafx.beans.property.SimpleIntegerProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -16,12 +14,6 @@ import javafx.scene.control.TextField;
 import project2dana.model.DbConnector;
 import project2dana.model.SceneSwitcher;
 
-/**
- * FXML Controller class
- *
- * @author Dardan Berisha, Anesa Kusmic, Nemanja Lekanovic, Axel Malmberg
- *
- */
 public class ViewSalesController implements Initializable {
 
     FinishedOrderProperty op = null;
@@ -93,9 +85,6 @@ public class ViewSalesController implements Initializable {
 
     }
 
-    /**
-     * Initializes the controller class.
-     */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         showTable();
@@ -155,7 +144,7 @@ public class ViewSalesController implements Initializable {
             ObservableList<TableColumn<FinishedOrderProperty, ?>> cols = orderTable.getColumns();
 
             for (int i = 0; i < ObList.size(); i++) {
-                System.out.println(1);
+                System.out.println("Loading table...");
                 TableColumn drinkCol = cols.get(0);
                 TableColumn appetizerCol = cols.get(2);
                 TableColumn mainCourseCol = cols.get(3);

@@ -3,6 +3,7 @@ package project2dana.controller;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
@@ -11,12 +12,6 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import project2dana.model.SceneSwitcher;
 
-/**
- * FXML Controller class
- *
- * @author Dardan Berisha, Anesa Kusmic, Nemanja Lekanovic, Axel Malmberg
- *
- */
 public class MainMenuController implements Initializable {
 
     @FXML
@@ -57,9 +52,6 @@ public class MainMenuController implements Initializable {
         }
     }
 
-    /**
-     * Initializes the controller class.
-     */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         BufferedReader read = null;
@@ -68,14 +60,13 @@ public class MainMenuController implements Initializable {
             String tmpStr = null;
             tmpStr = read.readLine();
             int adminStatus = Integer.parseInt(tmpStr);
-            System.out.println(adminStatus);
             if (adminStatus == 2) {
                 addUserButton.setVisible(false);
                 searchSalesButton.setVisible(false);
             }
             read.close();
 
-        } catch (Exception ex) {
+        } catch (IOException | NumberFormatException ex) {
             System.out.println(ex.getMessage());
         }
 

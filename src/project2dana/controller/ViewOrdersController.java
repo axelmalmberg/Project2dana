@@ -7,7 +7,6 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.net.URL;
 import java.util.ArrayList;
-import java.util.Observer;
 import java.util.ResourceBundle;
 import javafx.beans.property.StringProperty;
 import javafx.collections.FXCollections;
@@ -25,12 +24,6 @@ import project2dana.model.Order;
 import project2dana.model.PendingOrderProperty;
 import project2dana.model.SceneSwitcher;
 
-/**
- * FXML Controller class
- *
- * @author Dardan Berisha, Anesa Kusmic, Nemanja Lekanovic, Axel Malmberg
- *
- */
 public class ViewOrdersController implements Initializable {
 
     DbConnector db = new DbConnector();
@@ -65,19 +58,18 @@ public class ViewOrdersController implements Initializable {
 
     @FXML
     private TableColumn<PendingOrderProperty, Integer> idColumn;
-    
-    @FXML
-    private Button finishedOrderButton;
-   
 
     @FXML
-    private void handleRefreshButtonAction(ActionEvent event){
+    private Button finishedOrderButton;
+
+    @FXML
+    private void handleRefreshButtonAction(ActionEvent event) {
         ObList.clear();
         list.clear();
         downloadFtp();
         showTable();
     }
-    
+
     @FXML
     private void handleaddReturnButtonAction(ActionEvent event) {
         try {
@@ -92,16 +84,16 @@ public class ViewOrdersController implements Initializable {
 
     @FXML
     private void handleFinishedButtonAction(ActionEvent event) {
-        Button bt = (Button)event.getSource();
-        
+        Button bt = (Button) event.getSource();
+
         try {
             ObservableList<PendingOrderProperty> orderSelected, allOrders;
             allOrders = orderTable.getItems();
             orderSelected = orderTable.getSelectionModel().getSelectedItems();
-        if(bt == finishedOrderButton){    
-            Order order = list.get(orderTable.getSelectionModel().getSelectedIndex());
-            db.addSale(order.getDate(), order.getTableNumber(), order.getPrice(), order.getId(), order.getAppetizer(), order.getDessert(), order.getDrink(), order.getExtra(), order.getMainCourse(), order.getDrinkSize());
-        } 
+            if (bt == finishedOrderButton) {
+                Order order = list.get(orderTable.getSelectionModel().getSelectedIndex());
+                db.addSale(order.getDate(), order.getTableNumber(), order.getPrice(), order.getId(), order.getAppetizer(), order.getDessert(), order.getDrink(), order.getExtra(), order.getMainCourse(), order.getDrinkSize());
+            }
             list.remove(orderTable.getSelectionModel().getSelectedIndex());
             orderSelected.forEach(allOrders::remove);
 
@@ -116,13 +108,9 @@ public class ViewOrdersController implements Initializable {
         }
     }
 
-
-    /**
-     * Initializes the controller class.
-     */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        System.out.println("hej");
+        System.out.println("Loading the table");
         showTable();
     }
 
@@ -150,7 +138,7 @@ public class ViewOrdersController implements Initializable {
 
         downloadFtp();
         System.out.println("Downloading file from server");
-      
+
         File f = new File("OrderList.ser");
 
         if (!f.exists()) {
@@ -187,7 +175,7 @@ public class ViewOrdersController implements Initializable {
         ftp.startFTP();
 
     }
-    
+
     public void addToFTP() {
         ftpUp = new FtpUpload();
         ftpUp.startFTP("OrderList.ser");
