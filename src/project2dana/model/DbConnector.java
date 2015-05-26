@@ -286,7 +286,7 @@ public class DbConnector {
     }
 
     public Boolean verifyQuestion(String userName, String question, String answer) {
-        Boolean correct = null;
+        Boolean correct = false;
         try {
             Class.forName("com.mysql.jdbc.Driver").newInstance();
             String URL2 = "jdbc:mysql://dea-server.ddns.net:3306/dana?user=root&password=root";
@@ -297,10 +297,8 @@ public class DbConnector {
             while (rs.next()) {
                 String tmpQuestion = rs.getString("securityQuestion");
                 String tmpAnswer = rs.getString("securityAnswer");
-                if (tmpAnswer.equals(question) && tmpQuestion.equals(question)) {
+                if (tmpAnswer.equals(answer) && tmpQuestion.equals(question)) {
                     correct = true;
-                } else {
-                    correct = false;
                 }
             }
         } catch (Exception ex) {

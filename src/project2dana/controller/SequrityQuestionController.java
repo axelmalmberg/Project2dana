@@ -12,6 +12,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import project2dana.model.DbConnector;
 import project2dana.model.SceneSwitcher;
@@ -44,6 +45,14 @@ public class SequrityQuestionController implements Initializable {
     @FXML
     private Button finishButton;
     
+    @FXML
+    private Label sqLabel;
+    @FXML
+    private Label answerLabel;
+    @FXML
+    private Label passwordLabel;
+    
+    
 
     /**
      * Initializes the controller class.
@@ -55,6 +64,9 @@ public class SequrityQuestionController implements Initializable {
         passwordField.setVisible(false);
         secondNextButton.setVisible(false);
         finishButton.setVisible(false);
+        sqLabel.setVisible(false);
+        answerLabel.setVisible(false);
+        passwordLabel.setVisible(false);
     }    
     
     @FXML
@@ -67,7 +79,9 @@ public class SequrityQuestionController implements Initializable {
             firstNextButton.setVisible(false);
             secondNextButton.setVisible(true);
             securityQuestionField.setVisible(true);
+            sqLabel.setVisible(true);
             answerField.setVisible(true);
+            answerLabel.setVisible(true);
             
             idlogin = db.getIdLogin(username);
             question = db.getSecurityQuestion(username);
@@ -88,6 +102,7 @@ public class SequrityQuestionController implements Initializable {
         
         if (db.verifyQuestion(username, question, tmpAnswer) == true) {
             secondNextButton.setVisible(false);
+            passwordLabel.setVisible(true);
             passwordField.setVisible(true);
             finishButton.setVisible(true);
         }
