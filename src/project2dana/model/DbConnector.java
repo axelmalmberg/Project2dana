@@ -65,14 +65,14 @@ public class DbConnector {
             st3.executeUpdate(tmp2);
 //                    + " values (" + usrn + ", " + psw + " , " + quest + ", " + ans + ", " + resultat + ");");
             if (admin == ADMIN) {
-                String tmp3 = String.format("CREATE USER '%s'@'localhost' IDENTIFIED BY '%s';", userName, password);
-                String tmp4 = String.format("GRANT ALL PRIVILEGES ON * . * TO '%s'@'localhost' WITH GRANT OPTION", userName);
+                String tmp3 = String.format("CREATE USER '%s'@'' IDENTIFIED BY '%s';", userName, password);
+                String tmp4 = String.format("GRANT ALL PRIVILEGES ON * . * TO '%s'@'' WITH GRANT OPTION", userName);
 
                 st4.executeUpdate(tmp3);
                 st5.executeUpdate(tmp4);
             } else {
-                String tmp3 = String.format("CREATE USER '%s'@'localhost' IDENTIFIED BY '%s';", userName, password);
-                String tmp4 = String.format("GRANT INSERT, SELECT ON * . * TO '%s'@'localhost'", userName);
+                String tmp3 = String.format("CREATE USER '%s'@'' IDENTIFIED BY '%s';", userName, password);
+                String tmp4 = String.format("GRANT INSERT, SELECT ON * . * TO '%s'@''", userName);
 
                 st4.executeUpdate(tmp3);
                 st5.executeUpdate(tmp4);
@@ -89,7 +89,7 @@ public class DbConnector {
         FileWriter saveStatus = null;
         try {
             Class.forName("com.mysql.jdbc.Driver").newInstance();
-            String URL2 = "jdbc:mysql://127.0.0.1:3306/dana?user=" + userName + "&password=" + password;
+            String URL2 = "jdbc:mysql://dea-server.ddns.net:3306/dana?user=" + userName + "&password=" + password;
             Connection c = DriverManager.getConnection(URL2);
             Statement st = c.createStatement();
             ResultSet rs = st.executeQuery("SELECT * FROM login");
@@ -145,7 +145,7 @@ public class DbConnector {
                 String tmpStr = null;
                 tmpStr = read.readLine();
                 String[] tmpArray = tmpStr.split(":");
-                String tmpUrl = "jdbc:mysql://127.0.0.1:3306/dana?user=" + tmpArray[0] + "&password=" + tmpArray[1];
+                String tmpUrl = "jdbc:mysql://dea-server.ddns.net:3306/dana?user=" + tmpArray[0] + "&password=" + tmpArray[1];
 
                 System.out.println(tmpArray[0] + tmpArray[1]);
 
