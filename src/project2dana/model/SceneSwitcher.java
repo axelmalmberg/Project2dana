@@ -11,6 +11,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import project2dana.Project2dana;
 
 /**
  *
@@ -23,14 +24,16 @@ public class SceneSwitcher {
         Node node = (Node) event.getSource();
         Stage stage = (Stage) node.getScene().getWindow();
 
-        FXMLLoader loader = new FXMLLoader(getClass().getResource(sceneName));
+        FXMLLoader loader = new FXMLLoader(Project2dana.class.getResource("view/" + sceneName));
+        
+//        FXMLLoader loader = new FXMLLoader(getClass().getResource("view/" + sceneName));
         Parent root = loader.load();
 
         Scene scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
         } catch (Exception ex) {
-            System.out.println(ex.getMessage());
+            ex.printStackTrace();
         }
     }
 

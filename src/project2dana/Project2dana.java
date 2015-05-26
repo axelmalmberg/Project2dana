@@ -27,7 +27,7 @@ public class Project2dana extends Application {
 
         stage.initStyle(StageStyle.UNDECORATED);
 
-        Parent root = FXMLLoader.load(getClass().getResource("LogInScene.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("view/LogInScene.fxml"));
 
         root.setOnMousePressed(new EventHandler<MouseEvent>() {
             @Override
