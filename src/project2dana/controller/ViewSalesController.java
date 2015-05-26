@@ -8,6 +8,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
@@ -73,6 +74,9 @@ public class ViewSalesController implements Initializable {
 
     @FXML
     private TextField tableField;
+    
+    @FXML
+    private Label totalPrice;
 
     @FXML
     private void handleaddReturnButtonAction(ActionEvent event) {
@@ -111,6 +115,7 @@ public class ViewSalesController implements Initializable {
             priceColumn.setCellValueFactory(cellData -> cellData.getValue().getPrice().asObject());
             saleIdColumn.setCellValueFactory(cellData -> cellData.getValue().getSalesId().asObject());
             orderTable.setItems(ObList);
+            setTotalPrice(ObList);
 
         } catch (Exception ex) {
             System.out.println(ex.getMessage());
@@ -211,13 +216,21 @@ public class ViewSalesController implements Initializable {
                 }
             }
             orderTable.setItems(tableItems);
+            setTotalPrice(tableItems);
         } catch (Exception ex) {
             System.out.println(ex.getMessage());
         }
     }
 
-    public void setTotalPrice() {
-
+    public void setTotalPrice(ObservableList<FinishedOrderProperty> lista) {
+        FinishedOrderProperty tmpOp;
+        double doubleTotalPrice = 0;
+        for (int i = 0; i < lista.size(); i++) {
+            tmpOp = lista.get(i);
+            doubleTotalPrice += tmpOp.getPrice().doubleValue();
+        }
+        String stringTotalPrice = doubleTotalPrice + "";
+        totalPrice.setText(stringTotalPrice);
     }
 
 }
