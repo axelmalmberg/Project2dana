@@ -6,6 +6,19 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project2dana.controller.SequrityQuestionController">
-    
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project2dana.controller.SequrityQuestionController">
+   <children>
+      <TextField fx:id="usernameField" layoutX="202.0" layoutY="74.0" />
+      <TextField fx:id="securityQuestionField" layoutX="202.0" layoutY="137.0" />
+      <TextField fx:id="answerField" layoutX="202.0" layoutY="200.0" />
+      <Label layoutX="202.0" layoutY="57.0" text="enter username" />
+      <Label fx:id="sqLabel" layoutX="199.0" layoutY="120.0" text="security question" />
+      <Label fx:id="answerLabel" layoutX="202.0" layoutY="183.0" text="enter answer" />
+      <TextField fx:id="passwordField" layoutX="202.0" layoutY="253.0" />
+      <Label fx:id="passwordLabel" layoutX="202.0" layoutY="236.0" text="enter new password" />
+      <Button fx:id="secondNextButton" layoutX="382.0" layoutY="200.0" mnemonicParsing="false" onAction="#handleSecondNextButtonAction" text="next" />
+      <Button fx:id="firstNextButton" layoutX="382.0" layoutY="74.0" mnemonicParsing="false" onAction="#handleFirstNextButtonAction" text="next" />
+      <Button fx:id="finishButton" layoutX="382.0" layoutY="253.0" mnemonicParsing="false" onAction="#handleFinishButtonAction" text="finish" />
+      <Button layoutX="32.0" layoutY="24.0" mnemonicParsing="false" onAction="#handleReturnButtonAction" text="return" />
+   </children>
 </AnchorPane>

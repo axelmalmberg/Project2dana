@@ -15,6 +15,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import project2dana.model.DbConnector;
+import project2dana.model.SceneSwitcher;
 
 /**
  *
@@ -42,6 +43,11 @@ public class LogInController implements Initializable {
         password = passwordField.getText();
         Db.verifyLogIn(username, password, event);
        
+    }
+    @FXML
+    private void handleForgotPasswordButtonAction(ActionEvent event) {
+        SceneSwitcher ss = new SceneSwitcher();
+        ss.switchScene(event, "SequrityQuestion.fxml");
     }
     @Override
     public void initialize(URL url, ResourceBundle rb) {

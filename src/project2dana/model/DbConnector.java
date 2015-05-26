@@ -5,6 +5,7 @@
  */
 package project2dana.model;
 
+import com.sun.javafx.binding.StringFormatter;
 import project2dana.controller.FinishedOrderProperty;
 import java.io.BufferedReader;
 import java.io.File;
@@ -216,11 +217,111 @@ public class DbConnector {
             Statement st = c.createStatement();
             String tmpStr = String.format("DELETE FROM sales WHERE idsales = %d", salesId);
             st.executeUpdate(tmpStr);
-            
-            
+
         } catch (Exception ex) {
             System.out.println(ex.getMessage());
         }
 
+    }
+
+    public Boolean checkExistingUser(String userName) {
+        Boolean exists = false;
+        try {
+            Class.forName("com.mysql.jdbc.Driver").newInstance();
+            String URL2 = "jdbc:mysql://dea-server.ddns.net:3306/dana?user=root&password=root";
+            Connection c = DriverManager.getConnection(URL2);
+            Statement st = c.createStatement();
+            ResultSet rs = st.executeQuery("SELECT * FROM login");
+            while (rs.next()) {
+                String tmpstr1 = rs.getString("username");
+                if (tmpstr1.equals(userName)) {
+                    exists = true;
+                    break;
+                } else {
+
+                }
+
+            }
+
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+        return exists;
+    }
+
+    public String getSecurityQuestion(String userName) {
+        String question = null;
+        try {
+            Class.forName("com.mysql.jdbc.Driver").newInstance();
+            String URL2 = "jdbc:mysql://dea-server.ddns.net:3306/dana?user=root&password=root";
+            Connection c = DriverManager.getConnection(URL2);
+            Statement st = c.createStatement();
+            String tmpStr = String.format("SELECT securityQuestion FROM login WHERE username = '%s' ", userName);
+            ResultSet rs = st.executeQuery(tmpStr);
+            while (rs.next()) {
+                question = rs.getString("securityQuestion");
+            }
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+        return question;
+    }
+
+    public int getIdLogin(String userName) {
+        int tmpid = 0;
+        try {
+            Class.forName("com.mysql.jdbc.Driver").newInstance();
+            String URL2 = "jdbc:mysql://dea-server.ddns.net:3306/dana?user=root&password=root";
+            Connection c = DriverManager.getConnection(URL2);
+            Statement st = c.createStatement();
+            String tmpStr = String.format("SELECT idlogin FROM login WHERE username = '%s'", userName);
+            ResultSet rs = st.executeQuery(tmpStr);
+            while (rs.next()) {
+                tmpid = rs.getInt("idlogin");
+            }
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+        return tmpid;
+    }
+
+    public Boolean verifyQuestion(String userName, String question, String answer) {
+        Boolean correct = null;
+        try {
+            Class.forName("com.mysql.jdbc.Driver").newInstance();
+            String URL2 = "jdbc:mysql://dea-server.ddns.net:3306/dana?user=root&password=root";
+            Connection c = DriverManager.getConnection(URL2);
+            Statement st = c.createStatement();
+            String tmpStr = String.format("SELECT securityQuestion, securityAnswer FROM login WHERE username = '%s'", userName);
+            ResultSet rs = st.executeQuery(tmpStr);
+            while (rs.next()) {
+                String tmpQuestion = rs.getString("securityQuestion");
+                String tmpAnswer = rs.getString("securityAnswer");
+                if (tmpAnswer.equals(question) && tmpQuestion.equals(question)) {
+                    correct = true;
+                } else {
+                    correct = false;
+                }
+            }
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+        return correct;
+    }
+
+    public void updatePassword(String userName, String password, int id) {
+        try {
+            Class.forName("com.mysql.jdbc.Driver").newInstance();
+            String URL2 = "jdbc:mysql://dea-server.ddns.net:3306/dana?user=root&password=root";
+            Connection c = DriverManager.getConnection(URL2);
+            Statement st = c.createStatement();
+            Statement st2 = c.createStatement();
+            String tmpStr = String.format("UPDATE login SET password = '%s' WHERE idlogin = %d", password, id);
+            String tmpStr2 = String.format("SET PASSWORD FOR '%s'@'' = PASSWORD('%s')", userName, password);
+            st.executeUpdate(tmpStr);
+            st.executeUpdate(tmpStr2);
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
     }
 }
