@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
 <?import java.lang.*?>
 <?import java.util.*?>
 <?import javafx.scene.*?>
@@ -8,17 +12,54 @@
 
 <AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project2dana.controller.SequrityQuestionController">
    <children>
-      <TextField fx:id="usernameField" layoutX="202.0" layoutY="74.0" />
-      <TextField fx:id="securityQuestionField" layoutX="202.0" layoutY="137.0" />
-      <TextField fx:id="answerField" layoutX="202.0" layoutY="200.0" />
-      <Label layoutX="202.0" layoutY="57.0" text="enter username" />
-      <Label fx:id="sqLabel" layoutX="199.0" layoutY="120.0" text="security question" />
-      <Label fx:id="answerLabel" layoutX="202.0" layoutY="183.0" text="enter answer" />
-      <TextField fx:id="passwordField" layoutX="202.0" layoutY="253.0" />
-      <Label fx:id="passwordLabel" layoutX="202.0" layoutY="236.0" text="enter new password" />
-      <Button fx:id="secondNextButton" layoutX="382.0" layoutY="200.0" mnemonicParsing="false" onAction="#handleSecondNextButtonAction" text="next" />
-      <Button fx:id="firstNextButton" layoutX="382.0" layoutY="74.0" mnemonicParsing="false" onAction="#handleFirstNextButtonAction" text="next" />
-      <Button fx:id="finishButton" layoutX="382.0" layoutY="253.0" mnemonicParsing="false" onAction="#handleFinishButtonAction" text="finish" />
-      <Button layoutX="32.0" layoutY="24.0" mnemonicParsing="false" onAction="#handleReturnButtonAction" text="return" />
+      <ImageView fitHeight="716.0" fitWidth="1003.0" pickOnBounds="true">
+         <image>
+            <Image url="@background.jpg" />
+         </image>
+         <effect>
+            <Glow level="0.56">
+               <input>
+                  <ColorAdjust brightness="0.02" contrast="0.12" />
+               </input>
+            </Glow>
+         </effect>
+      </ImageView>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="348.0" layoutX="379.0" layoutY="190.0" opacity="0.8" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="297.0" />
+      <TextField fx:id="usernameField" layoutX="402.0" layoutY="229.0" prefHeight="35.0" prefWidth="168.0" />
+      <TextField fx:id="securityQuestionField" layoutX="402.0" layoutY="296.0" prefHeight="35.0" prefWidth="168.0" />
+      <TextField fx:id="answerField" layoutX="402.0" layoutY="369.0" prefHeight="35.0" prefWidth="168.0" />
+      <Label layoutX="402.0" layoutY="203.0" text="Enter username">
+         <font>
+            <Font size="18.0" />
+         </font></Label>
+      <Label fx:id="sqLabel" layoutX="402.0" layoutY="269.0" text="Security question">
+         <font>
+            <Font size="18.0" />
+         </font></Label>
+      <Label fx:id="answerLabel" layoutX="402.0" layoutY="339.0" text="Enter answer">
+         <font>
+            <Font size="18.0" />
+         </font></Label>
+      <TextField fx:id="passwordField" layoutX="402.0" layoutY="434.0" prefHeight="35.0" prefWidth="168.0" />
+      <Label fx:id="passwordLabel" layoutX="402.0" layoutY="407.0" text="Enter new password">
+         <font>
+            <Font size="18.0" />
+         </font></Label>
+      <Button fx:id="secondNextButton" layoutX="589.0" layoutY="369.0" mnemonicParsing="false" onAction="#handleSecondNextButtonAction" text="next">
+         <font>
+            <Font size="18.0" />
+         </font></Button>
+      <Button fx:id="firstNextButton" layoutX="589.0" layoutY="229.0" mnemonicParsing="false" onAction="#handleFirstNextButtonAction" text="next">
+         <font>
+            <Font size="18.0" />
+         </font></Button>
+      <Button fx:id="finishButton" layoutX="577.0" layoutY="485.0" mnemonicParsing="false" onAction="#handleFinishButtonAction" text="Finish">
+         <font>
+            <Font size="18.0" />
+         </font></Button>
+      <Button layoutX="402.0" layoutY="485.0" mnemonicParsing="false" onAction="#handleReturnButtonAction" text="Return">
+         <font>
+            <Font size="18.0" />
+         </font></Button>
    </children>
 </AnchorPane>

@@ -24,47 +24,71 @@
             </Glow>
          </effect>
       </ImageView>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="89.0" layoutX="202.0" layoutY="185.0" opacity="0.8" stroke="BLACK" strokeType="INSIDE" width="600.0" />
-      <TableView fx:id="orderTable" layoutX="55.0" layoutY="335.0" prefHeight="206.0" prefWidth="875.0">
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="73.0" layoutX="47.0" layoutY="556.0" opacity="0.8" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="920.0" />
+      <TableView fx:id="orderTable" layoutX="48.0" layoutY="164.0" opacity="0.8" prefHeight="385.0" prefWidth="920.0">
         <columns>
           <TableColumn fx:id="drinkColumn" prefWidth="70.0" text="Drink" />
-          <TableColumn fx:id="drinkSizeColumn" prefWidth="102.0" text="DrinkSize" />
-            <TableColumn fx:id="appetizerColumn" prefWidth="76.0" text="Appetizer" />
-            <TableColumn fx:id="mainCourseColumn" prefWidth="104.0" text="Main Course" />
-            <TableColumn fx:id="dessertColumn" prefWidth="86.0" text="Dessert" />
-            <TableColumn fx:id="extraColumn" prefWidth="95.0" text="Extra" />
-            <TableColumn fx:id="tableColumn" prefWidth="62.0" text="Table" />
-            <TableColumn fx:id="idColumn" prefWidth="41.0" text="Id" />
-            <TableColumn fx:id="dateColumn" prefWidth="123.0" text="Date" />
-            <TableColumn fx:id="priceColumn" minWidth="0.0" prefWidth="53.0" text="Price" />
-            <TableColumn fx:id="saleIdColumn" prefWidth="62.0" text="saleId" />
+          <TableColumn fx:id="drinkSizeColumn" prefWidth="78.0" text="DrinkSize" />
+            <TableColumn fx:id="appetizerColumn" prefWidth="94.0" text="Appetizer" />
+            <TableColumn fx:id="mainCourseColumn" prefWidth="110.0" text="Main Course" />
+            <TableColumn fx:id="dessertColumn" prefWidth="105.0" text="Dessert" />
+            <TableColumn fx:id="extraColumn" prefWidth="93.0" text="Extra" />
+            <TableColumn fx:id="tableColumn" prefWidth="64.0" text="Table" />
+            <TableColumn fx:id="idColumn" prefWidth="52.0" text="Id" />
+            <TableColumn fx:id="dateColumn" prefWidth="93.0" text="Date" />
+            <TableColumn fx:id="priceColumn" minWidth="0.0" prefWidth="106.0" text="Price" />
+            <TableColumn fx:id="saleIdColumn" prefWidth="60.0" text="saleId" />
         </columns>
       </TableView>
-      <TextField fx:id="itemField" layoutX="215.0" layoutY="224.0" prefHeight="25.0" prefWidth="70.0" />
-      <TextField fx:id="dateField" layoutX="308.0" layoutY="224.0" prefHeight="25.0" prefWidth="70.0" />
-      <TextField fx:id="idField" layoutX="394.0" layoutY="224.0" prefHeight="25.0" prefWidth="70.0" />
-      <TextField fx:id="tableField" layoutX="493.0" layoutY="224.0" prefHeight="25.0" prefWidth="70.0" />
-      <Button fx:id="searchButton" layoutX="614.0" layoutY="217.0" mnemonicParsing="false" onAction="#handleSearchButtonAction" text="Search" />
-      <Label layoutX="215.0" layoutY="197.0" text="Item">
+      <TextField fx:id="itemField" layoutX="58.0" layoutY="592.0" prefHeight="25.0" prefWidth="70.0" />
+      <TextField fx:id="dateField" layoutX="143.0" layoutY="592.0" prefHeight="25.0" prefWidth="70.0" />
+      <TextField fx:id="idField" layoutX="226.0" layoutY="592.0" prefHeight="26.0" prefWidth="104.0" />
+      <TextField fx:id="tableField" layoutX="346.0" layoutY="592.0" prefHeight="25.0" prefWidth="70.0" />
+      <Button fx:id="searchButton" layoutX="432.0" layoutY="582.0" mnemonicParsing="false" onAction="#handleSearchButtonAction" text="Search">
+         <font>
+            <Font size="18.0" />
+         </font></Button>
+      <Label layoutX="57.0" layoutY="565.0" text="Item">
          <font>
             <Font size="18.0" />
          </font></Label>
-      <Label layoutX="308.0" layoutY="197.0" text="Date">
+      <Label layoutX="143.0" layoutY="564.0" text="Date">
          <font>
             <Font size="18.0" />
          </font></Label>
-      <Label layoutX="394.0" layoutY="197.0" text="Id">
+      <Label layoutX="226.0" layoutY="565.0" text="Employee ID">
          <font>
             <Font size="18.0" />
          </font></Label>
-      <Label layoutX="493.0" layoutY="197.0" text="Table">
+      <Label layoutX="346.0" layoutY="566.0" text="Table">
          <font>
             <Font size="18.0" />
          </font></Label>
-      <Button fx:id="returnButton" layoutX="717.0" layoutY="217.0" mnemonicParsing="false" onAction="#handleaddReturnButtonAction" text="Return" />
-      <Label fx:id="totalPrice" layoutX="829.0" layoutY="310.0" textFill="WHITE" />
-      <Label layoutX="829.0" layoutY="293.0" text="total price" textFill="WHITE" />
-      <Button layoutX="666.0" layoutY="242.0" mnemonicParsing="false" onAction="#handleDeleteButtonAction" text="Delete" />
-      <Button layoutX="737.0" layoutY="249.0" mnemonicParsing="false" onAction="#handleRefreshButtonAction" text="Refresh" />
+      <Button fx:id="returnButton" layoutX="881.0" layoutY="582.0" mnemonicParsing="false" onAction="#handleaddReturnButtonAction" text="Return">
+         <font>
+            <Font size="18.0" />
+         </font></Button>
+      <Label fx:id="totalPrice" layoutX="648.0" layoutY="597.0" prefHeight="20.0" prefWidth="87.0" textAlignment="CENTER" textFill="RED">
+         <font>
+            <Font size="16.0" />
+         </font></Label>
+      <Label layoutX="646.0" layoutY="569.0" text="Total price">
+         <font>
+            <Font size="18.0" />
+         </font></Label>
+      <Button layoutX="524.0" layoutY="582.0" mnemonicParsing="false" onAction="#handleDeleteButtonAction" text="Delete">
+         <font>
+            <Font size="18.0" />
+         </font></Button>
+      <Button layoutX="785.0" layoutY="582.0" mnemonicParsing="false" onAction="#handleRefreshButtonAction" text="Refresh">
+         <font>
+            <Font size="18.0" />
+         </font></Button>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="54.0" layoutX="49.0" layoutY="104.0" opacity="0.8" stroke="WHITE" strokeType="INSIDE" strokeWidth="5.0" width="920.0" />
+      <Label layoutX="471.0" layoutY="115.0" text="DANA">
+         <font>
+            <Font name="System Bold" size="28.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

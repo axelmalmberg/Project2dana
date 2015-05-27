@@ -25,37 +25,37 @@
             </Glow>
          </effect>
       </ImageView>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="208.0" layoutX="373.0" layoutY="270.0" opacity="0.8" stroke="WHITE" strokeType="INSIDE" strokeWidth="5.0" width="226.0" />
-      <Button fx:id="addOrdersButton" layoutX="437.0" layoutY="288.0" mnemonicParsing="false" onAction="#handleButtonAction" text="Add order">
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="215.0" layoutX="407.0" layoutY="245.0" opacity="0.8" stroke="WHITE" strokeType="INSIDE" strokeWidth="5.0" width="226.0" />
+      <Button fx:id="addOrdersButton" layoutX="467.0" layoutY="264.0" mnemonicParsing="false" onAction="#handleButtonAction" text="Add order">
          <font>
-            <Font name="Times New Roman" size="18.0" />
+            <Font size="18.0" />
          </font>
       </Button>
-      <Button fx:id="viewOrdersButton" layoutX="430.0" layoutY="336.0" mnemonicParsing="false" onAction="#handleButtonAction" text="View orders">
+      <Button fx:id="viewOrdersButton" layoutX="460.0" layoutY="311.0" mnemonicParsing="false" onAction="#handleButtonAction" text="View orders">
          <font>
-            <Font name="Times New Roman" size="18.0" />
+            <Font size="18.0" />
          </font>
       </Button>
-      <Button fx:id="searchSalesButton" layoutX="430.0" layoutY="382.0" mnemonicParsing="false" onAction="#handleButtonAction" text="Search sales">
+      <Button fx:id="searchSalesButton" layoutX="456.0" layoutY="358.0" mnemonicParsing="false" onAction="#handleButtonAction" text="Search sales">
          <font>
-            <Font name="Times New Roman" size="18.0" />
+            <Font size="18.0" />
          </font>
       </Button>
-      <Button fx:id="addUserButton" layoutX="442.0" layoutY="425.0" mnemonicParsing="false" onAction="#handleButtonAction" text="Add user">
+      <Button fx:id="addUserButton" layoutX="472.0" layoutY="405.0" mnemonicParsing="false" onAction="#handleButtonAction" text="Add user">
          <font>
-            <Font name="Times New Roman" size="18.0" />
+            <Font size="18.0" />
          </font>
       </Button>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="54.0" layoutX="373.0" layoutY="203.0" opacity="0.8" stroke="WHITE" strokeType="INSIDE" strokeWidth="5.0" width="226.0" />
-      <Label layoutX="451.0" layoutY="216.0" text="DANA">
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="54.0" layoutX="407.0" layoutY="185.0" opacity="0.8" stroke="WHITE" strokeType="INSIDE" strokeWidth="5.0" width="226.0" />
+      <Label layoutX="480.0" layoutY="196.0" text="DANA">
          <font>
-            <Font name="Times New Roman Bold" size="24.0" />
+            <Font name="System Bold" size="28.0" />
          </font>
       </Label>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="54.0" layoutX="374.0" layoutY="496.0" opacity="0.8" stroke="WHITE" strokeType="INSIDE" strokeWidth="5.0" width="226.0" />
-      <Button fx:id="exitButton" layoutX="460.0" layoutY="507.0" mnemonicParsing="false" onAction="#handleButtonAction" text="Exit">
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="54.0" layoutX="407.0" layoutY="466.0" opacity="0.8" stroke="WHITE" strokeType="INSIDE" strokeWidth="5.0" width="226.0" />
+      <Button fx:id="exitButton" layoutX="495.0" layoutY="475.0" mnemonicParsing="false" onAction="#handleButtonAction" text="Exit">
          <font>
-            <Font name="Times New Roman" size="18.0" />
+            <Font size="18.0" />
          </font>
       </Button>
    </children>

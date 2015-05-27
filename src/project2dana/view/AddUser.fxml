@@ -25,110 +25,122 @@
             </Glow>
          </effect>
       </ImageView>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="85.0" layoutX="524.0" layoutY="484.0" opacity="0.8" stroke="BLACK" strokeType="INSIDE" width="298.0" />
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="264.0" layoutX="524.0" layoutY="212.0" opacity="0.8" stroke="BLACK" strokeType="INSIDE" width="298.0" />
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="358.0" layoutX="198.0" layoutY="210.0" opacity="0.8" stroke="BLACK" strokeType="INSIDE" width="286.0" />
-      <TextField fx:id="firstNameField" layoutX="217.0" layoutY="247.0" prefHeight="31.0" prefWidth="235.0" />
-      <TextField fx:id="lastNameField" layoutX="217.0" layoutY="303.0" prefHeight="31.0" prefWidth="235.0" />
-      <TextField fx:id="emailField" layoutX="217.0" layoutY="359.0" prefHeight="31.0" prefWidth="235.0" />
-      <TextField fx:id="PhoneField" layoutX="217.0" layoutY="415.0" prefHeight="31.0" prefWidth="235.0" />
-      <TextField fx:id="addressField" layoutX="217.0" layoutY="469.0" prefHeight="31.0" prefWidth="235.0" />
-      <TextField fx:id="cityField" layoutX="217.0" layoutY="527.0" prefHeight="31.0" prefWidth="235.0" />
-      <TextField fx:id="userNameField" layoutX="546.0" layoutY="261.0" prefHeight="31.0" prefWidth="235.0" />
-      <TextField fx:id="passwordField" layoutX="546.0" layoutY="318.0" prefHeight="31.0" prefWidth="235.0" />
-      <TextField fx:id="sequrityQuestionField" layoutX="546.0" layoutY="373.0" prefHeight="31.0" prefWidth="235.0" />
-      <TextField fx:id="answerField" layoutX="546.0" layoutY="430.0" prefHeight="31.0" prefWidth="235.0" />
-      <CheckBox fx:id="adminBox" layoutX="607.0" layoutY="495.0" mnemonicParsing="false" text="Make Admin" />
-      <Button fx:id="submitButton" layoutX="541.0" layoutY="527.0" mnemonicParsing="false" onAction="#handleSubmitButtonAction" prefHeight="31.0" prefWidth="73.0" text="Submit" />
-      <Button fx:id="returnButton" layoutX="720.0" layoutY="527.0" mnemonicParsing="false" onAction="#handleaReturnButtonAction" prefHeight="31.0" prefWidth="73.0" text="Return" />
-      <Label layoutX="547.0" layoutY="290.0" text="Enter Password">
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="55.0" layoutX="250.0" layoutY="521.0" opacity="0.8" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="544.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="378.0" layoutX="530.0" layoutY="129.0" opacity="0.8" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="264.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="378.0" layoutX="250.0" layoutY="129.0" opacity="0.8" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="264.0" />
+      <TextField fx:id="firstNameField" layoutX="262.0" layoutY="167.0" prefHeight="31.0" prefWidth="235.0" />
+      <TextField fx:id="lastNameField" layoutX="262.0" layoutY="225.0" prefHeight="31.0" prefWidth="235.0" />
+      <TextField fx:id="emailField" layoutX="262.0" layoutY="282.0" prefHeight="31.0" prefWidth="235.0" />
+      <TextField fx:id="PhoneField" layoutX="262.0" layoutY="340.0" prefHeight="31.0" prefWidth="235.0" />
+      <TextField fx:id="addressField" layoutX="262.0" layoutY="399.0" prefHeight="31.0" prefWidth="235.0" />
+      <TextField fx:id="cityField" layoutX="262.0" layoutY="461.0" prefHeight="31.0" prefWidth="235.0" />
+      <TextField fx:id="userNameField" layoutX="545.0" layoutY="167.0" prefHeight="31.0" prefWidth="235.0" />
+      <TextField fx:id="passwordField" layoutX="545.0" layoutY="229.0" prefHeight="31.0" prefWidth="235.0" />
+      <TextField fx:id="sequrityQuestionField" layoutX="545.0" layoutY="290.0" prefHeight="31.0" prefWidth="235.0" />
+      <TextField fx:id="answerField" layoutX="545.0" layoutY="347.0" prefHeight="31.0" prefWidth="235.0" />
+      <CheckBox fx:id="adminBox" layoutX="595.0" layoutY="432.0" mnemonicParsing="false" text="Make Admin">
+         <font>
+            <Font size="18.0" />
+         </font></CheckBox>
+      <Button fx:id="submitButton" layoutX="263.0" layoutY="530.0" mnemonicParsing="false" onAction="#handleSubmitButtonAction" prefHeight="35.0" prefWidth="84.0" text="Submit">
+         <font>
+            <Font size="18.0" />
+         </font></Button>
+      <Button fx:id="returnButton" layoutX="699.0" layoutY="530.0" mnemonicParsing="false" onAction="#handleaReturnButtonAction" prefHeight="35.0" prefWidth="83.0" text="Return">
+         <font>
+            <Font size="18.0" />
+         </font></Button>
+      <Label layoutX="545.0" layoutY="201.0" text="Password">
          <font>
             <Font size="18.0" />
          </font></Label>
-      <Label layoutX="545.0" layoutY="347.0" prefHeight="27.0" prefWidth="155.0" text="Sequrity Question">
+      <Label layoutX="545.0" layoutY="261.0" prefHeight="27.0" prefWidth="155.0" text="Security question">
          <font>
             <Font size="18.0" />
          </font></Label>
-      <Label layoutX="216.0" layoutY="222.0" text="First Name">
+      <Label layoutX="262.0" layoutY="139.0" text="First name">
          <font>
             <Font size="18.0" />
          </font></Label>
-      <Label layoutX="217.0" layoutY="276.0" text="Last Name">
+      <Label layoutX="262.0" layoutY="199.0" text="Last name">
          <font>
             <Font size="18.0" />
          </font></Label>
-      <Label layoutX="219.0" layoutY="334.0" text="E-mail">
+      <Label layoutX="262.0" layoutY="257.0" text="E-mail">
          <font>
             <Font size="18.0" />
          </font></Label>
-      <Label layoutX="218.0" layoutY="391.0" text="Phone">
+      <Label layoutX="262.0" layoutY="315.0" text="Phone">
          <font>
             <Font size="18.0" />
          </font></Label>
-      <Label layoutX="220.0" layoutY="448.0" text="Address">
+      <Label layoutX="262.0" layoutY="373.0" text="Address">
          <font>
             <Font size="18.0" />
          </font></Label>
-      <Label layoutX="217.0" layoutY="503.0" prefHeight="27.0" prefWidth="35.0" text="City">
+      <Label layoutX="262.0" layoutY="431.0" prefHeight="27.0" prefWidth="35.0" text="City">
          <font>
             <Font size="18.0" />
          </font></Label>
-      <Label layoutX="551.0" layoutY="404.0" prefHeight="27.0" prefWidth="67.0" text="Answer">
+      <Label layoutX="545.0" layoutY="320.0" prefHeight="27.0" prefWidth="136.0" text="Security answer">
          <font>
             <Font size="18.0" />
          </font></Label>
-      <Label fx:id="userAdded" layoutX="622.0" layoutY="532.0" prefHeight="21.0" prefWidth="83.0" textAlignment="CENTER" />
-      <Label layoutX="545.0" layoutY="234.0" text="Enter Username">
+      <Label fx:id="userAdded" layoutX="421.0" layoutY="536.0" prefHeight="23.0" prefWidth="223.0" textAlignment="CENTER">
+         <font>
+            <Font size="18.0" />
+         </font></Label>
+      <Label layoutX="545.0" layoutY="140.0" text="Username">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Label fx:id="firstNLabel" layoutX="308.0" layoutY="224.0" text="*" textFill="RED" visible="false">
+      <Label fx:id="firstNLabel" layoutX="352.0" layoutY="141.0" text="*" textFill="RED" visible="false">
          <font>
             <Font size="27.0" />
          </font>
       </Label>
-      <Label fx:id="lastNLabel" layoutX="308.0" layoutY="279.0" text="*" textFill="RED" visible="false">
+      <Label fx:id="lastNLabel" layoutX="351.0" layoutY="202.0" text="*" textFill="RED" visible="false">
          <font>
             <Font size="27.0" />
          </font>
       </Label>
-      <Label fx:id="emailLabel" layoutX="273.0" layoutY="336.0" text="*" textFill="RED" visible="false">
+      <Label fx:id="emailLabel" layoutX="317.0" layoutY="259.0" text="*" textFill="RED" visible="false">
          <font>
             <Font size="27.0" />
          </font>
       </Label>
-      <Label fx:id="phoneLabel" layoutX="273.0" layoutY="393.0" text="*" textFill="RED" visible="false">
+      <Label fx:id="phoneLabel" layoutX="318.0" layoutY="317.0" text="*" textFill="RED" visible="false">
          <font>
             <Font size="27.0" />
          </font>
       </Label>
-      <Label fx:id="addressLabel" layoutX="290.0" layoutY="450.0" text="*" textFill="RED" visible="false">
+      <Label fx:id="addressLabel" layoutX="333.0" layoutY="376.0" text="*" textFill="RED" visible="false">
          <font>
             <Font size="27.0" />
          </font>
       </Label>
-      <Label fx:id="cityLabel" layoutX="250.0" layoutY="508.0" text="*" textFill="RED" visible="false">
+      <Label fx:id="cityLabel" layoutX="296.0" layoutY="435.0" text="*" textFill="RED" visible="false">
          <font>
             <Font size="27.0" />
          </font>
       </Label>
-      <Label fx:id="userNameLabel" layoutX="680.0" layoutY="236.0" text="*" textFill="RED" visible="false">
+      <Label fx:id="userNameLabel" layoutX="632.0" layoutY="142.0" text="*" textFill="RED" visible="false">
          <font>
             <Font size="27.0" />
          </font>
       </Label>
-      <Label fx:id="passwordLabel" layoutX="680.0" layoutY="292.0" text="*" textFill="RED" visible="false">
+      <Label fx:id="passwordLabel" layoutX="629.0" layoutY="203.0" text="*" textFill="RED" visible="false">
          <font>
             <Font size="27.0" />
          </font>
       </Label>
-      <Label fx:id="seqQLabel" layoutX="695.0" layoutY="352.0" text="*" textFill="RED" visible="false">
+      <Label fx:id="seqQLabel" layoutX="690.0" layoutY="265.0" text="*" textFill="RED" visible="false">
          <font>
             <Font size="27.0" />
          </font>
       </Label>
-      <Label fx:id="answerQLabel" layoutX="615.0" layoutY="408.0" text="*" textFill="RED" visible="false">
+      <Label fx:id="answerQLabel" layoutX="679.0" layoutY="324.0" text="*" textFill="RED" visible="false">
          <font>
             <Font size="27.0" />
          </font>
