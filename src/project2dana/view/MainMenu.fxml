@@ -25,7 +25,7 @@
             </Glow>
          </effect>
       </ImageView>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="215.0" layoutX="407.0" layoutY="245.0" opacity="0.8" stroke="WHITE" strokeType="INSIDE" strokeWidth="5.0" width="226.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="263.0" layoutX="407.0" layoutY="245.0" opacity="0.8" stroke="WHITE" strokeType="INSIDE" strokeWidth="5.0" width="226.0" />
       <Button fx:id="addOrdersButton" layoutX="467.0" layoutY="264.0" mnemonicParsing="false" onAction="#handleButtonAction" text="Add order">
          <font>
             <Font size="18.0" />
@@ -52,8 +52,13 @@
             <Font name="System Bold" size="28.0" />
          </font>
       </Label>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="54.0" layoutX="407.0" layoutY="466.0" opacity="0.8" stroke="WHITE" strokeType="INSIDE" strokeWidth="5.0" width="226.0" />
-      <Button fx:id="exitButton" layoutX="495.0" layoutY="475.0" mnemonicParsing="false" onAction="#handleButtonAction" text="Exit">
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="54.0" layoutX="407.0" layoutY="514.0" opacity="0.8" stroke="WHITE" strokeType="INSIDE" strokeWidth="5.0" width="226.0" />
+      <Button fx:id="exitButton" layoutX="495.0" layoutY="523.0" mnemonicParsing="false" onAction="#handleButtonAction" text="Exit">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+      <Button fx:id="addFoodButton" layoutX="471.0" layoutY="452.0" mnemonicParsing="false" onAction="#handleButtonAction" text="Add food">
          <font>
             <Font size="18.0" />
          </font>

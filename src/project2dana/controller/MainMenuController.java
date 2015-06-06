@@ -15,13 +15,13 @@ import project2dana.model.SceneSwitcher;
 public class MainMenuController implements Initializable {
 
     @FXML
-    private Button addOrdersButton, viewOrdersButton, searchSalesButton, addUserButton, exitButton;
+    private Button addOrdersButton, viewOrdersButton, searchSalesButton, addUserButton, exitButton, addFoodButton;
 
     @FXML
     private void handleButtonAction(ActionEvent event) {
         Button scr = (Button) event.getSource();
         String tmpFxmlStr = null;
-        if (scr == addOrdersButton || scr == viewOrdersButton || scr == searchSalesButton || scr == addUserButton) {
+        if (scr == addOrdersButton || scr == viewOrdersButton || scr == searchSalesButton || scr == addUserButton || scr == addFoodButton) {
             if (scr == addOrdersButton) {
                 tmpFxmlStr = "AddOrders.fxml";
             } else if (scr == viewOrdersButton) {
@@ -30,6 +30,9 @@ public class MainMenuController implements Initializable {
                 tmpFxmlStr = "ViewSales.fxml";
             } else if (scr == addUserButton) {
                 tmpFxmlStr = "AddUser.fxml";
+            }
+            else if (scr == addFoodButton) {
+                tmpFxmlStr = "AddFood.fxml";
             }
             try {
                 SceneSwitcher ss = new SceneSwitcher();

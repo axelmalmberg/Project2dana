@@ -292,4 +292,17 @@ public class DbConnector {
             ex.printStackTrace();
         }
     }
+        public void addFood(String mealName, String categoryName, String sizeName, String price) {
+        try {
+            connect();
+            Connection c = DriverManager.getConnection(URL);
+            Statement st = c.createStatement();
+            String tmp = String.format("insert into food (name, category, size, price) values ('%s', '%s', '%s', '%s')", mealName, categoryName, sizeName, price);
+            st.executeUpdate(tmp);
+
+        } catch (Exception ex) {
+            System.out.println(ex.getMessage());
+        }
+
+    }
 }
