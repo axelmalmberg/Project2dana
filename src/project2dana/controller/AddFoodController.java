@@ -12,6 +12,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 import project2dana.model.DbConnector;
 import project2dana.model.SceneSwitcher;
@@ -26,10 +27,13 @@ public class AddFoodController implements Initializable {
     private DbConnector db = new DbConnector();
     
     @FXML
-    private TextField mealField, categoryField, sizeField, priceField;
+    private TextField mealField, categoryField, priceField;
     
     @FXML
     private Button submitButton, returnButton;
+    
+    @FXML
+    ComboBox comboCategory = new ComboBox();
 
     @FXML
     private void handleReturnButtonAction(ActionEvent event) {
@@ -48,22 +52,18 @@ public class AddFoodController implements Initializable {
     private void handleSubmitButtonAction(ActionEvent event) {
         String mealName;
         String categoryName;
-        String sizeName;
         String price;
 
         try {
 
             mealName = mealField.getText();
-            categoryName = categoryField.getText();
-            sizeName = sizeField.getText();
+            categoryName = (String) comboCategory.getValue();
             price = priceField.getText();
 
 
-            db.addFood(mealName, categoryName, sizeName, price);
+            db.addFood(mealName, categoryName, price);
 
             mealField.clear();
-            categoryField.clear();
-            sizeField.clear();
             priceField.clear();
 
 
@@ -80,7 +80,9 @@ public class AddFoodController implements Initializable {
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+        readComboCategory();
     }    
-    
+        public void readComboCategory() {
+        comboCategory.getItems().addAll("Drink","Appetizer","Main course","Dessert","Extras");
+    }
 }

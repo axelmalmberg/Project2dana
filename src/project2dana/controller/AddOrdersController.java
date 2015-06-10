@@ -10,12 +10,18 @@ import java.io.ObjectOutputStream;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
+import javafx.beans.property.StringProperty;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
+import javafx.scene.control.SingleSelectionModel;
 import javafx.scene.control.TextField;
+import project2dana.model.DbConnector;
 import project2dana.model.FtpDownload;
 import project2dana.model.FtpUpload;
 import project2dana.model.Order;
@@ -24,6 +30,9 @@ import project2dana.model.SceneSwitcher;
 public class AddOrdersController implements Initializable {
 
     FtpDownload ftpDown = null;
+
+    ObservableList<FoodProperty> FoodList = FXCollections.observableArrayList();
+    DbConnector db = new DbConnector();
 
     ArrayList<Order> list = new ArrayList<>();
     Order order = null;
@@ -36,7 +45,21 @@ public class AddOrdersController implements Initializable {
     private Button submitButton, returnButton;
 
     @FXML
-    private Label orderAdded, mustHavePrice, mustHaveSize;
+    private Label orderAdded, mustHavePrice, mustHaveSize, totalPrice;
+
+    @FXML
+    private ComboBox comboDrink;
+    @FXML
+    private ComboBox<String> comboAppetizer;
+    @FXML
+    private ComboBox<String> comboMainMeal;
+    @FXML
+    private ComboBox<String> comboDessert;
+    @FXML
+    private ComboBox<String> comboExtras;
+
+    @FXML
+    private ComboBox comboDrinkSize = new ComboBox();
 
     @FXML
     private void handleaddReturnButtonAction(ActionEvent event) {
@@ -53,6 +76,7 @@ public class AddOrdersController implements Initializable {
     private void handleSubmitButtonAction(ActionEvent event) {
         BufferedReader read = null;
         int tempNr = 0;
+        double Totalprice;
 
         try {
             File f = new File("OrderList.ser");
@@ -70,49 +94,16 @@ public class AddOrdersController implements Initializable {
             } else {
                 tempNr = Integer.parseInt(addTableNumber.getText());
             }
-            if (addDrink.textProperty().get().isEmpty()) {
-                order.setDrink("0");
-                order.setDrinkSize("0");
-            } else {
-                order.setDrink(addDrink.getText());
 
-                if (addDrinkSize.textProperty().get().isEmpty()) {
-                    orderAdded.setText("Drink size!");
-                    mustHaveSize.setVisible(true);
-                    return;
-                } else {
-                    order.setDrinkSize(addDrinkSize.getText());
-                }
-            }
+            FoodList = db.getFood();
 
-            if (addAppetizer.textProperty().get().isEmpty()) {
-                order.setAppetizer("0");
-            } else {
-                order.setAppetizer(addAppetizer.getText());
-            }
-            if (addMainCourse.textProperty().get().isEmpty()) {
-                order.setMainCourse("0");
-            } else {
-                order.setMainCourse(addMainCourse.getText());
-            }
-            if (addDessert.textProperty().get().isEmpty()) {
-                order.setDessert("0");
-            } else {
-                order.setDessert(addDessert.getText());
-            }
-            if (addExtra.textProperty().get().isEmpty()) {
-                order.setExtra("0");
-            } else {
-                order.setExtra(addExtra.getText());
-            }
+            order.setDrink((String) comboDrink.getValue());  
+            order.setAppetizer((String) comboAppetizer.getValue());
+            order.setMainCourse((String) comboMainMeal.getValue());
+            order.setDessert((String) comboDessert.getValue());
+            order.setExtra((String) comboExtras.getValue());
             order.setTableNumber(tempNr);
-            if (addPrice.textProperty().get().isEmpty()) {
-                orderAdded.setText("Price!");
-                mustHavePrice.setVisible(true);
-                return;
-            } else {
-                order.setPrice(Double.parseDouble(addPrice.getText()));
-            }
+            order.setPrice(Double.parseDouble(addPrice.getText()));
             order.setId(id);
 
             list.add(order);
@@ -133,6 +124,7 @@ public class AddOrdersController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        readCombo();
         downloadFtp();
         File f = new File("OrderList.ser");
 
@@ -178,4 +170,29 @@ public class AddOrdersController implements Initializable {
 
     }
 
+    public void readCombo() {
+
+        readDrinkSize();
+
+        try {
+            FoodList = db.getFood();
+            for (int i = 0; i < FoodList.size(); i++) {
+
+                comboDrink.getItems().add(FoodList.get(i).getDrink());
+                comboAppetizer.getItems().add(FoodList.get(i).getAppetizer());
+                comboMainMeal.getItems().add(FoodList.get(i).getMainMeal());
+                comboDessert.getItems().add(FoodList.get(i).getDessert());
+                comboExtras.getItems().add(FoodList.get(i).getExtras());
+
+            }
+
+        } catch (Exception ex) {
+            System.out.println("Funka ej");
+        }
+
+    }
+
+    public void readDrinkSize() {
+        comboDrinkSize.getItems().addAll("25cl", "33cl", "50cl", "1.5L");
+    }
 }

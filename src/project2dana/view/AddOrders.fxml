@@ -26,12 +26,6 @@
       </ImageView>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="412.0" layoutX="353.0" layoutY="134.0" opacity="0.8" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="297.0" />
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="55.0" layoutX="353.0" layoutY="554.0" opacity="0.8" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="297.0" />
-      <TextField fx:id="addDrink" layoutX="364.0" layoutY="171.0" />
-      <TextField fx:id="addDrinkSize" layoutX="542.0" layoutY="171.0" prefHeight="26.0" prefWidth="98.0" />
-      <TextField fx:id="addAppetizer" layoutX="364.0" layoutY="227.0" prefHeight="26.0" prefWidth="275.0" />
-      <TextField fx:id="addMainCourse" layoutX="364.0" layoutY="283.0" prefHeight="26.0" prefWidth="275.0" />
-      <TextField fx:id="addDessert" layoutX="364.0" layoutY="339.0" prefHeight="26.0" prefWidth="275.0" />
-      <TextField fx:id="addExtra" layoutX="364.0" layoutY="395.0" prefHeight="26.0" prefWidth="275.0" />
       <TextField fx:id="addTableNumber" layoutX="364.0" layoutY="451.0" prefHeight="26.0" prefWidth="275.0" />
       <TextField fx:id="addPrice" layoutX="364.0" layoutY="507.0" prefHeight="26.0" prefWidth="275.0" />
       <Label layoutX="364.0" layoutY="143.0" prefHeight="27.0" prefWidth="49.0" text="Drink">
@@ -90,5 +84,11 @@
             <Font size="27.0" />
          </font>
       </Label>
+      <ComboBox id="nameCombo" fx:id="comboDrink" layoutX="364.0" layoutY="171.0" prefHeight="26.0" prefWidth="170.0" promptText="Choose drink" />
+      <ComboBox id="nameCombo" fx:id="comboDrinkSize" layoutX="539.0" layoutY="171.0" prefHeight="26.0" prefWidth="97.0" />
+      <ComboBox id="nameCombo" fx:id="comboAppetizer" layoutX="364.0" layoutY="225.0" prefHeight="26.0" prefWidth="275.0" promptText="Choose appetizer" />
+      <ComboBox id="nameCombo" fx:id="comboMainMeal" layoutX="364.0" layoutY="282.0" prefHeight="26.0" prefWidth="275.0" promptText="Choose main course" />
+      <ComboBox id="nameCombo" fx:id="comboDessert" layoutX="364.0" layoutY="338.0" prefHeight="26.0" prefWidth="275.0" promptText="Choose dessert" />
+      <ComboBox id="nameCombo" fx:id="comboExtras" layoutX="364.0" layoutY="392.0" prefHeight="26.0" prefWidth="275.0" promptText="Choose extras" />
    </children>
 </AnchorPane>

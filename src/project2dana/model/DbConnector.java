@@ -9,13 +9,16 @@ import java.sql.*;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
+import project2dana.controller.FoodProperty;
 
 public class DbConnector {
 
     FinishedOrderProperty op = null;
+    FoodProperty food = null;
     private static final int ADMIN = 1;
     private String URL;
     ObservableList<FinishedOrderProperty> ObList = FXCollections.observableArrayList();
+    ObservableList<FoodProperty> FoodList = FXCollections.observableArrayList();
 
     public void addSale(String date, int tableNr, double price, int employeeId, String appetizer, String dessert, String drink, String extras, String mainCourse, String drinkSize) {
         try {
@@ -292,17 +295,56 @@ public class DbConnector {
             ex.printStackTrace();
         }
     }
-        public void addFood(String mealName, String categoryName, String sizeName, String price) {
+
+    public void addFood(String mealName, String categoryName, String price) {
         try {
             connect();
             Connection c = DriverManager.getConnection(URL);
             Statement st = c.createStatement();
-            String tmp = String.format("insert into food (name, category, size, price) values ('%s', '%s', '%s', '%s')", mealName, categoryName, sizeName, price);
+            String tmp = String.format("insert into food (name, category, price) values ('%s', '%s', '%s')", mealName, categoryName, price);
             st.executeUpdate(tmp);
 
         } catch (Exception ex) {
             System.out.println(ex.getMessage());
         }
 
+    }
+
+    public ObservableList<FoodProperty> getFood() {
+
+        try {
+            connect();
+            Connection c = DriverManager.getConnection(URL);
+            Statement st = c.createStatement();
+            ResultSet rs = st.executeQuery("SELECT * FROM food");
+
+            while (rs.next()) {
+
+                String name = rs.getString("name");
+                String category = rs.getString("category");
+                String price = rs.getString("price");
+                food = new FoodProperty(name, category, price);
+
+                FoodList.add(food);
+            }
+
+        } catch (Exception ex) {
+            System.out.println(ex.getMessage());
+        }
+        return FoodList;
+    }
+
+    public String foodPrice(String food) {
+        try {
+            connect();
+            Connection c = DriverManager.getConnection(URL);
+            Statement st = c.createStatement();
+            String tmp = String.format("SELECT price FROM food WHERE (name) values ('%s')", food);
+            st.executeUpdate(tmp);
+
+        } catch (Exception ex) {
+            System.out.println(ex.getMessage());
+        }
+        return food;
     }
 }
