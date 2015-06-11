@@ -97,7 +97,7 @@ public class AddOrdersController implements Initializable {
 
             FoodList = db.getFood();
 
-            order.setDrink((String) comboDrink.getValue());  
+            order.setDrink((String) comboDrink.getValue());
             order.setAppetizer((String) comboAppetizer.getValue());
             order.setMainCourse((String) comboMainMeal.getValue());
             order.setDessert((String) comboDessert.getValue());
@@ -178,11 +178,25 @@ public class AddOrdersController implements Initializable {
             FoodList = db.getFood();
             for (int i = 0; i < FoodList.size(); i++) {
 
-                comboDrink.getItems().add(FoodList.get(i).getDrink());
-                comboAppetizer.getItems().add(FoodList.get(i).getAppetizer());
-                comboMainMeal.getItems().add(FoodList.get(i).getMainMeal());
-                comboDessert.getItems().add(FoodList.get(i).getDessert());
-                comboExtras.getItems().add(FoodList.get(i).getExtras());
+                if (FoodList.get(i).getCategory().equals("Drink")) {
+                    comboDrink.getItems().add(FoodList.get(i).getDrink());
+                }
+
+                if (FoodList.get(i).getCategory().equals("Appetizer")) {
+                    comboAppetizer.getItems().add(FoodList.get(i).getAppetizer());
+                }
+
+                if (FoodList.get(i).getCategory().equals("Main course")) {
+                    comboMainMeal.getItems().add(FoodList.get(i).getMainMeal());
+                }
+
+                if (FoodList.get(i).getCategory().equals("Dessert")) {
+                    comboDessert.getItems().add(FoodList.get(i).getDessert());
+                }
+
+                if (FoodList.get(i).getCategory().equals("Extras")) {
+                    comboExtras.getItems().add(FoodList.get(i).getExtras());
+                }
 
             }
 
